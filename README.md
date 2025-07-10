@@ -43,7 +43,7 @@ Clone the repository:
 ```shell
 $ cd ~
 ### Clone this repo
-$ git clone https://github.com/reiniscimurs/DRL-robot-navigation
+git clone https://github.com/abdelzaro/DRL-robot-navigation
 ```
 The network can be run with a standard 2D laser, but this implementation uses a simulated [3D Velodyne sensor](https://github.com/lmark1/velodyne_simulator)
 
