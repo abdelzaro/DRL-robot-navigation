@@ -43,7 +43,9 @@ class TD3(object):
 
 
 # Set the parameters for the implementation
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # cuda or cpu
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # cuda or cpudevice = torch.device("cpu")
+device = torch.device("cpu")
+
 seed = 0  # Random seed number
 max_ep = 500  # maximum number of steps per episode
 file_name = "TD3_velodyne"  # name of the file to load the policy from
