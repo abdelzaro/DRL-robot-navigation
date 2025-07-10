@@ -217,7 +217,9 @@ class TD3(object):
 
 
 # Set the parameters for the implementation
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # cuda or cpu
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # cuda or cpu
+device = torch.device("cpu")
+
 seed = 0  # Random seed number
 eval_freq = 5e3  # After how many steps to perform the evaluation
 max_ep = 500  # maximum number of steps per episode
@@ -298,14 +300,31 @@ while timestep < max_timesteps:
                 policy_freq,
             )
 
+        # if timesteps_since_eval >= eval_freq:
+        #     print("Validating")
+        #     timesteps_since_eval %= eval_freq
+        #     evaluations.append(
+        #         evaluate(network=network, epoch=epoch, eval_episodes=eval_ep)
+        #     )
+        #     network.save(file_name, directory="./pytorch_models")
+        #     np.save("./results/%s" % (file_name), evaluations)
+        #     epoch += 1
+
         if timesteps_since_eval >= eval_freq:
             print("Validating")
             timesteps_since_eval %= eval_freq
             evaluations.append(
                 evaluate(network=network, epoch=epoch, eval_episodes=eval_ep)
             )
-            network.save(file_name, directory="./pytorch_models")
-            np.save("./results/%s" % (file_name), evaluations)
+            
+            # Generate a timestamp
+            timestamp = time.strftime("%Y%m%d-%H%M%S")
+            
+            # Save with timestamp in filename
+            save_name = f"{file_name}_{timestamp}"
+            network.save(save_name, directory="./pytorch_models")
+            np.save(f"./results/{save_name}", evaluations)
+
             epoch += 1
 
         state = env.reset()
