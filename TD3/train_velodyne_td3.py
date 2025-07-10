@@ -310,7 +310,7 @@ while timestep < max_timesteps:
         #     np.save("./results/%s" % (file_name), evaluations)
         #     epoch += 1
 
-        if timesteps_since_eval >= eval_freq:
+        if timesteps_since_eval >= eval_freq: # << added this
             print("Validating")
             timesteps_since_eval %= eval_freq
             evaluations.append(
