@@ -82,6 +82,13 @@ To kill the training process:
 ```shell
 $ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
 ```
+abdel: some extra commands if gazebo won't cose
+```shell
+
+pkill -9 -f ros
+pkill -9 -f gzserver
+pkill -9 -f gzclient
+```
 
 Once training is completed, test the model:
 ```shell
