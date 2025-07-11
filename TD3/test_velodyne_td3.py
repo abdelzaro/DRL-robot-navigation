@@ -4,6 +4,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import argparse
+
 
 from velodyne_env import GazeboEnv
 
@@ -35,12 +37,16 @@ class TD3(object):
         state = torch.Tensor(state.reshape(1, -1)).to(device)
         return self.actor(state).cpu().data.numpy().flatten()
 
-    def load(self, filename, directory):
-        # Function to load network parameters
-        self.actor.load_state_dict(
-            torch.load("%s/%s_actor.pth" % (directory, filename))
-        )
+    # def load(self, filename, directory):
+    #     # Function to load network parameters
+    #     self.actor.load_state_dict(
+    #         torch.load("%s/%s_actor.pth" % (directory, filename))
+    #     )
 
+    def load(self, filename, directory):
+        self.actor.load_state_dict(
+            torch.load("%s/%s.pth" % (directory, filename))
+        )
 
 # Set the parameters for the implementation
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # cuda or cpudevice = torch.device("cpu")
@@ -48,7 +54,17 @@ device = torch.device("cpu")
 
 seed = 0  # Random seed number
 max_ep = 500  # maximum number of steps per episode
-file_name = "TD3_velodyne"  # name of the file to load the policy from
+# file_name = "TD3_velodyne"  # name of the file to load the policy from
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "model",
+    type=str,
+    help="Model filename without .pth (e.g., TD3_velodyne_20250710-200821_actor)"
+)
+args = parser.parse_args()
+
+file_name = args.model
+
 
 
 # Create the testing environment
