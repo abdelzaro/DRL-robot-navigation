@@ -80,7 +80,7 @@ $ tensorboard --logdir runs
 
 To kill the training process:
 ```shell
-$ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
 ```
 abdel: some extra commands if gazebo won't cose
 ```shell
