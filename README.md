@@ -68,9 +68,14 @@ source devel_isolated/setup.bash
 
 Run the training:
 ```shell
-$ cd ~/DRL-robot-navigation/TD3
-$ python3 train_velodyne_td3.py
+cd ~/DRL-robot-navigation/TD3
+python3 train_velodyne_td3.py
 ```
+if using dynamic_gap make sure you launch the gap detection publisher:
+```shell
+roslaunch dynamic_gap gap_streamer.launch
+```
+
 
 To check the training process on tensorboard:
 ```shell
