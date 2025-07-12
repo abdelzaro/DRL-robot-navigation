@@ -71,7 +71,7 @@ Run the training:
 cd ~/DRL-robot-navigation/TD3
 python3 train_velodyne_td3.py
 ```
-if using dynamic_gap don't make sure you launch the gap detection publisher:
+if using dynamic_gap make sure you launch the gap detection publisher:
 ```shell
 roslaunch dynamic_gap gap_streamer.launch
 ```
