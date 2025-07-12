@@ -89,7 +89,7 @@ To kill the training process:
 ```
 abdel: some extra commands if gazebo won't cose
 ```shell
-
+ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
 pkill -9 -f ros
 pkill -9 -f gzserver
 pkill -9 -f gzclient
