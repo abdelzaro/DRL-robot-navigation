@@ -96,9 +96,9 @@ class GazeboEnv:
             self.gaps.append(
                 [self.gaps[m][1], self.gaps[m][1] + np.pi / self.environment_dim]
             )
-        self.gaps[-1][-1] += 0.03
+        self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
         
-        self.dgap_flat_vector = []
+        self.dgap_flat_vector = []# this is part of the dgap code
 
         port = "11311"
         subprocess.Popen(["roscore", "-p", port])
@@ -167,8 +167,8 @@ class GazeboEnv:
                 gap.left_angle, gap.left_range
             ])
         # Save up to N gaps (pad with zeros if fewer gaps)
-        max_gaps = 5
-        gap_vector = gaps_flat[:max_gaps * 4]  # if you allow up to 5 gaps
+        max_gaps = 5 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        gap_vector = gaps_flat[:max_gaps * 4]  #IF YOU CHANGE THIS too!: update dgap_number_gaps_dim in train_velodyne_td3.py
         gap_vector += [0.0] * (max_gaps * 4 - len(gap_vector))
         self.dgap_flat_vector = gap_vector 
         # print(self.dgap_flat_vector)
@@ -252,10 +252,18 @@ class GazeboEnv:
             done = True
 
         robot_state = [distance, theta, action[0], action[1]]
-        print("inside of step()")
-        print(self.dgap_flat_vector)
+        # print("inside of step()")
+        # print(self.dgap_flat_vector)
 
-        state = np.append(laser_state, robot_state)
+        state = np.append(laser_state, robot_state) #orginal before dgap
+        
+        gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
+        # state = np.concatenate([laser_state, robot_state, gap_state])
+
+        # just_a_test = np.concatenate([laser_state, robot_state, gap_state])
+        # print("just a test print np.concatenate([laser_state, robot_state, gap_state])")
+        # print(just_a_test)
+        
         reward = self.get_reward(target, collision, action, min_laser)
         return state, reward, done, target
 
