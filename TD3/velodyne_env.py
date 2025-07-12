@@ -256,9 +256,16 @@ class GazeboEnv:
         # print(self.dgap_flat_vector)
 
         state = np.append(laser_state, robot_state) #orginal before dgap
-        
+      
         gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
+         # print("gap_state")
+        # print(gap_state)
+        
         # state = np.concatenate([laser_state, robot_state, gap_state])
+       
+        test = np.append(state, gap_state)
+        print("test")
+        print(test)
 
         # just_a_test = np.concatenate([laser_state, robot_state, gap_state])
         # print("just a test print np.concatenate([laser_state, robot_state, gap_state])")
