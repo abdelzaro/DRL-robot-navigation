@@ -256,22 +256,14 @@ class GazeboEnv:
         robot_state = [distance, theta, action[0], action[1]]
         # print("inside of step()")
         # print(self.dgap_flat_vector)
-
         original_state = np.append(laser_state, robot_state) #orginal before dgap
       
         gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
          # print("gap_state")
-        # print(gap_state)
-        
-        # state = np.concatenate([laser_state, robot_state, gap_state])
-       
+        # print(gap_state)     
         state = np.append(original_state, gap_state)
         # print("state with gap added:")
         # print(state)
-
-        # just_a_test = np.concatenate([laser_state, robot_state, gap_state])
-        # print("just a test print np.concatenate([laser_state, robot_state, gap_state])")
-        # print(just_a_test)
         
         reward = self.get_reward(target, collision, action, min_laser)
         return state, reward, done, target
@@ -364,8 +356,8 @@ class GazeboEnv:
         gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
 
         state = np.append(original_state, gap_state)
-        print("state inside reset(): ")
-        print(state)
+        # print("state inside reset(): ")
+        # print(state)
         return state
 
     def change_goal(self):
