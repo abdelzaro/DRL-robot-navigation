@@ -8,5 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib/pkgconfig:$PKG_CONFIG_PATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins:$ROS_PACKAGE_PATH"

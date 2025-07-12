@@ -5,6 +5,9 @@ import subprocess
 import time
 from os import path
 
+from dynamic_gap.msg import GapPolarArray
+
+
 import numpy as np
 import rospy
 import sensor_msgs.point_cloud2 as pc2
@@ -94,6 +97,8 @@ class GazeboEnv:
                 [self.gaps[m][1], self.gaps[m][1] + np.pi / self.environment_dim]
             )
         self.gaps[-1][-1] += 0.03
+        
+        self.dgap_flat_vector = []
 
         port = "11311"
         subprocess.Popen(["roscore", "-p", port])
@@ -129,7 +134,12 @@ class GazeboEnv:
         self.odom = rospy.Subscriber(
             "/r1/odom", Odometry, self.odom_callback, queue_size=1
         )
-
+        
+        self.gaps_data = []  # store the latest gaps
+        rospy.Subscriber("/simplified_gaps", GapPolarArray, self.gaps_callback, queue_size=1)
+        
+    
+    #DON'T GET CONFUSED: THE ORIGINAL DRL CODE I USED ALSO HAS A VARIABLE CALLED GAPS
     # Read velodyne pointcloud and turn it into distance data, then select the minimum value for each angle
     # range as state representation
     def velodyne_callback(self, v):
@@ -147,6 +157,21 @@ class GazeboEnv:
                     if self.gaps[j][0] <= beta < self.gaps[j][1]:
                         self.velodyne_data[j] = min(self.velodyne_data[j], dist)
                         break
+
+    def gaps_callback(self, msg):
+        # Example: just flatten gap data into a list
+        gaps_flat = []
+        for gap in msg.gaps:
+            gaps_flat.extend([
+                gap.right_angle, gap.right_range,
+                gap.left_angle, gap.left_range
+            ])
+        # Save up to N gaps (pad with zeros if fewer gaps)
+        max_gaps = 5
+        gap_vector = gaps_flat[:max_gaps * 4]  # if you allow up to 5 gaps
+        gap_vector += [0.0] * (max_gaps * 4 - len(gap_vector))
+        self.dgap_flat_vector = gap_vector 
+        # print(self.dgap_flat_vector)
 
     def odom_callback(self, od_data):
         self.last_odom = od_data
@@ -227,6 +252,9 @@ class GazeboEnv:
             done = True
 
         robot_state = [distance, theta, action[0], action[1]]
+        print("inside of step()")
+        print(self.dgap_flat_vector)
+
         state = np.append(laser_state, robot_state)
         reward = self.get_reward(target, collision, action, min_laser)
         return state, reward, done, target

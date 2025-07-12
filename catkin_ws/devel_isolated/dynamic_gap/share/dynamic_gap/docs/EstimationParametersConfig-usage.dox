@@ -1,0 +1,8 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_gap" pkg="dynamic_gap" type="dynamic_gap">
+  <param name="Q" type="double" value="0.01" />
+  <param name="R" type="double" value="0.01" />
+</node>
+\endverbatim
+
