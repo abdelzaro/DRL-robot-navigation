@@ -39,14 +39,14 @@
               <horizontal>
                 <!-- The URG-04LX-UG01  has  683 steps with 0.35139 Degree resolution -->
                 <resolution>1</resolution>
-                <max_angle>3.14</max_angle> <!--2.0944 120 Degree -->
-                <min_angle>-3.14</min_angle> <!-- -120 Degree -->
-                <samples>512</samples><!--<samples>683</samples>-->
+                <max_angle>1.5708</max_angle> <!--2.0944 120 Degree -->
+                <min_angle>-1.5708</min_angle> <!-- -120 Degree -->
+                <samples>360</samples><!--<samples>683</samples>-->
               </horizontal>
             </scan>
             <range>
               <min>0.08</min>
-              <max>5</max>
+              <max>10</max>
               <resolution>0.01</resolution>
             </range>
           </ray>

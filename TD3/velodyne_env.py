@@ -168,7 +168,7 @@ class GazeboEnv:
         except (rospy.ServiceException) as e:
             print("/gazebo/unpause_physics service call failed")
 
-        # propagate state for TIME_DELTA seconds
+        # propagate state for TIME_DELTA seconds 
         time.sleep(TIME_DELTA)
 
         rospy.wait_for_service("/gazebo/pause_physics")
