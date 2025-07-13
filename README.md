@@ -47,6 +47,11 @@ git clone https://github.com/abdelzaro/DRL-robot-navigation
 ```
 The network can be run with a standard 2D laser, but this implementation uses a simulated [3D Velodyne sensor](https://github.com/lmark1/velodyne_simulator)
 
+if compiling doesn't work try: 
+```shell
+git clone https://github.com/srl-freiburg/pedsim_ros.git
+```
+
 Compile the workspace:
 ```shell
 $ cd ~/DRL-robot-navigation/catkin_ws
