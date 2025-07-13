@@ -73,6 +73,8 @@ source devel_isolated/setup.bash
 
 Run the training:
 ```shell
+cd
+source env/bin/activate #change based on your virtual env
 cd ~/DRL-robot-navigation/TD3
 python3 train_velodyne_td3.py
 ```
