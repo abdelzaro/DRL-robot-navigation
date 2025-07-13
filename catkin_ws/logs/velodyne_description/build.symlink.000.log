@@ -1,0 +1,3 @@
+Symlinking /home/power20/DRL-robot-navigation/catkin_ws/devel/lib/pkgconfig/velodyne_description.pc
+Symlinking /home/power20/DRL-robot-navigation/catkin_ws/devel/share/velodyne_description/cmake/velodyne_descriptionConfig-version.cmake
+Symlinking /home/power20/DRL-robot-navigation/catkin_ws/devel/share/velodyne_description/cmake/velodyne_descriptionConfig.cmake
