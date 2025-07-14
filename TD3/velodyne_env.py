@@ -20,9 +20,29 @@ from std_srvs.srv import Empty
 from visualization_msgs.msg import Marker
 from visualization_msgs.msg import MarkerArray
 
-GOAL_REACHED_DIST = 0.3
+GOAL_REACHED_DIST = 0.3 
 COLLISION_DIST = 0.35
-TIME_DELTA = 0.1
+# TIME_DELTA = 0.1
+
+# ------------------------------------------------------------------
+SIM_SPEEDUP = 5.0          # IF YOU CHANGE THIS!!  : make sure you adjust real_time_update_rate in TD3.world
+TIME_DELTA_SIM = 0.1       # desired delta_t in *simulation* seconds
+TIME_DELTA = TIME_DELTA_SIM / SIM_SPEEDUP   # wall-clock sleep
+# ------------------------------------------------------------------
+def sim_sleep(dt_sim):
+    """
+    Pause thread until simulated time advances by dt_sim.
+    max_walltime (sec) to prevent infinite blocking.
+    """
+    max_walltime = dt_sim * 10 # 10x margin
+    start_sim_time = rospy.Time.now()
+    start_wall_time = time.time()
+
+    while (rospy.Time.now() - start_sim_time).to_sec() < dt_sim:
+        if max_walltime and (time.time() - start_wall_time) > max_walltime:
+            rospy.logwarn("sim_sleep: Wall-time timeout reached!")
+            break
+        time.sleep(0.001)
 
 
 # Check if the random goal position is located on an obstacle and do not accept it if it is
@@ -196,7 +216,9 @@ class GazeboEnv:
             print("/gazebo/unpause_physics service call failed")
 
         # propagate state for TIME_DELTA seconds 
-        time.sleep(TIME_DELTA)
+        # time.sleep(TIME_DELTA)
+        sim_sleep(TIME_DELTA)
+
 
         rospy.wait_for_service("/gazebo/pause_physics")
         try:
@@ -313,7 +335,9 @@ class GazeboEnv:
         except (rospy.ServiceException) as e:
             print("/gazebo/unpause_physics service call failed")
 
-        time.sleep(TIME_DELTA)
+        # time.sleep(TIME_DELTA)
+        sim_sleep(TIME_DELTA)
+
 
         rospy.wait_for_service("/gazebo/pause_physics")
         try:
