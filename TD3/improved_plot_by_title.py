@@ -1,23 +1,25 @@
 import os
+import re
 import numpy as np
 import matplotlib.pyplot as plt
 
 # === CONFIGURATION ===
 results_dir = '/home/az/DRL-robot-navigation/TD3/results/1gap_run2'  # full path
-file_prefix = 'TD3_velodyne_1gap'  # what to match before the timestamp
+file_prefix = 'TD3_velodyne_1gap'  # exact match prefix
 
 # === LOAD & FILTER FILES ===
-all_files = [f for f in os.listdir(results_dir)
-             if f.endswith('.npy') and f.startswith(file_prefix)]
+pattern = re.compile(rf"^{file_prefix}(_\d+)?\.npy$")  # e.g., TD3_velodyne_1gap_12345.npy or TD3_velodyne_1gap.npy
 
-# max_files = 3  # only show the last 10 logs
-# all_files = sorted(all_files)[-max_files:]
+all_files = [
+    f for f in os.listdir(results_dir)
+    if f.endswith('.npy') and pattern.match(f)
+]
 
 if not all_files:
-    print(f"No files found starting with '{file_prefix}'")
+    print(f"No files found matching pattern '{file_prefix}(_<digits>).npy'")
     exit()
 
-print(f"Found {len(all_files)} files matching prefix '{file_prefix}'.")
+print(f"Found {len(all_files)} files matching '{file_prefix}' (excluding *_run1 etc).")
 
 # === LOAD & PLOT ===
 plt.figure(figsize=(12, 6))
@@ -31,7 +33,7 @@ for filename in sorted(all_files):
         else:
             rewards = data  # assume it's a simple array of rewards
 
-        label = filename.split('_')[-1].split('.')[0]  # short suffix (timestamp)
+        label = filename.split('_')[-1].split('.')[0]  # short suffix (e.g., timestamp or number)
         plt.plot(rewards, label=label)
 
     except Exception as e:
