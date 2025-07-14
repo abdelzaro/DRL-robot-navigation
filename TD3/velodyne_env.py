@@ -25,7 +25,7 @@ COLLISION_DIST = 0.35
 # TIME_DELTA = 0.1
 
 # ------------------------------------------------------------------
-SIM_SPEEDUP = 5.0          # IF YOU CHANGE THIS!!  : make sure you adjust real_time_update_rate in TD3.world
+SIM_SPEEDUP = 1.0          # IF YOU CHANGE THIS!!  : make sure you adjust real_time_update_rate in TD3.world
 TIME_DELTA_SIM = 0.1       # desired delta_t in *simulation* seconds
 TIME_DELTA = TIME_DELTA_SIM / SIM_SPEEDUP   # wall-clock sleep
 # ------------------------------------------------------------------
