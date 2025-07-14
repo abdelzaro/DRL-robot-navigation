@@ -71,7 +71,7 @@ class GapPolarArray {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    length += 16 * object.gaps.length;
+    length += 20 * object.gaps.length;
     return length + 4;
   }
 
@@ -82,7 +82,7 @@ class GapPolarArray {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'bca7aae125759a66c1c2548d6ce506aa';
+    return 'acecdc166934590f4302140fcb710960';
   }
 
   static messageDefinition() {
@@ -116,7 +116,7 @@ class GapPolarArray {
     float32 left_range
     
     # convenience: Euclidean width of the gap  (m)
-    # float32 width 
+    float32 width 
     
     `;
   }

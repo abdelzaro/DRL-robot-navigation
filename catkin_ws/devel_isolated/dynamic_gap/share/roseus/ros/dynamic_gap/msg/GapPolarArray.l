@@ -78,7 +78,7 @@
    self)
   )
 
-(setf (get dynamic_gap::GapPolarArray :md5sum-) "bca7aae125759a66c1c2548d6ce506aa")
+(setf (get dynamic_gap::GapPolarArray :md5sum-) "acecdc166934590f4302140fcb710960")
 (setf (get dynamic_gap::GapPolarArray :datatype-) "dynamic_gap/GapPolarArray")
 (setf (get dynamic_gap::GapPolarArray :definition-)
       "Header      header
@@ -109,12 +109,12 @@ float32 left_angle
 float32 left_range
 
 # convenience: Euclidean width of the gap  (m)
-# float32 width 
+float32 width 
 
 ")
 
 
 
-(provide :dynamic_gap/GapPolarArray "bca7aae125759a66c1c2548d6ce506aa")
+(provide :dynamic_gap/GapPolarArray "acecdc166934590f4302140fcb710960")
 
 

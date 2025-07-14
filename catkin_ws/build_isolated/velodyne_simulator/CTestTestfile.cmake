@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_simulator
-# Build directory: /home/power20/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_simulator
+# Source directory: /home/asus/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_simulator
+# Build directory: /home/asus/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_simulator
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

@@ -1,4 +1,4 @@
-prefix=/home/power20/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/asus/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: velodyne_gazebo_plugins
 Description: Description of velodyne_gazebo_plugins

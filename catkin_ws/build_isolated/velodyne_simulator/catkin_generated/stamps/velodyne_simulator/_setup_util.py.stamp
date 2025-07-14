@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/home/power20/gaps/devel;/home/power20/arena_ws/devel;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/googletest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/power20/DRL-robot-navigation/catkin_ws/build_isolated/dynamic_gap")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/asus/DRL-robot-navigation/catkin_ws/build_isolated/dynamic_gap")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

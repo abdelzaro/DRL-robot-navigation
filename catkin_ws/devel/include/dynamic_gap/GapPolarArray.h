@@ -1,1 +1,0 @@
-/home/power20/DRL-robot-navigation/catkin_ws/devel/.private/dynamic_gap/include/dynamic_gap/GapPolarArray.h

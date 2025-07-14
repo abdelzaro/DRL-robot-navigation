@@ -1,6 +1,0 @@
-devel_space: /home/power20/DRL-robot-navigation/catkin_ws/devel
-install: false
-install_space: /home/power20/DRL-robot-navigation/catkin_ws/install
-profile: default
-source_space: /home/power20/DRL-robot-navigation/catkin_ws/src
-workspace: /home/power20/DRL-robot-navigation/catkin_ws

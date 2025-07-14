@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/power20/DRL-robot-navigation/catkin_ws/devel/.private/velodyne_gazebo_plugins/setup.sh

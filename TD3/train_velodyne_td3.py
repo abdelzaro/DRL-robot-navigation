@@ -200,7 +200,7 @@ class TD3(object):
 
             av_loss += loss
         self.iter_count += 1
-        # Write new values for tensorboard
+        # Write new values for tensorboard  
         self.writer.add_scalar("loss", av_loss / iterations, self.iter_count)
         self.writer.add_scalar("Av. Q", av_Q / iterations, self.iter_count)
         self.writer.add_scalar("Max. Q", max_Q, self.iter_count)
@@ -256,7 +256,7 @@ if save_model and not os.path.exists("./pytorch_models"):
 # Create the training environment
 environment_dim = 20
 robot_dim = 4
-dgap_number_gaps_dim = 7 * 4 # 5 gaps * 4 floats in the dgap_flat_list
+dgap_number_gaps_dim = 3 * 5 # 5 gaps * 4 floats in the dgap_flat_list
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim)
 time.sleep(5)
 torch.manual_seed(seed)

@@ -1,1 +1,0 @@
-/home/power20/DRL-robot-navigation/catkin_ws/devel/.private/multi_robot_scenario/share/multi_robot_scenario/cmake/multi_robot_scenarioConfig.cmake
