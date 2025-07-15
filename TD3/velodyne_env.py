@@ -68,7 +68,9 @@ def check_pos(x, y):
 class GazeboEnv:
     """Superclass for all Gazebo environments."""
 
-    def __init__(self, launchfile, environment_dim):
+    def __init__(self, launchfile, environment_dim, robot_name="r1"):
+        self.robot_name = robot_name
+
         self.environment_dim = environment_dim
         self.odom_x = 0
         self.odom_y = 0
@@ -98,7 +100,7 @@ class GazeboEnv:
             )
         self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
         
-        # self.dgap_flat_vector = []# this is part of the dgap code
+        # self.dgap_flat_vector = []# this is part of the dgap code 
         self.dgap_flat_vector = np.zeros(12, dtype=np.float32)
 
         port = "11311"
@@ -119,7 +121,7 @@ class GazeboEnv:
         print("Gazebo launched!")
 
         # Set up the ROS publishers and subscribers
-        self.vel_pub = rospy.Publisher("/r1/cmd_vel", Twist, queue_size=1)
+        self.vel_pub = rospy.Publisher(f"/{self.robot_name}/cmd_vel", Twist, queue_size=1)
         self.set_state = rospy.Publisher(
             "gazebo/set_model_state", ModelState, queue_size=10
         )
@@ -133,7 +135,7 @@ class GazeboEnv:
             "/velodyne_points", PointCloud2, self.velodyne_callback, queue_size=1
         )
         self.odom = rospy.Subscriber(
-            "/r1/odom", Odometry, self.odom_callback, queue_size=1
+            f"/{self.robot_name}/odom", Odometry, self.odom_callback, queue_size=1
         )
         
         self.gaps_data = []  # store the latest gaps

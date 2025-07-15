@@ -163,7 +163,7 @@ Visualization Manager:
     - Class: rviz/Camera
       Enabled: true
       Image Rendering: background and overlay
-      Image Topic: /r1/front_camera/image_raw
+      Image Topic: /$(arg robot_name)/front_camera/image_raw
       Name: Camera
       Overlay Alpha: 0.5
       Queue Size: 2
@@ -202,7 +202,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.10000000149011612
       Style: Flat Squares
-      Topic: /r1/front_laser/scan
+      Topic: /$(arg robot_name)/front_laser/scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -239,7 +239,7 @@ Visualization Manager:
         Shaft Length: 0.05000000074505806
         Shaft Radius: 0.05000000074505806
         Value: Arrow
-      Topic: /r1/odom
+      Topic: /$(arg robot_name)/odom
       Unreliable: false
       Value: true
     - Class: rviz/MarkerArray

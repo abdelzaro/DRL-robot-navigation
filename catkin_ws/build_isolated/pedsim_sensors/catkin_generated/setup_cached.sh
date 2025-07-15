@@ -8,5 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib/pkgconfig:$PKG_CONFIG_PATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_sensors:$ROS_PACKAGE_PATH"

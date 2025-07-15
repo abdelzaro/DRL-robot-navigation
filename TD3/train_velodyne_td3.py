@@ -7,6 +7,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import sys
 
+robot_name = sys.argv[1] if len(sys.argv) > 1 else "r1"
+
+
 from numpy import inf
 from torch.utils.tensorboard import SummaryWriter
 
@@ -257,7 +260,7 @@ if save_model and not os.path.exists("./pytorch_models"):
 environment_dim = 20
 robot_dim = 4
 dgap_number_gaps_dim = 3 * 4 # 5 gaps * 4 floats in the dgap_flat_list
-env = GazeboEnv("multi_robot_scenario.launch", environment_dim)
+env = GazeboEnv("multi_robot_scenario.launch", environment_dim, robot_name)
 time.sleep(5)
 torch.manual_seed(seed)
 np.random.seed(seed)
@@ -384,6 +387,8 @@ while timestep < max_timesteps:
 
 # After the training is done, evaluate the network and save it
 evaluations.append(evaluate(network=network, epoch=epoch, eval_episodes=eval_ep))
+
 if save_model:
-    network.save("%s" % file_name, directory="./pytorch_models")
-np.save("./results/%s" % file_name, evaluations)
+    network.save(f"{file_name}_{robot_name}", directory="./pytorch_models")
+np.save(f"./results/{file_name}_{robot_name}", evaluations)
+
