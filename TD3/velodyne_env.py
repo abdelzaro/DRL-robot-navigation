@@ -160,23 +160,32 @@ class GazeboEnv:
                         break
 
     def gaps_callback(self, msg):
-        # Example: just flatten gap data into a list
         gaps_flat = []
-        for gap in msg.gaps:
-            gaps_flat.extend([
-                gap.right_angle, gap.right_range,
-                gap.left_angle, gap.left_range
-            ])
-        # Save up to N gaps (pad with zeros if fewer gaps)
-        max_gaps = 1 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        max_gaps = 1  #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
         # and dgap_flat_vector initial value
-        gap_vector = gaps_flat[:max_gaps * 4]  #IF YOU CHANGE THIS too!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        max_range = 5.0  
+        
+        for gap in msg.gaps:
+            # Normalize angles to [-1, 1] (angle / π)
+            right_angle_norm = gap.right_angle / np.pi
+            left_angle_norm = gap.left_angle / np.pi
+            
+            # Normalize ranges to [0, 1] (range / max_range)
+            right_range_norm = gap.right_range / max_range
+            left_range_norm = gap.left_range / max_range
+
+            gaps_flat.extend([
+                right_angle_norm, right_range_norm,
+                left_angle_norm, left_range_norm
+            ])
+
+        # Pad with zeros if fewer than max_gaps
+        gap_vector = gaps_flat[:max_gaps * 4] #IF YOU CHANGE THIS too!: update dgap_number_gaps_dim in train_velodyne_td3.py
         gap_vector += [0.0] * (max_gaps * 4 - len(gap_vector))
-        self.dgap_flat_vector = gap_vector 
+
+        self.dgap_flat_vector = gap_vector
         # print(self.dgap_flat_vector)
 
-    def odom_callback(self, od_data):
-        self.last_odom = od_data
 
     # Perform an action and read a new state
     def step(self, action):
