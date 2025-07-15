@@ -70,6 +70,7 @@ class GazeboEnv:
 
     def __init__(self, launchfile, environment_dim, robot_name="r1"):
         self.robot_name = robot_name
+        ns = f"/{self.robot_name}"
 
         self.environment_dim = environment_dim
         self.odom_x = 0
@@ -84,7 +85,7 @@ class GazeboEnv:
         self.last_odom = None
 
         self.set_self_state = ModelState()
-        self.set_self_state.model_name = "r1"
+        # self.set_self_state.model_name = "r1"
         self.set_self_state.pose.position.x = 0.0
         self.set_self_state.pose.position.y = 0.0
         self.set_self_state.pose.position.z = 0.0
@@ -121,26 +122,19 @@ class GazeboEnv:
         print("Gazebo launched!")
 
         # Set up the ROS publishers and subscribers
-        self.vel_pub = rospy.Publisher(f"/{self.robot_name}/cmd_vel", Twist, queue_size=1)
-        self.set_state = rospy.Publisher(
-            "gazebo/set_model_state", ModelState, queue_size=10
-        )
-        self.unpause = rospy.ServiceProxy("/gazebo/unpause_physics", Empty)
-        self.pause = rospy.ServiceProxy("/gazebo/pause_physics", Empty)
-        self.reset_proxy = rospy.ServiceProxy("/gazebo/reset_world", Empty)
-        self.publisher = rospy.Publisher("goal_point", MarkerArray, queue_size=3)
-        self.publisher2 = rospy.Publisher("linear_velocity", MarkerArray, queue_size=1)
-        self.publisher3 = rospy.Publisher("angular_velocity", MarkerArray, queue_size=1)
-        self.velodyne = rospy.Subscriber(
-            "/velodyne_points", PointCloud2, self.velodyne_callback, queue_size=1
-        )
-        self.odom = rospy.Subscriber(
-            f"/{self.robot_name}/odom", Odometry, self.odom_callback, queue_size=1
-        )
-        
-        self.gaps_data = []  # store the latest gaps
-        rospy.Subscriber("/simplified_gaps", GapPolarArray, self.gaps_callback, queue_size=1)
-        
+        self.vel_pub    = rospy.Publisher(f"{ns}/cmd_vel", Twist, queue_size=1)
+        self.set_state  = rospy.Publisher(f"{ns}/gazebo/set_model_state", ModelState, queue_size=10)
+
+        self.unpause    = rospy.ServiceProxy(f"{ns}/gazebo/unpause_physics", Empty)
+        self.pause      = rospy.ServiceProxy(f"{ns}/gazebo/pause_physics", Empty)
+        self.reset_proxy= rospy.ServiceProxy(f"{ns}/gazebo/reset_world", Empty)
+
+        self.velodyne   = rospy.Subscriber(f"{ns}/velodyne_points", PointCloud2, self.velodyne_callback, queue_size=1)
+        self.odom       = rospy.Subscriber(f"{ns}/odom", Odometry, self.odom_callback, queue_size=1)
+        rospy.Subscriber(f"{ns}/simplified_gaps", GapPolarArray, self.gaps_callback, queue_size=1)
+
+        self.set_self_state.model_name = self.robot_name  # don't hardcode "r1"
+
     
     #DON'T GET CONFUSED: THE ORIGINAL DRL CODE I USED ALSO HAS A VARIABLE CALLED GAPS
     # Read velodyne pointcloud and turn it into distance data, then select the minimum value for each angle
