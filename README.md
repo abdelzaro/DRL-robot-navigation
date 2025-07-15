@@ -47,6 +47,38 @@ git clone https://github.com/abdelzaro/DRL-robot-navigation
 ```
 The network can be run with a standard 2D laser, but this implementation uses a simulated [3D Velodyne sensor](https://github.com/lmark1/velodyne_simulator)
 
+Parallel instructions: 
+```shell
+source env/bin/activate
+cd ~/DRL-robot-navigation/catkin_ws
+catkin_make_isolated
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_PORT_SIM=11311
+export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
+source ~/.bashrc
+cd ~/DRL-robot-navigation/catkin_ws
+source devel_isolated/setup.bash
+
+```
+
+All at once Parallel: 
+```shell
+source env/bin/activate
+cd ~/DRL-robot-navigation/catkin_ws
+catkin_make_isolated
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_PORT_SIM=11311
+export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
+source ~/.bashrc
+cd ~/DRL-robot-navigation/catkin_ws
+source devel_isolated/setup.bash
+cd ~/DRL-robot-navigation/TD3
+python3 train_velodyne_td3.py r1
+
+```
+
 Compile the workspace:
 ```shell
 $ cd ~/DRL-robot-navigation/catkin_ws
