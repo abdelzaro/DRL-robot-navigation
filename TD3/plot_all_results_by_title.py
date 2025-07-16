@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # === CONFIGURATION ===
-results_dir = '/home/power20/DRL-robot-navigation/TD3/results'  # or full path
-file_prefix = 'TD3_velodyne_7_gaps'  # what to match before the timestamp
+results_dir = '/home/mini/DRL-robot-navigation/TD3/results'  # or full path
+file_prefix = 'TD3_velodyne_r1'  # what to match before the timestamp
 
 # === LOAD & FILTER FILES ===
 all_files = [f for f in os.listdir(results_dir)
