@@ -4,18 +4,16 @@
   <arg name="robot_name" default="r1"/>
   <arg name="robot_position" default="-x 0.0 -y 0.0 -z 0.01 -R 0 -P 0 -Y 0.0"/>
 
-  <group ns="$(arg ns)">
-    <!-- Gazebo -->
-    <include file="$(find multi_robot_scenario)/launch/empty_world.launch">
-      <arg name="gui" value="$(arg gui)" />
-    </include>
+  <!--  Launch Gazebo world WITHOUT namespace -->
+  <include file="$(find multi_robot_scenario)/launch/empty_world.launch">
+    <arg name="gui" value="$(arg gui)" />
+  </include>
 
-    <!-- Robot -->
+  <!--  Launch robot and plugins WITH namespace -->
+  <group ns="$(arg ns)">
     <include file="$(find multi_robot_scenario)/launch/pioneer3dx.gazebo.launch">
       <arg name="robot_name" value="$(arg robot_name)" />
       <arg name="robot_position" value="$(arg robot_position)" />
     </include>
-
-    <!-- TF/RViz/etc., if needed inside the namespace -->
   </group>
 </launch>
