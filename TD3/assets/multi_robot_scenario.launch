@@ -16,4 +16,7 @@
       <arg name="robot_position" value="$(arg robot_position)" />
     </include>
   </group>
+  
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find multi_robot_scenario)/launch/pioneer3dx.rviz" />
+
 </launch>
