@@ -162,10 +162,17 @@ class GazeboEnv:
     def gaps_callback(self, msg):
         # Example: just flatten gap data into a list
         gaps_flat = []
+        max_range = 5.0
         for gap in msg.gaps:
+            # normalize angles to [-1, 1] and ranges to [0, 1]
+            right_angle = gap.right_angle / np.pi
+            right_range = gap.right_range / max_range
+            left_angle = gap.left_angle / np.pi
+            left_range = gap.left_range / max_range
+
             gaps_flat.extend([
-                gap.right_angle, gap.right_range,
-                gap.left_angle, gap.left_range
+                right_angle, right_range,
+                left_angle, left_range
             ])
         # Save up to N gaps (pad with zeros if fewer gaps)
         max_gaps = 1 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
