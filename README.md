@@ -32,9 +32,24 @@ Please cite as:<br/>
   doi={10.1109/LRA.2021.3133591}}
 ```
 
-## Installation
+## Parallel Gazebo simulations
 
 
+without env Parallel instructions: 
+```shell
+cd ~/DRL-robot-navigation/catkin_ws
+catkin_make_isolated
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_PORT_SIM=11311
+export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
+source ~/.bashrc
+cd ~/DRL-robot-navigation/catkin_ws
+source devel_isolated/setup.bash
+cd ~/DRL-robot-navigation/TD3
+ROS_NAMESPACE=r2 python3 train_velodyne_td3.py r2
+```
+## old
 
 without env Parallel instructions: 
 ```shell
