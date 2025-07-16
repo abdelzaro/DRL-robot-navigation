@@ -1,0 +1,8 @@
+prefix=/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap
+
+Name: dynamic_gap
+Description: Description of dynamic_gap
+Version: 0.0.0
+Cflags: -I/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include -I/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include -I/usr/include/eigen3 -I/home/power20/arena_ws/devel/.private/base_local_planner/include -I/home/power20/arena_ws/devel/.private/costmap_2d/include -I/home/power20/arena_ws/devel/.private/actionlib/include -I/home/power20/arena_ws/devel/.private/pedsim_msgs/include -I/home/power20/arena_ws/src/arena/utils/actionlib/actionlib/include -I/home/power20/arena_ws/src/arena/utils/navigation/utils/voxel_grid/include -I/home/power20/arena_ws/src/arena/utils/navigation/core/costmap_2d/include -I/home/power20/arena_ws/src/arena/utils/navigation/core/nav_core/include -I/home/power20/arena_ws/src/arena/utils/navigation/planners/local/base_local_planner/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include
+Libs: -L${prefix}/lib -ldynamic_gap
+Requires: base_local_planner pluginlib roscpp rospy pedsim_msgs dynamic_reconfigure message_generation std_msgs sensor_msgs geometry_msgs message_runtime std_msgs geometry_msgs

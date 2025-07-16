@@ -1,0 +1,7 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~Q" : \b [double] Model noise parameter min: 0.0, default: 0.01, max: 100.0
+- \b "~R" : \b [double] Sensor noise parameter min: 0.0, default: 0.01, max: 100.0
+

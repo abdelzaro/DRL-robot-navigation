@@ -8,9 +8,5 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib:$LD_LIBRARY_PATH"
-export PATH='/opt/ros/noetic/bin:/home/power20/.local/bin:/home/power20/.local/bin:/home/power20/.local/bin:/home/power20/.local/bin:/home/power20/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
-export PKG_CONFIG_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/power20/DRL-robot-navigation/catkin_ws/build_isolated/multi_robot_scenario'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/share/common-lisp'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/power20/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario:$ROS_PACKAGE_PATH"
