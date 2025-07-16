@@ -84,7 +84,8 @@ class GazeboEnv:
         self.last_odom = None
 
         self.set_self_state = ModelState()
-        self.set_self_state.model_name = "r1"
+        # self.set_self_state.model_name = "r1"
+        self.set_self_state.model_name = self.robot_name   # was hard‑coded to "r1"
         self.set_self_state.pose.position.x = 0.0
         self.set_self_state.pose.position.y = 0.0
         self.set_self_state.pose.position.z = 0.0
