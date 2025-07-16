@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/dyna
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/dynamic_gap/test_results
+	/home/mini/env/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/dynamic_gap/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make

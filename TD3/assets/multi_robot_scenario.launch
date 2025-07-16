@@ -1,16 +1,21 @@
 <launch>
-<arg name="gui" value="false"/>
+  <arg name="gui" default="false"/>
+  <arg name="ns" default="r1"/>
+  <arg name="robot_name" default="r1"/>
+  <arg name="robot_position" default="-x 0.0 -y 0.0 -z 0.01 -R 0 -P 0 -Y 0.0"/>
 
-   <!-- Gazebo  -->
-  <include file="$(find multi_robot_scenario)/launch/empty_world.launch" />
+  <group ns="$(arg ns)">
+    <!-- Gazebo -->
+    <include file="$(find multi_robot_scenario)/launch/empty_world.launch">
+      <arg name="gui" value="$(arg gui)" />
+    </include>
 
-  <!-- Robot with diff drive -->
-  <include file="$(find multi_robot_scenario)/launch/pioneer3dx.gazebo.launch">
-     <arg name="robot_name" value="r1" />
-     <arg name="robot_position" value="-x 0.0 -y 0.0 -z 0.01 -R 0 -P 0 -Y +0.0" />
-   </include>
+    <!-- Robot -->
+    <include file="$(find multi_robot_scenario)/launch/pioneer3dx.gazebo.launch">
+      <arg name="robot_name" value="$(arg robot_name)" />
+      <arg name="robot_position" value="$(arg robot_position)" />
+    </include>
 
-  <!-- RVIZ -->
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find multi_robot_scenario)/launch/pioneer3dx.rviz" />
-
+    <!-- TF/RViz/etc., if needed inside the namespace -->
+  </group>
 </launch>

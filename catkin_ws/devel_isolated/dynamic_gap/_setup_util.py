@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/mini/env/bin/python3
 # -*- coding: utf-8 -*-
 
 # Software License Agreement (BSD License)

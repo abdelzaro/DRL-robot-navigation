@@ -156,7 +156,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/python3/dist-packages/dynamic_gap/cfg")
+  execute_process(COMMAND "/home/mini/env/bin/python3" -m compileall "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/python3/dist-packages/dynamic_gap/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -191,7 +191,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/python3/dist-packages/dynamic_gap")
+  execute_process(COMMAND "/home/mini/env/bin/python3" -m compileall "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/python3/dist-packages/dynamic_gap")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
