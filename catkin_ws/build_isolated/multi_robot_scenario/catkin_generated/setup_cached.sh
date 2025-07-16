@@ -7,6 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario:$CMAKE_PREFIX_PATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/power20/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario:$CMAKE_PREFIX_PATH"
+export PATH='/opt/ros/noetic/bin:/home/mini/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+export PWD='/home/mini/DRL-robot-navigation/catkin_ws/build_isolated/multi_robot_scenario'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/mini/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario:$ROS_PACKAGE_PATH"
