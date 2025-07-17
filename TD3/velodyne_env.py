@@ -119,7 +119,7 @@ class GazeboEnv:
         self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
         
         # self.dgap_flat_vector = []# this is part of the dgap code
-        self.dgap_flat_vector = np.zeros(28, dtype=np.float32)
+        self.dgap_flat_vector = np.zeros(15, dtype=np.float32)
 
         port = "11311"
         subprocess.Popen(["roscore", "-p", port])
@@ -179,19 +179,21 @@ class GazeboEnv:
                         self.velodyne_data[j] = min(self.velodyne_data[j], dist)
                         break
 
+    
     def gaps_callback(self, msg):
         # Example: just flatten gap data into a list
         gaps_flat = []
         for gap in msg.gaps:
             gaps_flat.extend([
                 gap.right_angle, gap.right_range,
-                gap.left_angle, gap.left_range
+                gap.left_angle, gap.left_range,
+                gap.width
             ])
         # Save up to N gaps (pad with zeros if fewer gaps)
-        max_gaps = 7 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        max_gaps = 3 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
         # and dgap_flat_vector initial value
-        gap_vector = gaps_flat[:max_gaps * 4]  #IF YOU CHANGE THIS too!: update dgap_number_gaps_dim in train_velodyne_td3.py
-        gap_vector += [0.0] * (max_gaps * 4 - len(gap_vector))
+        gap_vector = gaps_flat[:max_gaps * 5]  #IF YOU CHANGE THIS too!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        gap_vector += [0.0] * (max_gaps * 5 - len(gap_vector))
         self.dgap_flat_vector = gap_vector 
         # print(self.dgap_flat_vector)
 
