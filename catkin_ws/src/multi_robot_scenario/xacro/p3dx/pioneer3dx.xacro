@@ -19,7 +19,9 @@
       parent="chassis"
       xyz="0.125 0 0.25"
       rpy="0 0 0"
-      meshes="package://gazebo_plugins/test/multi_robot_scenario/meshes/laser"/>
+      meshes="package://gazebo_plugins/test/multi_robot_scenario/meshes/laser"
+      robotNamespace="/${robot_name}" 
+      robot_name="${robot_name}" />
 
   <!-- ================= RGB Camera =================== -->
   <xacro:include filename="$(find multi_robot_scenario)/xacro/camera/camera.xacro"/>

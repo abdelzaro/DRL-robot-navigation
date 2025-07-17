@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <!-- Front Laser -->
-<xacro:macro name="laser" params="name parent xyz rpy meshes" >
+<xacro:macro name="laser" params="name parent xyz rpy meshes robotNamespace robot_name">
 
   <joint name="${parent}_${name}_joint" type="fixed">
       <axis xyz="0 0 1" />
@@ -52,7 +52,7 @@
           </ray>
 
           <plugin name="laser" filename="libgazebo_ros_laser.so" >
-            <robotNamespace></robotNamespace>
+            <robotNamespace>${robotNamespace}</robotNamespace>  <!-- abdel: Use argument -->
             <topicName>${name}/scan</topicName>
             <frameName>${name}</frameName>
           </plugin>
