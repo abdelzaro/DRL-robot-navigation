@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolar.h
+/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolar.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolarArray.h
+/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolarArray.h
 string
 -
 vector
@@ -42,7 +42,7 @@ std_msgs/Header.h
 dynamic_gap/GapPolar.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/config/DynamicGapConfig.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/config/DynamicGapConfig.h
 ros/ros.h
 -
 sensor_msgs/LaserScan.h
@@ -52,7 +52,7 @@ boost/shared_ptr.hpp
 dynamic_gap/utils/Utils.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_detection/GapDetector.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_detection/GapDetector.h
 ros/ros.h
 -
 vector
@@ -68,7 +68,7 @@ boost/shared_ptr.hpp
 dynamic_gap/config/DynamicGapConfig.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_estimation/Estimator.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_estimation/Estimator.h
 ros/ros.h
 -
 map
@@ -86,7 +86,7 @@ Eigen/Dense
 dynamic_gap/utils/Utils.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_estimation/PerfectEstimator.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_estimation/PerfectEstimator.h
 ros/ros.h
 -
 dynamic_gap/config/DynamicGapConfig.h
@@ -110,7 +110,7 @@ Eigen/Dense
 dynamic_gap/gap_estimation/Estimator.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_estimation/RotatingFrameCartesianKalmanFilter.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/gap_estimation/RotatingFrameCartesianKalmanFilter.h
 ros/ros.h
 -
 geometry_msgs/Pose.h
@@ -134,7 +134,7 @@ dynamic_gap/config/DynamicGapConfig.h
 dynamic_gap/gap_estimation/Estimator.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/Gap.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/Gap.h
 ros/ros.h
 -
 math.h
@@ -156,9 +156,9 @@ dynamic_gap/gap_estimation/RotatingFrameCartesianKalmanFilter.h
 dynamic_gap/gap_estimation/PerfectEstimator.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/GapGoal.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/GapGoal.h
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/GapPoint.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/GapPoint.h
 ros/ros.h
 -
 math.h
@@ -176,7 +176,7 @@ dynamic_gap/gap_estimation/RotatingFrameCartesianKalmanFilter.h
 dynamic_gap/gap_estimation/PerfectEstimator.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/PropagatedGapPoint.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/PropagatedGapPoint.h
 ros/ros.h
 -
 dynamic_gap/utils/Utils.h
@@ -184,7 +184,7 @@ dynamic_gap/utils/Utils.h
 dynamic_gap/gap_estimation/Estimator.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/Utils.h
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include/dynamic_gap/utils/Utils.h
 ros/ros.h
 -
 Eigen/Core
@@ -196,7 +196,7 @@ vector
 tf/tf.h
 -
 
-/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/src/gap_streamer_polar.cpp
+/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/src/gap_streamer_polar.cpp
 ros/ros.h
 -
 sensor_msgs/LaserScan.h

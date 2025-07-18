@@ -1,4 +1,4 @@
-prefix=/home/power20/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/mini/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: multi_robot_scenario
 Description: Description of multi_robot_scenario

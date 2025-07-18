@@ -67,14 +67,14 @@ set(velodyne_gazebo_plugins_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(velodyne_gazebo_plugins_SOURCE_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins)
-  set(velodyne_gazebo_plugins_DEVEL_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins)
+  set(velodyne_gazebo_plugins_SOURCE_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins)
+  set(velodyne_gazebo_plugins_DEVEL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins)
   set(velodyne_gazebo_plugins_INSTALL_PREFIX "")
   set(velodyne_gazebo_plugins_PREFIX ${velodyne_gazebo_plugins_DEVEL_PREFIX})
 else()
   set(velodyne_gazebo_plugins_SOURCE_PREFIX "")
   set(velodyne_gazebo_plugins_DEVEL_PREFIX "")
-  set(velodyne_gazebo_plugins_INSTALL_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/install_isolated)
+  set(velodyne_gazebo_plugins_INSTALL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/install_isolated)
   set(velodyne_gazebo_plugins_PREFIX ${velodyne_gazebo_plugins_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(velodyne_gazebo_plugins_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/include;/usr/include;/usr/include/gazebo-11;/usr/include/bullet;/usr/include/simbody;/usr/include/sdformat-9.10;/usr/include/ignition/math6;/usr/include/OGRE;/usr/include/OGRE/Terrain;/usr/include/OGRE/Paging;/usr/include/ignition/transport8;/usr/include/ignition/msgs5;/usr/include/ignition/common3;/usr/include/ignition/fuel_tools4 " STREQUAL " ")
+if(NOT "/home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/include;/usr/include;/usr/include/gazebo-11;/usr/include/bullet;/usr/include/simbody;/usr/include/sdformat-9.10;/usr/include/ignition/math6;/usr/include/OGRE;/usr/include/OGRE/Terrain;/usr/include/OGRE/Paging;/usr/include/ignition/transport8;/usr/include/ignition/msgs5;/usr/include/ignition/common3;/usr/include/ignition/fuel_tools4 " STREQUAL " ")
   set(velodyne_gazebo_plugins_INCLUDE_DIRS "")
-  set(_include_dirs "/home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/include;/usr/include;/usr/include/gazebo-11;/usr/include/bullet;/usr/include/simbody;/usr/include/sdformat-9.10;/usr/include/ignition/math6;/usr/include/OGRE;/usr/include/OGRE/Terrain;/usr/include/OGRE/Paging;/usr/include/ignition/transport8;/usr/include/ignition/msgs5;/usr/include/ignition/common3;/usr/include/ignition/fuel_tools4")
+  set(_include_dirs "/home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/include;/usr/include;/usr/include/gazebo-11;/usr/include/bullet;/usr/include/simbody;/usr/include/sdformat-9.10;/usr/include/ignition/math6;/usr/include/OGRE;/usr/include/OGRE/Terrain;/usr/include/OGRE/Paging;/usr/include/ignition/transport8;/usr/include/ignition/msgs5;/usr/include/ignition/common3;/usr/include/ignition/fuel_tools4")
   if(NOT "https://bitbucket.org/dataspeedinc/velodyne_simulator/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://bitbucket.org/dataspeedinc/velodyne_simulator/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/velodyne_gazebo_plugins " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velo
         message(FATAL_ERROR "Project 'velodyne_gazebo_plugins' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'velodyne_gazebo_plugins' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'velodyne_gazebo_plugins' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/${idir}'.  ${_report}")
     endif()
     _list_append_unique(velodyne_gazebo_plugins_INCLUDE_DIRS ${include})
   endforeach()
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/power20/gaps/devel/lib;/home/power20/arena_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

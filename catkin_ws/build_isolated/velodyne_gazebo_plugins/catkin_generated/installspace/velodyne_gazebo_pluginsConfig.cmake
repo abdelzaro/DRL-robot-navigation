@@ -67,14 +67,14 @@ set(velodyne_gazebo_plugins_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(velodyne_gazebo_plugins_SOURCE_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins)
-  set(velodyne_gazebo_plugins_DEVEL_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins)
+  set(velodyne_gazebo_plugins_SOURCE_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins)
+  set(velodyne_gazebo_plugins_DEVEL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins)
   set(velodyne_gazebo_plugins_INSTALL_PREFIX "")
   set(velodyne_gazebo_plugins_PREFIX ${velodyne_gazebo_plugins_DEVEL_PREFIX})
 else()
   set(velodyne_gazebo_plugins_SOURCE_PREFIX "")
   set(velodyne_gazebo_plugins_DEVEL_PREFIX "")
-  set(velodyne_gazebo_plugins_INSTALL_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/install_isolated)
+  set(velodyne_gazebo_plugins_INSTALL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/install_isolated)
   set(velodyne_gazebo_plugins_PREFIX ${velodyne_gazebo_plugins_INSTALL_PREFIX})
 endif()
 
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/power20/DRL-robot-navigation/catkin_ws/install_isolated/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/power20/gaps/devel/lib;/home/power20/arena_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/mini/DRL-robot-navigation/catkin_ws/install_isolated/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
