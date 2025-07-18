@@ -1,0 +1,28 @@
+<launch>
+  <!-- Hard‑coded variant for r1 -->
+
+  <!-- Load the URDF description -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro '$(find multi_robot_scenario)/xacro/p3dx/pioneer3dx_r1.xacro'" />
+
+  <!-- Everything under its own namespace so names don’t clash -->
+  <group ns="r1">
+
+    <!-- Spawn the model in Gazebo -->
+    <node name="r1_urdf_spawner"
+          pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -model r1 -param robot_description -x 0 -y 0 -z 0.01"/>
+
+    <!-- TF publishers -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher"
+          name="r1_state_pub">
+      <param name="publish_frequency" type="double" value="30.0"/>
+    </node>
+
+    <node pkg="joint_state_publisher" type="joint_state_publisher"
+          name="r1_joint_pub">
+      <param name="publish_frequency" type="double" value="30.0"/>
+    </node>
+
+  </group>
+</launch>

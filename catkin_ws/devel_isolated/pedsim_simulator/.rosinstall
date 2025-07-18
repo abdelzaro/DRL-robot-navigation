@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/setup.sh
