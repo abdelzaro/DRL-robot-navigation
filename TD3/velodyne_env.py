@@ -25,7 +25,7 @@ COLLISION_DIST = 0.35
 TIME_DELTA = 0.1
 
 
-# Check if the random goal position is located on an obstacle and do not accept it if it is
+# Check if the random goal position is located on an obstacle and do not accept it if it is 
 def check_pos(x, y):
     goal_ok = True
 
@@ -68,7 +68,9 @@ def check_pos(x, y):
 class GazeboEnv:
     """Superclass for all Gazebo environments."""
 
-    def __init__(self, launchfile, environment_dim):
+    def __init__(self, launchfile, environment_dim, robot_name="r1"):
+        self.robot_name = robot_name
+
         self.environment_dim = environment_dim
         self.odom_x = 0
         self.odom_y = 0
@@ -82,7 +84,9 @@ class GazeboEnv:
         self.last_odom = None
 
         self.set_self_state = ModelState()
-        self.set_self_state.model_name = "r1"
+        # self.set_self_state.model_name = "r1" 
+        self.set_self_state.model_name = self.robot_name
+
         self.set_self_state.pose.position.x = 0.0
         self.set_self_state.pose.position.y = 0.0
         self.set_self_state.pose.position.z = 0.0
@@ -99,7 +103,7 @@ class GazeboEnv:
         self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
         
         # self.dgap_flat_vector = []# this is part of the dgap code
-        self.dgap_flat_vector = np.zeros(20, dtype=np.float32)
+        self.dgap_flat_vector = np.zeros(12, dtype=np.float32)
 
         port = "11311"
         subprocess.Popen(["roscore", "-p", port])
@@ -119,7 +123,7 @@ class GazeboEnv:
         print("Gazebo launched!")
 
         # Set up the ROS publishers and subscribers
-        self.vel_pub = rospy.Publisher("/r1/cmd_vel", Twist, queue_size=1)
+        self.vel_pub = rospy.Publisher(f"/{self.robot_name}/cmd_vel", Twist, queue_size=1)
         self.set_state = rospy.Publisher(
             "gazebo/set_model_state", ModelState, queue_size=10
         )
@@ -129,17 +133,13 @@ class GazeboEnv:
         self.publisher = rospy.Publisher("goal_point", MarkerArray, queue_size=3)
         self.publisher2 = rospy.Publisher("linear_velocity", MarkerArray, queue_size=1)
         self.publisher3 = rospy.Publisher("angular_velocity", MarkerArray, queue_size=1)
-        self.velodyne = rospy.Subscriber(
-            "/velodyne_points", PointCloud2, self.velodyne_callback, queue_size=1
-        )
-        self.odom = rospy.Subscriber(
-            "/r1/odom", Odometry, self.odom_callback, queue_size=1
-        )
+        self.velodyne = rospy.Subscriber(f"/{self.robot_name}/velodyne_points", PointCloud2, self.velodyne_callback, queue_size=1)
+
+        self.odom = rospy.Subscriber(f"/{self.robot_name}/odom", Odometry, self.odom_callback, queue_size=1)
         
         self.gaps_data = []  # store the latest gaps
-        rospy.Subscriber("/simplified_gaps", GapPolarArray, self.gaps_callback, queue_size=1)
-        
-    
+        rospy.Subscriber(f"/{self.robot_name}/simplified_gaps", GapPolarArray, self.gaps_callback, queue_size=1)
+
     #DON'T GET CONFUSED: THE ORIGINAL DRL CODE I USED ALSO HAS A VARIABLE CALLED GAPS
     # Read velodyne pointcloud and turn it into distance data, then select the minimum value for each angle
     # range as state representation
@@ -168,7 +168,7 @@ class GazeboEnv:
                 gap.left_angle, gap.left_range
             ])
         # Save up to N gaps (pad with zeros if fewer gaps)
-        max_gaps = 5 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        max_gaps = 3 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
         # and dgap_flat_vector initial value
         gap_vector = gaps_flat[:max_gaps * 4]  #IF YOU CHANGE THIS too!: update dgap_number_gaps_dim in train_velodyne_td3.py
         gap_vector += [0.0] * (max_gaps * 4 - len(gap_vector))

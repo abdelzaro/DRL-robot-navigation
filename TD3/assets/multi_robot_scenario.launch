@@ -11,7 +11,7 @@
    </include>
 
   <!-- Robot 2 -->
-  <include file="$(find multi_robot_scenario)/launch/pioneer3dx_r1.gazebo.launch">
+  <include file="$(find multi_robot_scenario)/launch/pioneer3dx_r2.gazebo.launch">
     <arg name="robot_name" value="r2"/>
     <arg name="robot_position"  value="-x 0.1 -y 0.0 -z 0.01 -R 0 -P 0 -Y +0.0" />
   </include>
