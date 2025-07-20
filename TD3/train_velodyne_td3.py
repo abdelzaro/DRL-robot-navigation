@@ -239,10 +239,10 @@ policy_noise = 0.2  # Added noise for exploration
 noise_clip = 0.5  # Maximum clamping values of the noise
 policy_freq = 2  # Frequency of Actor network updates
 buffer_size = 1e6  # Maximum size of the buffer
-custom_title = sys.argv[1] if len(sys.argv) > 1 else ""
-file_name = f"TD3_velodyne_{custom_title}" if custom_title else "TD3_velodyne"
+# custom_title = sys.argv[1] if len(sys.argv) > 1 else ""
+# file_name = f"TD3_velodyne_{custom_title}" if custom_title else "TD3_velodyne"
 
-# file_name = "TD3_velodyne"  # name of the file to store the policy
+file_name = "TD3_velodyne"  # name of the file to store the policy
 save_model = True  # Weather to save the model or not
 load_model = False  # Weather to load a stored model
 random_near_obstacle = True  # To take random actions near obstacles or not
