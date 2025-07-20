@@ -1,0 +1,109 @@
+[33mcommit b94f34e7b6984d304b001c926ed88650a3fb465a[m[33m ([m[1;36mHEAD -> [m[1;32m1gapNormalized[m[33m)[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 19 21:02:58 2025 -0400
+
+    ignore thesse results, accidently stopped run
+
+[33mcommit a7186ec12bed9171eef480b2a582ea4ef967eab5[m[33m ([m[1;31morigin/1gapNormalized[m[33m)[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 19 15:10:22 2025 -0400
+
+    And another run, negative results
+
+[33mcommit 0bcd5be71741aeb6bc2b964cc93423cc84878149[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 19 05:34:54 2025 -0400
+
+    another run, negative results
+
+[33mcommit e8f7b459e82d119d28a04964e4a9d3b80a63a81c[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Fri Jul 18 17:27:50 2025 -0400
+
+    another run negative results
+
+[33mcommit 6c40afdae973b5cd184b048dbf8c65cfbc5b5e8b[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Fri Jul 18 05:51:46 2025 -0400
+
+    2 gap normalized run 1 positive result
+
+[33mcommit 3890a8182c11aa721d45925043fbb1c8f76c9278[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 17 22:14:44 2025 -0400
+
+    1 gap normalized run 5 positive result
+
+[33mcommit f56a82c7f44a58eb046a78b903d7ae886895aea2[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 17 12:45:44 2025 -0400
+
+    1 gap normalized run 4 positive result
+
+[33mcommit 48414f41febfe95d9616a20f4a72d751dea637c5[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 17 05:03:07 2025 -0400
+
+    1 gap normalized run 3 negative result
+
+[33mcommit ad7ea673e1a3c1f01ca9c9375b0ab9a51988e062[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Wed Jul 16 18:36:27 2025 -0400
+
+    1 gap normalized run 2 negative result
+
+[33mcommit fc1809d4a5d26e0d9f6592d9d53cd0528304073f[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Wed Jul 16 06:43:31 2025 -0400
+
+    1 gap normalized run 1 positive result
+
+[33mcommit bbd823be4000125fa71cfd1cb2ce30c4b160177f[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Tue Jul 15 20:27:45 2025 -0400
+
+    1 gap normalized run1 positive results
+
+[33mcommit 6d2f563df5ef6eec755438c01c13eb6dc36cea1f[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Mon Jul 14 18:50:18 2025 -0400
+
+    1 gap run_2 positive results
+
+[33mcommit 89d766607bf8e64517b992b53e0f3dd1929ae955[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Mon Jul 14 07:11:41 2025 -0400
+
+    1 gap run_1 negative results
+
+[33mcommit efed2f5881abad9c81b4970ab5379a21c9c8626c[m[33m ([m[1;31morigin/central[m[33m, [m[1;32mcentral[m[33m)[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 17:00:42 2025 -0400
+
+    testing how this will merge
+
+[33mcommit c886615445f5517a9a3d3517fd678c92141738d7[m
+Merge: dd5f317b 2b6e50a0
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:41:10 2025 -0400
+
+    Merge branch 'thinkpad' into central
+
+[33mcommit 2b6e50a064f005fdda2eaf1b6d51bec5d9ed43e9[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:40:48 2025 -0400
+
+    merge test
+
+[33mcommit dd5f317b83d79d129ed2ef8bd4089720f180a6e7[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:36:27 2025 -0400
+
+    testing if I can add stuff then pull on thinkpad branch
+
+[33mcommit b1c4b6c5d7f5f1f121dbc28072e0ddc9ab84e48a[m
+Merge: a706f908 7112bac1
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:35:59 2025 -0400
+
+    Merge branch 'central' of https://github.com/abdelzaro/DRL-robot-navigation into central
