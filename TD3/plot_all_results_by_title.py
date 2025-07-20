@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # === CONFIGURATION ===
 results_dir = '/home/az/DRL-robot-navigation/TD3/results'  # full path
-file_prefix = 'TD3_velodyne_20250718-121100'  # what to match before the timestamp
+file_prefix = 'TD3_velodyne_run5_2gap_normalized'  # what to match before the timestamp
 
 # === LOAD & FILTER FILES ===
 all_files = [f for f in os.listdir(results_dir)
