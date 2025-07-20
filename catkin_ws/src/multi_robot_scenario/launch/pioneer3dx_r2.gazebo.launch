@@ -11,23 +11,23 @@
          command="$(find xacro)/xacro '$(find multi_robot_scenario)/xacro/p3dx/pioneer3dx_r2.xacro'" />
 
   <!-- Everything under its own namespace so names don’t clash -->
-  <group ns="r2">
+  <!-- <group ns="r2"> -->
 
     <!-- Spawn the model in Gazebo -->
-    <node name="r2_urdf_spawner"
-          pkg="gazebo_ros" type="spawn_model" output="screen"
-          args="-urdf -model r2 -param robot_description -x 2 -y 0 -z 0.01"/>
+  <node name="urdf_spawner"
+        pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -model r2 -param robot_description -x 2 -y 0 -z 0.01"/>
 
-    <!-- TF publishers -->
-    <node pkg="robot_state_publisher" type="robot_state_publisher"
-          name="r2_state_pub">
-      <param name="publish_frequency" type="double" value="30.0"/>
-    </node>
+  <!-- TF publishers -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher"
+        name="state_pub">
+    <param name="publish_frequency" type="double" value="30.0"/>
+  </node>
 
-    <node pkg="joint_state_publisher" type="joint_state_publisher"
-          name="r2_joint_pub">
-      <param name="publish_frequency" type="double" value="30.0"/>
-    </node>
+  <node pkg="joint_state_publisher" type="joint_state_publisher"
+        name="joint_pub">
+    <param name="publish_frequency" type="double" value="30.0"/>
+  </node>
 
-  </group>
+  <!-- </group> -->
 </launch>

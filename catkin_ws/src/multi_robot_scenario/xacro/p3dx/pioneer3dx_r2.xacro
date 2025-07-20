@@ -10,19 +10,19 @@
 
   <!-- 2‑D Laser (topic will be inside hokuyo.xacro; assume it respects the name field)  -->
   <xacro:include filename="$(find multi_robot_scenario)/xacro/laser/hokuyo.xacro"/>
-  <xacro:laser name="r2_front_laser" parent="chassis" xyz="0.125 0 0.25" rpy="0 0 0"
+  <xacro:laser name="front_laser" parent="chassis" xyz="0.125 0 0.25" rpy="0 0 0"
                meshes="package://gazebo_plugins/test/multi_robot_scenario/meshes/laser"/>
 
   <!-- Cameras -->
   <xacro:include filename="$(find multi_robot_scenario)/xacro/camera/camera.xacro"/>
-  <xacro:cam name="r2_front_camera" parent="chassis" xyz="0.025 0 0.32" rpy="0 0 0" />
+  <xacro:cam name="front_camera" parent="chassis" xyz="0.025 0 0.32" rpy="0 0 0" />
 
   <xacro:include filename="$(find multi_robot_scenario)/xacro/camera/cameraD.xacro"/>
-  <xacro:camD name="r2_cameraD" parent="chassis" xyz="0.025 0 0.32" rpy="0 0 0" />
+  <xacro:camD name="cameraD" parent="chassis" xyz="0.025 0 0.32" rpy="0 0 0" />
 
   <!-- Velodyne -->
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <xacro:VLP-16 parent="base_link" name="r2_velodyne" topic="/r2/velodyne_points"
+  <xacro:VLP-16 parent="base_link" name="velodyne" topic="/r2/velodyne_points"
                 hz="10" samples="360" gpu="false"
                 min_angle="-1.57" max_angle="1.57" min_range="0.1">
     <origin xyz="0.125 0 0.25" rpy="0 0 0" />

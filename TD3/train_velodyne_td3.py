@@ -257,7 +257,7 @@ if save_model and not os.path.exists("./pytorch_models"):
 environment_dim = 20
 robot_dim = 4
 dgap_number_gaps_dim = 3 * 4 # 5 gaps * 4 floats in the dgap_flat_list
-env = GazeboEnv("multi_robot_scenario.launch", environment_dim, robot_name="r1")
+env = GazeboEnv("multi_robot_scenario.launch", environment_dim, robot_name="r2")
 time.sleep(5)
 torch.manual_seed(seed)
 np.random.seed(seed)
