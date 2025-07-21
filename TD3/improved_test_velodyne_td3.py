@@ -69,7 +69,11 @@ file_name = args.model
 
 # Create the testing environment
 measure_collisions = True #collects data on number of collisions
-num_collisions = 0 
+num_collisions = 0
+num_timeouts = 0
+total_time = 0.0
+episode_num = 0
+
 environment_dim = 20
 robot_dim = 4
 dgap_number_gaps_dim = 5 * 5 # 5 gaps * 4 floats in the dgap_flat_list
@@ -80,6 +84,7 @@ np.random.seed(seed)
 state_dim = environment_dim + robot_dim + dgap_number_gaps_dim
 # state_dim = environment_dim + robot_dim
 action_dim = 2
+total_runs = 2
 
 # Create the network
 network = TD3(state_dim, action_dim)
@@ -91,30 +96,57 @@ except:
 done = False
 episode_timesteps = 0
 state = env.reset()
+episode_start_time = time.time()
 
+i = 1
 # Begin the testing loop
-while True:
-    action = network.get_action(np.array(state))
+while i <= (total_runs):
+    print(i)
+    while not done and episode_timesteps < max_ep:
+        
+        action = network.get_action(np.array(state))
 
-    # Update action to fall in range [0,1] for linear velocity and [-1,1] for angular velocity
-    a_in = [(action[0] + 1) / 2, action[1]]
+        # Update action to fall in range [0,1] for linear velocity and [-1,1] for angular velocity
+        a_in = [(action[0] + 1) / 2, action[1]]
 
-    if not measure_collisions: 
-        next_state, reward, done, target = env.step(a_in)
-    else: 
-        next_state, reward, done, target, collision= env.step(a_in, measure_collisions)
-        if collision: 
-            num_collisions += 1
-            print(f"(Collision Count:{num_collisions}, Step {episode_timesteps}, Reward: {reward:.2f}")
+        if not measure_collisions: 
+            next_state, reward, done, target = env.step(a_in)
+        else: 
+            next_state, reward, done, target, collision= env.step(a_in, measure_collisions)
+            if collision: 
+                num_collisions += 1
+                print(f"(Collision Count:{num_collisions}, Step {episode_timesteps}, Reward: {reward:.2f}")
 
 
-    done = 1 if episode_timesteps + 1 == max_ep else int(done)
+        # done = 1 if episode_timesteps + 1 == max_ep else int(done) #loop handles this
 
-    # On termination of episode
-    if done:
-        state = env.reset()
-        done = False
-        episode_timesteps = 0
-    else:
+        # On termination of episode   
         state = next_state
         episode_timesteps += 1
+    
+    run_time = time.time() - episode_start_time
+    total_time += run_time
+
+    if episode_timesteps >= max_ep:
+        num_timeouts += 1
+
+    print(f"[DONE] Episode {episode_num} finished in {episode_timesteps} steps, {run_time:.2f}s")
+    state = env.reset()
+    done = False
+    episode_timesteps = 0
+    episode_start_time = time.time()
+    episode_num += 1
+    i += 1
+
+
+#outside the loop
+# print("total collisions over all the runs: " + str(num_collisions))
+
+avg_time = total_time / total_runs
+print("\n=== RUN SUMMARY ===")
+print(f"Total Episodes       : {total_runs}")
+print(f"Total Collisions     : {num_collisions}")
+print(f"Timeouts (max steps) : {num_timeouts}")
+print(f"Total Runtime        : {total_time:.2f} seconds")
+print(f"Average per Episode  : {avg_time:.2f} seconds")
+
