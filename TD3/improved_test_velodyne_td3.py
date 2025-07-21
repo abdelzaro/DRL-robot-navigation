@@ -8,10 +8,25 @@ import argparse
 
 from velodyne_env import GazeboEnv
 import csv 
+import os
 
-csv_file = open("run_stats.csv", mode="w", newline='')
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "model",
+    type=str,
+    help="Model filename without .pth (e.g., TD3_velodyne_20250710-200821_actor)"
+)
+args = parser.parse_args()
+
+file_name = args.model
+
+csv_filename = f"run_stats_{file_name}.csv"
+
+csv_file = open(csv_filename, mode="w", newline='')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(["episode", "steps", "collisions", "timeout", "runtime_s", "success"])
+
+
 import subprocess
 
 
@@ -61,16 +76,6 @@ device = torch.device("cpu")
 seed = 0  # Random seed number
 max_ep = 500  # maximum number of steps per episode
 # file_name = "TD3_velodyne"  # name of the file to load the policy from
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    "model",
-    type=str,
-    help="Model filename without .pth (e.g., TD3_velodyne_20250710-200821_actor)"
-)
-args = parser.parse_args()
-
-file_name = args.model
-
 
 
 # Create the testing environment
@@ -91,8 +96,7 @@ np.random.seed(seed)
 state_dim = environment_dim + robot_dim + dgap_number_gaps_dim
 # state_dim = environment_dim + robot_dim
 action_dim = 2
-total_runs = 20
-
+total_runs = 2
 # Create the network
 network = TD3(state_dim, action_dim)
 try:
@@ -168,4 +172,4 @@ print(f"Total Runtime        : {total_time:.2f} seconds")
 print(f"Average per Episode  : {avg_time:.2f} seconds")
 
 print("\nGenerating plots...")
-subprocess.run(["python3", "nav_plot.py"])
+subprocess.run(["python3", "nav_plot.py", file_name])

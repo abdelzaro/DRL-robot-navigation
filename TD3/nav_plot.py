@@ -1,5 +1,13 @@
 import csv
 import matplotlib.pyplot as plt
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python plot_run_stats.py <model_filename>")
+    sys.exit(1)
+
+model_name = sys.argv[1]
+csv_file = f"run_stats_{model_name}.csv"
 
 # Load data from CSV
 episodes = []
@@ -8,7 +16,7 @@ timeouts = []
 runtimes = []
 successes = []
 
-with open('run_stats.csv', 'r') as csvfile:
+with open(csv_file, 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         episodes.append(int(row["episode"]))
@@ -42,5 +50,5 @@ axs[2].set_yticks([0, 1])
 axs[2].grid(True)
 
 plt.tight_layout(rect=[0, 0, 1, 0.96])
-plt.savefig("summary_subplot.png")
+plt.savefig(f"{model_name}_summary_subplot.png")
 plt.show()
