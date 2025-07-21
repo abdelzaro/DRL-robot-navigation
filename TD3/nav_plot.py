@@ -2,6 +2,7 @@ import sys
 import os
 import csv
 import matplotlib.pyplot as plt
+import numpy as np
 
 if len(sys.argv) != 3:
     print("Usage: python nav_plot.py <model_name> <plot_dir>")
@@ -16,6 +17,7 @@ csv_path = os.path.join("/home/asus/DRL-robot-navigation/TD3/nav_data", f"run_st
 # Create plot_dir if needed
 os.makedirs(plot_dir, exist_ok=True)
 
+# Load data
 episodes = []
 collisions = []
 timeouts = []
@@ -31,31 +33,49 @@ with open(csv_path, 'r') as csvfile:
         runtimes.append(float(row["runtime_s"]))
         successes.append(int(row["success"]))
 
+# Compute totals for the stacked outcome bar
+total_collisions = sum(collisions)
+total_timeouts = sum(timeouts)
+total_successes = sum(successes)
+
+# --- Compute stats for mean runtime ---
+mean_runtime = np.mean(runtimes)
+std_runtime = np.std(runtimes)
 
 # Create subplots
-fig, axs = plt.subplots(3, 1, figsize=(10, 12))
+fig, axs = plt.subplots(3, 1, figsize=(10, 14))
 fig.suptitle("Episode Performance Metrics", fontsize=16)
 
-# --- Subplot 1: Collisions ---
-axs[0].plot(episodes, collisions, label="Collisions", marker='x', color='red')
-axs[0].set_ylabel("Collisions")
-axs[0].set_title("Collisions per Episode")
-axs[0].grid(True)
+# --- Subplot 1: Single Stacked Outcome Bar ---
+axs[0].bar(["Episodes"], [total_collisions], label="Collision", color='red')
+axs[0].bar(["Episodes"], [total_timeouts], bottom=[total_collisions], label="Timeout", color='gray')
+axs[0].bar(["Episodes"], [total_successes], bottom=[total_collisions + total_timeouts], label="Success", color='green')
+axs[0].set_ylabel("Count")
+axs[0].set_title("Total Episode Outcomes (Stacked)")
+axs[0].legend()
+axs[0].grid(True, axis='y')
 
 # --- Subplot 2: Runtime ---
 axs[1].plot(episodes, runtimes, label="Runtime (s)", marker='o', color='orange')
+axs[1].axhline(mean_runtime, color='blue', linestyle='--', label=f"Mean: {mean_runtime:.2f}s")
+axs[1].fill_between(episodes,
+                    mean_runtime - std_runtime,
+                    mean_runtime + std_runtime,
+                    color='blue',
+                    alpha=0.1,
+                    label=f"±1 STD: {std_runtime:.2f}")
 axs[1].set_ylabel("Time (s)")
 axs[1].set_title("Runtime per Episode")
+axs[1].legend()
 axs[1].grid(True)
 
-# --- Subplot 3: Success ---
-axs[2].plot(episodes, successes, label="Success", marker='o', linestyle='', color='green')
-axs[2].set_xlabel("Episode")
-axs[2].set_ylabel("Success (0/1)")
-axs[2].set_title("Success per Episode")
-axs[2].set_yticks([0, 1])
-axs[2].grid(True)
+# --- Subplot 3: Runtime Mean Summary ---
+axs[2].bar(["Runtime"], [mean_runtime], yerr=[std_runtime], capsize=10, color='orange')
+axs[2].set_ylabel("Seconds")
+axs[2].set_title("Mean Runtime ± STD")
+axs[2].grid(axis='y')
 
+# Save and show
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.savefig(os.path.join(plot_dir, f"{model_name}_summary_subplot.png"))
 plt.show()
