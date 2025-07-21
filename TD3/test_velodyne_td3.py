@@ -68,6 +68,8 @@ file_name = args.model
 
 
 # Create the testing environment
+measure_collisions = True #collects data on number of collisions
+num_collisions = 0 
 environment_dim = 20
 robot_dim = 4
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim)
@@ -94,11 +96,19 @@ while True:
 
     # Update action to fall in range [0,1] for linear velocity and [-1,1] for angular velocity
     a_in = [(action[0] + 1) / 2, action[1]]
-    next_state, reward, done, target = env.step(a_in)
+
+    if not measure_collisions: 
+        next_state, reward, done, target = env.step(a_in)
+    else: 
+        next_state, reward, done, target, collision= env.step(a_in, measure_collisions)
+        if collision: 
+            num_collisions += 1
+
     done = 1 if episode_timesteps + 1 == max_ep else int(done)
 
     # On termination of episode
     if done:
+        print(f"[Collision] Episode {episode_num}, Step {episode_timesteps}, Reward: {reward:.2f}")
         state = env.reset()
         done = False
         episode_timesteps = 0

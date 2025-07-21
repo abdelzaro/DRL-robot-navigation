@@ -212,7 +212,7 @@ class GazeboEnv:
         self.last_odom = od_data
 
     # Perform an action and read a new state
-    def step(self, action):
+    def step(self, action, measure_collisions = False):
         target = False
 
         # Publish the robot action
@@ -301,7 +301,12 @@ class GazeboEnv:
         # print(state)
         
         reward = self.get_reward(target, collision, action, min_laser)
-        return state, reward, done, target
+        
+        if not measure_collisions:
+            return state, reward, done, target
+        
+        else: 
+            return state, reward, done, target, collision
 
     def reset(self):
 
