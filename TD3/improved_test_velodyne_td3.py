@@ -91,7 +91,7 @@ np.random.seed(seed)
 state_dim = environment_dim + robot_dim + dgap_number_gaps_dim
 # state_dim = environment_dim + robot_dim
 action_dim = 2
-total_runs = 2
+total_runs = 20
 
 # Create the network
 network = TD3(state_dim, action_dim)
