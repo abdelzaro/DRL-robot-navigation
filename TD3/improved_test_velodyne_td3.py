@@ -10,6 +10,15 @@ from velodyne_env import GazeboEnv
 import csv 
 import os
 
+# Define paths
+base_dir = "/home/asus/DRL-robot-navigation/TD3"
+nav_data_dir = os.path.join(base_dir, "nav_data")
+plot_dir = os.path.join(nav_data_dir, "plots")
+
+# Create directories if they don't exist
+os.makedirs(nav_data_dir, exist_ok=True)
+os.makedirs(plot_dir, exist_ok=True)
+
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "model",
@@ -22,6 +31,7 @@ file_name = args.model
 
 csv_filename = f"run_stats_{file_name}.csv"
 
+csv_filename = os.path.join(nav_data_dir, f"run_stats_{file_name}.csv")
 csv_file = open(csv_filename, mode="w", newline='')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(["episode", "steps", "collisions", "timeout", "runtime_s", "success"])
@@ -172,4 +182,4 @@ print(f"Total Runtime        : {total_time:.2f} seconds")
 print(f"Average per Episode  : {avg_time:.2f} seconds")
 
 print("\nGenerating plots...")
-subprocess.run(["python3", "nav_plot.py", file_name])
+subprocess.run(["python3", "nav_plot.py", file_name, plot_dir])

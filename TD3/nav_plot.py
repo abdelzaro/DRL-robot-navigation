@@ -1,22 +1,28 @@
+import sys
+import os
 import csv
 import matplotlib.pyplot as plt
-import sys
 
-if len(sys.argv) != 2:
-    print("Usage: python plot_run_stats.py <model_filename>")
+if len(sys.argv) != 3:
+    print("Usage: python nav_plot.py <model_name> <plot_dir>")
     sys.exit(1)
 
 model_name = sys.argv[1]
-csv_file = f"run_stats_{model_name}.csv"
+plot_dir = sys.argv[2]
 
-# Load data from CSV
+# Construct path to CSV file
+csv_path = os.path.join("/home/asus/DRL-robot-navigation/TD3/nav_data", f"run_stats_{model_name}.csv")
+
+# Create plot_dir if needed
+os.makedirs(plot_dir, exist_ok=True)
+
 episodes = []
 collisions = []
 timeouts = []
 runtimes = []
 successes = []
 
-with open(csv_file, 'r') as csvfile:
+with open(csv_path, 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         episodes.append(int(row["episode"]))
@@ -24,6 +30,7 @@ with open(csv_file, 'r') as csvfile:
         timeouts.append(int(row["timeout"]))
         runtimes.append(float(row["runtime_s"]))
         successes.append(int(row["success"]))
+
 
 # Create subplots
 fig, axs = plt.subplots(3, 1, figsize=(10, 12))
@@ -50,5 +57,5 @@ axs[2].set_yticks([0, 1])
 axs[2].grid(True)
 
 plt.tight_layout(rect=[0, 0, 1, 0.96])
-plt.savefig(f"{model_name}_summary_subplot.png")
+plt.savefig(os.path.join(plot_dir, f"{model_name}_summary_subplot.png"))
 plt.show()
