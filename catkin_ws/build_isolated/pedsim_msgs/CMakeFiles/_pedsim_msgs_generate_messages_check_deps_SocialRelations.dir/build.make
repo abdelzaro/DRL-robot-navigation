@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/peds
 include CMakeFiles/_pedsim_msgs_generate_messages_check_deps_SocialRelations.dir/progress.make
 
 CMakeFiles/_pedsim_msgs_generate_messages_check_deps_SocialRelations:
-	catkin_generated/env_cached.sh /home/mini/env/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py pedsim_msgs /home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_msgs/msg/SocialRelations.msg pedsim_msgs/SocialRelation:std_msgs/Header
+	catkin_generated/env_cached.sh /home/mini/env/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py pedsim_msgs /home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_msgs/msg/SocialRelations.msg std_msgs/Header:pedsim_msgs/SocialRelation
 
 _pedsim_msgs_generate_messages_check_deps_SocialRelations: CMakeFiles/_pedsim_msgs_generate_messages_check_deps_SocialRelations
 _pedsim_msgs_generate_messages_check_deps_SocialRelations: CMakeFiles/_pedsim_msgs_generate_messages_check_deps_SocialRelations.dir/build.make
