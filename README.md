@@ -1,61 +1,6 @@
-# DRL-robot-navigation
-
-
-Deep Reinforcement Learning for mobile robot navigation in ROS Gazebo simulator. Using Twin Delayed Deep Deterministic Policy Gradient (TD3) neural network, a robot learns to navigate to a random goal point in a simulated environment while avoiding obstacles. Obstacles are detected by laser readings and a goal is given to the robot in polar coordinates. Trained in ROS Gazebo simulator with PyTorch.  Tested with ROS Noetic on Ubuntu 20.04 with python 3.8.10 and pytorch 1.10.
-
-**!!!Use the issue template to submit your issue**
-
-**Installation and code overview tutorial available** [here](https://medium.com/@reinis_86651/deep-reinforcement-learning-in-mobile-robot-navigation-tutorial-part1-installation-d62715722303)
-
-Training example:
-<p align="center">
-    <img width=100% src="https://github.com/reiniscimurs/DRL-robot-navigation/blob/main/training.gif">
-</p>
-
-
-
-**ICRA 2022 and IEEE RA-L paper:**
-
-
-Some more information about the implementation is available [here](https://ieeexplore.ieee.org/document/9645287?source=authoralert)
-
-Please cite as:<br/>
-```
-@ARTICLE{9645287,
-  author={Cimurs, Reinis and Suh, Il Hong and Lee, Jin Han},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={Goal-Driven Autonomous Exploration Through Deep Reinforcement Learning}, 
-  year={2022},
-  volume={7},
-  number={2},
-  pages={730-737},
-  doi={10.1109/LRA.2021.3133591}}
-```
-
-## Installation
-Main dependencies: 
-
-* [ROS Noetic](http://wiki.ros.org/noetic/Installation)
-* [PyTorch](https://pytorch.org/get-started/locally/)
-* [Tensorboard](https://github.com/tensorflow/tensorboard)
-
-Clone the repository:
 ```shell
-$ cd ~
-### Clone this repo
-git clone https://github.com/abdelzaro/DRL-robot-navigation
-```
-The network can be run with a standard 2D laser, but this implementation uses a simulated [3D Velodyne sensor](https://github.com/lmark1/velodyne_simulator)
-
-Compile the workspace:
-```shell
-$ cd ~/DRL-robot-navigation/catkin_ws
-### Compile
-$ catkin_make_isolated
-```
-
-Open a terminal and set up sources:
-```shell
+cd ~/DRL-robot-navigation/catkin_ws
+catkin_make_isolated
 export ROS_HOSTNAME=localhost
 export ROS_MASTER_URI=http://localhost:11311
 export ROS_PORT_SIM=11311
@@ -63,7 +8,16 @@ export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_sce
 source ~/.bashrc
 cd ~/DRL-robot-navigation/catkin_ws
 source devel_isolated/setup.bash
+cd ~/DRL-robot-navigation/TD3
+roslaunch ~/DRL-robot-navigation/TD3/assets/multi_robot_scenario.launch
+```
 
+
+```shell
+ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+pkill -9 -f ros
+pkill -9 -f gzserver
+pkill -9 -f gzclient
 ```
 
 Run the training:
@@ -77,23 +31,24 @@ roslaunch dynamic_gap gap_streamer.launch
 ```
 
 
+Open a terminal and set up sources:
+```shell
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_PORT_SIM=11311
+export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
+source ~/.bashrc
+cd ~/DRL-robot-navigation/catkin_ws
+source devel_isolated/setup.bash
+
+```
+
 To check the training process on tensorboard:
 ```shell
 $ cd ~/DRL-robot-navigation/TD3
 $ tensorboard --logdir runs
 ```
 
-To kill the training process:
-```shell
- killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
-```
-abdel: some extra commands if gazebo won't cose
-```shell
- killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
-pkill -9 -f ros
-pkill -9 -f gzserver
-pkill -9 -f gzclient
-```
 
 Once training is completed, test the model:
 ```shell
