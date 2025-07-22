@@ -47,9 +47,25 @@ fig, axs = plt.subplots(3, 1, figsize=(10, 14))
 fig.suptitle("Episode Performance Metrics", fontsize=16)
 
 # --- Subplot 1: Single Stacked Outcome Bar ---
-axs[0].bar(["Episodes"], [total_collisions], label="Collision", color='red')
-axs[0].bar(["Episodes"], [total_timeouts], bottom=[total_collisions], label="Timeout", color='gray')
-axs[0].bar(["Episodes"], [total_successes], bottom=[total_collisions + total_timeouts], label="Success", color='green')
+
+
+# Convert cumulative collisions to per-episode binary
+per_episode_collisions = [int(i > 0) for i in np.diff([0] + collisions)]
+
+# Count each outcome type
+total_successes = sum(successes)
+total_timeouts = sum(timeouts)
+total_collisions = sum(per_episode_collisions)
+
+# Total outcomes
+labels = ["Collision", "Timeout", "Success"]
+values = [total_collisions, total_timeouts, total_successes]
+colors = ['red', 'gray', 'green']
+
+# Single stacked bar
+axs[0].bar(["Episodes"], values[0], label=labels[0], color=colors[0])
+axs[0].bar(["Episodes"], values[1], bottom=values[0], label=labels[1], color=colors[1])
+axs[0].bar(["Episodes"], values[2], bottom=np.add(values[0], values[1]), label=labels[2], color=colors[2])
 axs[0].set_ylabel("Count")
 axs[0].set_title("Total Episode Outcomes (Stacked)")
 axs[0].legend()
