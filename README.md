@@ -1,9 +1,41 @@
-# DRL-robot-navigation  
+## moving to the top so can find easier
 
+without env Parallel instructions: 
+```shell
+cd ~/DRL-robot-navigation/catkin_ws
+catkin_make_isolated
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_PORT_SIM=11311
+export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
+source ~/.bashrc
+cd ~/DRL-robot-navigation/catkin_ws
+source devel_isolated/setup.bash
+cd ~/DRL-robot-navigation/TD3
+python3 train_velodyne_td3.py
+```
 
-Deep Reinforcement Learning for mobile robot navigation in ROS Gazebo simulator. Using Twin Delayed Deep Deterministic Policy Gradient (TD3) neural network, a robot learns to navigate to a random goal point in a simulated environment while avoiding obstacles. Obstacles are detected by laser readings and a goal is given to the robot in polar coordinates. Trained in ROS Gazebo simulator with PyTorch.  Tested with ROS Noetic on Ubuntu 20.04 with python 3.8.10 and pytorch 1.10. 
+```shell
+ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+pkill -9 -f ros
+pkill -9 -f gzserver
+pkill -9 -f gzclient
+```
 
-**!!!Use the issue template to submit your issue**
+if using dynamic_gap make sure you launch the gap detection publisher:
+```shell
+roslaunch dynamic_gap gap_streamer.launch
+```
+
+To test the code. example of yourFIle is TD3_velodyne_run5_5gap_width_normalized_x5speed: 
+```shell
+model=$(python3 high_reward.py yourFile)
+```
+you don't need to change:
+```shell
+python3 improved_test_velodyne_td3.py $model
+```
+
 
 **Installation and code overview tutorial available** [here](https://medium.com/@reinis_86651/deep-reinforcement-learning-in-mobile-robot-navigation-tutorial-part1-installation-d62715722303)
 
@@ -19,33 +51,9 @@ Training example:
 
 Some more information about the implementation is available [here](https://ieeexplore.ieee.org/document/9645287?source=authoralert)
 
-Please cite as:<br/>
-```
-@ARTICLE{9645287,
-  author={Cimurs, Reinis and Suh, Il Hong and Lee, Jin Han},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={Goal-Driven Autonomous Exploration Through Deep Reinforcement Learning}, 
-  year={2022},
-  volume={7},
-  number={2},
-  pages={730-737},
-  doi={10.1109/LRA.2021.3133591}}
-```
+
 
 ## Installation
-Main dependencies: 
-
-* [ROS Noetic](http://wiki.ros.org/noetic/Installation)
-* [PyTorch](https://pytorch.org/get-started/locally/)
-* [Tensorboard](https://github.com/tensorflow/tensorboard)
-
-Clone the repository:
-```shell
-$ cd ~
-### Clone this repo
-git clone https://github.com/abdelzaro/DRL-robot-navigation
-```
-The network can be run with a standard 2D laser, but this implementation uses a simulated [3D Velodyne sensor](https://github.com/lmark1/velodyne_simulator)
 
 Compile the workspace:
 ```shell
