@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib/libActorPosesPlugin.pdb"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib/libActorPosesPlugin.so"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib/libActorPosesPlugin.pdb"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib/libActorPosesPlugin.so"
   "CMakeFiles/ActorPosesPlugin.dir/src/actor_poses_plugin.cpp.o"
 )
 

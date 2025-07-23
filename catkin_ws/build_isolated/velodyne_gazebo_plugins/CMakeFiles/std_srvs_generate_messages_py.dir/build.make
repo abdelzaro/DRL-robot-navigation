@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins
+CMAKE_SOURCE_DIR = /home/asus/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins
+CMAKE_BINARY_DIR = /home/asus/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins
 
 # Utility rule file for std_srvs_generate_messages_py.
 
@@ -67,6 +67,6 @@ CMakeFiles/std_srvs_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/std_srvs_generate_messages_py.dir/clean
 
 CMakeFiles/std_srvs_generate_messages_py.dir/depend:
-	cd /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins /home/mini/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins /home/mini/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/asus/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asus/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins /home/asus/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins /home/asus/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins /home/asus/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins /home/asus/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/std_srvs_generate_messages_py.dir/depend
 

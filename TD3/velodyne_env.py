@@ -103,7 +103,7 @@ class GazeboEnv:
         self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
         
         # self.dgap_flat_vector = []# this is part of the dgap code
-        self.dgap_flat_vector = np.zeros(12, dtype=np.float32)
+        self.dgap_flat_vector = np.zeros(0, dtype=np.float32)
 
         # port = "11311"
         # subprocess.Popen(["roscore", "-p", port])

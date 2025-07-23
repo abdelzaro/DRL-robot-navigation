@@ -130,12 +130,12 @@ struct MD5Sum< ::dynamic_gap::GapPolarArray_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bca7aae125759a66c1c2548d6ce506aa";
+    return "acecdc166934590f4302140fcb710960";
   }
 
   static const char* value(const ::dynamic_gap::GapPolarArray_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xbca7aae125759a66ULL;
-  static const uint64_t static_value2 = 0xc1c2548d6ce506aaULL;
+  static const uint64_t static_value1 = 0xacecdc166934590fULL;
+  static const uint64_t static_value2 = 0x4302140fcb710960ULL;
 };
 
 template<class ContainerAllocator>
@@ -182,7 +182,7 @@ struct Definition< ::dynamic_gap::GapPolarArray_<ContainerAllocator> >
 "float32 left_range\n"
 "\n"
 "# convenience: Euclidean width of the gap  (m)\n"
-"# float32 width \n"
+"float32 width \n"
 ;
   }
 
