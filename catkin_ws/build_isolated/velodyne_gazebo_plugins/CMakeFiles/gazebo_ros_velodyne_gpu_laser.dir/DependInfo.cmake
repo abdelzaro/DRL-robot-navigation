@@ -34,8 +34,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/power20/arena_ws/devel/.private/actionlib/include"
-  "/home/power20/arena_ws/src/arena/utils/actionlib/actionlib/include"
   "/usr/include/gazebo-11"
   "/usr/include/bullet"
   "/usr/include/sdformat-9.10"

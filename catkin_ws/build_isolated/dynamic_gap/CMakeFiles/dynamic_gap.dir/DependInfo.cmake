@@ -45,17 +45,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include"
   "/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include"
   "/usr/include/eigen3"
+  "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/power20/arena_ws/devel/.private/base_local_planner/include"
-  "/home/power20/arena_ws/src/arena/utils/navigation/planners/local/base_local_planner/include"
-  "/home/power20/arena_ws/devel/.private/costmap_2d/include"
-  "/home/power20/arena_ws/src/arena/utils/navigation/core/costmap_2d/include"
-  "/home/power20/arena_ws/devel/.private/actionlib/include"
-  "/home/power20/arena_ws/src/arena/utils/actionlib/actionlib/include"
-  "/home/power20/arena_ws/src/arena/utils/navigation/utils/voxel_grid/include"
-  "/home/power20/arena_ws/devel/.private/pedsim_msgs/include"
-  "/home/power20/arena_ws/src/arena/utils/navigation/core/nav_core/include"
   )
 
 # Targets to which this target links.

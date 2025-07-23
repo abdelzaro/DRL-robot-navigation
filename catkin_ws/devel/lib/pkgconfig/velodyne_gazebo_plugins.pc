@@ -1,1 +1,0 @@
-/home/power20/DRL-robot-navigation/catkin_ws/devel/.private/velodyne_gazebo_plugins/lib/pkgconfig/velodyne_gazebo_plugins.pc

@@ -12,7 +12,7 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in '/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/opt/ros/noetic'.split(';'):
+    for workspace in '/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/opt/ros/noetic'.split(';'):
         python_path = os.path.join(workspace, 'lib/python3/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)

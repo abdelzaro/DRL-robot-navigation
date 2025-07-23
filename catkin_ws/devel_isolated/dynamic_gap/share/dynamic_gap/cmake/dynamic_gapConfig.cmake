@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(dynamic_gap_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/home/power20/arena_ws/devel/.private/base_local_planner/include;/home/power20/arena_ws/src/arena/utils/navigation/planners/local/base_local_planner/include;/home/power20/arena_ws/devel/.private/costmap_2d/include;/home/power20/arena_ws/src/arena/utils/navigation/core/costmap_2d/include;/usr/include;/home/power20/arena_ws/devel/.private/actionlib/include;/home/power20/arena_ws/src/arena/utils/actionlib/actionlib/include;/home/power20/arena_ws/src/arena/utils/navigation/utils/voxel_grid/include;/home/power20/arena_ws/devel/.private/pedsim_msgs/include;/home/power20/arena_ws/src/arena/utils/navigation/core/nav_core/include " STREQUAL " ")
+if(NOT "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/usr/include " STREQUAL " ")
   set(dynamic_gap_INCLUDE_DIRS "")
-  set(_include_dirs "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/home/power20/arena_ws/devel/.private/base_local_planner/include;/home/power20/arena_ws/src/arena/utils/navigation/planners/local/base_local_planner/include;/home/power20/arena_ws/devel/.private/costmap_2d/include;/home/power20/arena_ws/src/arena/utils/navigation/core/costmap_2d/include;/usr/include;/home/power20/arena_ws/devel/.private/actionlib/include;/home/power20/arena_ws/src/arena/utils/actionlib/actionlib/include;/home/power20/arena_ws/src/arena/utils/navigation/utils/voxel_grid/include;/home/power20/arena_ws/devel/.private/pedsim_msgs/include;/home/power20/arena_ws/src/arena/utils/navigation/core/nav_core/include")
+  set(_include_dirs "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/usr/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/opt/ros/noetic/lib)
+    foreach(path /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/power20/DRL-robot-navigation/catkin_ws/install_isolated/setup.sh
