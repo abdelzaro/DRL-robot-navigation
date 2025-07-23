@@ -273,7 +273,7 @@ class GazeboEnv:
         # print(state)
         
         reward = self.get_reward(target, collision, action, min_laser)
-        return state, reward, done, target
+        return state, reward, done, target, collision
 
     def reset(self):
 
