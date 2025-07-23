@@ -13,6 +13,15 @@
     </include>
   </group>
 
+  <!-- Robot with diff drive -->
+  <group ns="r2">
+    <param name="tf_prefix" value="r2" />
+    <include file="$(find multi_robot_scenario)/launch/pioneer3dx.gazebo.launch">
+      <arg name="robot_name" value="r2" />
+      <arg name="robot_position" value="-x 1.0 -y 0.0 -z 0.01 -R 0 -P 0 -Y +0.0" />
+    </include>
+  </group>
+
   <!-- RVIZ -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find multi_robot_scenario)/launch/pioneer3dx.rviz" />
 

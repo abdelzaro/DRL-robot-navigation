@@ -11,7 +11,9 @@ source devel_isolated/setup.bash
 cd ~/DRL-robot-navigation/TD3
 roslaunch ~/DRL-robot-navigation/TD3/assets/multi_robot_scenario.launch
 ```
-
+```shell
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=r1/cmd_vel
+```
 
 ```shell
  killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
