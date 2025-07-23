@@ -26,6 +26,11 @@
     :reader left_range
     :initarg :left_range
     :type cl:float
+    :initform 0.0)
+   (width
+    :reader width
+    :initarg :width
+    :type cl:float
     :initform 0.0))
 )
 
@@ -56,6 +61,11 @@
 (cl:defmethod left_range-val ((m <GapPolar>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader dynamic_gap-msg:left_range-val is deprecated.  Use dynamic_gap-msg:left_range instead.")
   (left_range m))
+
+(cl:ensure-generic-function 'width-val :lambda-list '(m))
+(cl:defmethod width-val ((m <GapPolar>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader dynamic_gap-msg:width-val is deprecated.  Use dynamic_gap-msg:width instead.")
+  (width m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <GapPolar>) ostream)
   "Serializes a message object of type '<GapPolar>"
   (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'right_angle))))
@@ -74,6 +84,11 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
   (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'left_range))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'width))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -105,6 +120,12 @@
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'left_range) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'width) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<GapPolar>)))
@@ -115,18 +136,19 @@
   "dynamic_gap/GapPolar")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<GapPolar>)))
   "Returns md5sum for a message object of type '<GapPolar>"
-  "633e4eeee72c08575897401f2c80d401")
+  "4eda0998fb76ae7703340ee0972390d2")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'GapPolar)))
   "Returns md5sum for a message object of type 'GapPolar"
-  "633e4eeee72c08575897401f2c80d401")
+  "4eda0998fb76ae7703340ee0972390d2")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<GapPolar>)))
   "Returns full string definition for message of type '<GapPolar>"
-  (cl:format cl:nil "# angles are in the incoming laser frame  (rad)~%float32 right_angle~%float32 right_range~%float32 left_angle~%float32 left_range~%~%# convenience: Euclidean width of the gap  (m)~%# float32 width ~%~%~%"))
+  (cl:format cl:nil "# angles are in the incoming laser frame  (rad)~%float32 right_angle~%float32 right_range~%float32 left_angle~%float32 left_range~%~%# convenience: Euclidean width of the gap  (m)~%float32 width ~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'GapPolar)))
   "Returns full string definition for message of type 'GapPolar"
-  (cl:format cl:nil "# angles are in the incoming laser frame  (rad)~%float32 right_angle~%float32 right_range~%float32 left_angle~%float32 left_range~%~%# convenience: Euclidean width of the gap  (m)~%# float32 width ~%~%~%"))
+  (cl:format cl:nil "# angles are in the incoming laser frame  (rad)~%float32 right_angle~%float32 right_range~%float32 left_angle~%float32 left_range~%~%# convenience: Euclidean width of the gap  (m)~%float32 width ~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <GapPolar>))
   (cl:+ 0
+     4
      4
      4
      4
@@ -139,4 +161,5 @@
     (cl:cons ':right_range (right_range msg))
     (cl:cons ':left_angle (left_angle msg))
     (cl:cons ':left_range (left_range msg))
+    (cl:cons ':width (width msg))
 ))

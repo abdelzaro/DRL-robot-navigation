@@ -5,6 +5,9 @@ import subprocess
 import time
 from os import path
 
+from dynamic_gap.msg import GapPolarArray
+
+
 import numpy as np
 import rospy
 import sensor_msgs.point_cloud2 as pc2
@@ -17,9 +20,29 @@ from std_srvs.srv import Empty
 from visualization_msgs.msg import Marker
 from visualization_msgs.msg import MarkerArray
 
-GOAL_REACHED_DIST = 0.3
+GOAL_REACHED_DIST = 0.3 
 COLLISION_DIST = 0.35
-TIME_DELTA = 0.1
+# TIME_DELTA = 0.1
+
+# ------------------------------------------------------------------
+SIM_SPEEDUP = 5.0          # IF YOU CHANGE THIS!!  : make sure you adjust real_time_update_rate in TD3.world
+TIME_DELTA_SIM = 0.1       # desired delta_t in *simulation* seconds
+TIME_DELTA = TIME_DELTA_SIM / SIM_SPEEDUP   # wall-clock sleep
+# ------------------------------------------------------------------
+def sim_sleep(dt_sim):
+    """
+    Pause thread until simulated time advances by dt_sim.
+    max_walltime (sec) to prevent infinite blocking.
+    """
+    max_walltime = dt_sim * 10 # 10x margin
+    start_sim_time = rospy.Time.now()
+    start_wall_time = time.time()
+
+    while (rospy.Time.now() - start_sim_time).to_sec() < dt_sim:
+        if max_walltime and (time.time() - start_wall_time) > max_walltime:
+            rospy.logwarn("sim_sleep: Wall-time timeout reached!")
+            break
+        time.sleep(0.001)
 
 
 # Check if the random goal position is located on an obstacle and do not accept it if it is
@@ -93,7 +116,10 @@ class GazeboEnv:
             self.gaps.append(
                 [self.gaps[m][1], self.gaps[m][1] + np.pi / self.environment_dim]
             )
-        self.gaps[-1][-1] += 0.03
+        self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
+        
+        # self.dgap_flat_vector = []# this is part of the dgap code
+        self.dgap_flat_vector = np.zeros(15, dtype=np.float32)
 
         port = "11311"
         subprocess.Popen(["roscore", "-p", port])
@@ -129,7 +155,12 @@ class GazeboEnv:
         self.odom = rospy.Subscriber(
             "/r1/odom", Odometry, self.odom_callback, queue_size=1
         )
-
+        
+        self.gaps_data = []  # store the latest gaps
+        rospy.Subscriber("/simplified_gaps", GapPolarArray, self.gaps_callback, queue_size=1)
+        
+    
+    #DON'T GET CONFUSED: THE ORIGINAL DRL CODE I USED ALSO HAS A VARIABLE CALLED GAPS
     # Read velodyne pointcloud and turn it into distance data, then select the minimum value for each angle
     # range as state representation
     def velodyne_callback(self, v):
@@ -147,6 +178,24 @@ class GazeboEnv:
                     if self.gaps[j][0] <= beta < self.gaps[j][1]:
                         self.velodyne_data[j] = min(self.velodyne_data[j], dist)
                         break
+
+    
+    def gaps_callback(self, msg):
+        # Example: just flatten gap data into a list 
+        gaps_flat = []
+        for gap in msg.gaps:
+            gaps_flat.extend([
+                gap.right_angle, gap.right_range,
+                gap.left_angle, gap.left_range,
+                gap.width
+            ])
+        # Save up to N gaps (pad with zeros if fewer gaps)
+        max_gaps = 3 #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        # and dgap_flat_vector initial value
+        gap_vector = gaps_flat[:max_gaps * 5]  #IF YOU CHANGE THIS too!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        gap_vector += [0.0] * (max_gaps * 5 - len(gap_vector))
+        self.dgap_flat_vector = gap_vector 
+        # print(self.dgap_flat_vector)
 
     def odom_callback(self, od_data):
         self.last_odom = od_data
@@ -168,8 +217,10 @@ class GazeboEnv:
         except (rospy.ServiceException) as e:
             print("/gazebo/unpause_physics service call failed")
 
-        # propagate state for TIME_DELTA seconds
-        time.sleep(TIME_DELTA)
+        # propagate state for TIME_DELTA seconds 
+        # time.sleep(TIME_DELTA)
+        sim_sleep(TIME_DELTA)
+
 
         rospy.wait_for_service("/gazebo/pause_physics")
         try:
@@ -227,9 +278,19 @@ class GazeboEnv:
             done = True
 
         robot_state = [distance, theta, action[0], action[1]]
-        state = np.append(laser_state, robot_state)
+        # print("inside of step()")
+        # print(self.dgap_flat_vector)
+        original_state = np.append(laser_state, robot_state) #orginal before dgap
+      
+        gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
+         # print("gap_state")
+        # print(gap_state)     
+        state = np.append(original_state, gap_state)
+        # print("state with gap added:")
+        # print(state)
+        
         reward = self.get_reward(target, collision, action, min_laser)
-        return state, reward, done, target
+        return state, reward, done, target, collision       
 
     def reset(self):
 
@@ -276,7 +337,9 @@ class GazeboEnv:
         except (rospy.ServiceException) as e:
             print("/gazebo/unpause_physics service call failed")
 
-        time.sleep(TIME_DELTA)
+        # time.sleep(TIME_DELTA)
+        sim_sleep(TIME_DELTA)
+
 
         rospy.wait_for_service("/gazebo/pause_physics")
         try:
@@ -314,7 +377,13 @@ class GazeboEnv:
             theta = np.pi - theta
 
         robot_state = [distance, theta, 0.0, 0.0]
-        state = np.append(laser_state, robot_state)
+        original_state = np.append(laser_state, robot_state)
+
+        gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
+
+        state = np.append(original_state, gap_state)
+        # print("state inside reset(): ")
+        # print(state)
         return state
 
     def change_goal(self):
