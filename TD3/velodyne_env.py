@@ -130,9 +130,9 @@ class GazeboEnv:
         self.unpause = rospy.ServiceProxy("/gazebo/unpause_physics", Empty)
         self.pause = rospy.ServiceProxy("/gazebo/pause_physics", Empty)
         self.reset_proxy = rospy.ServiceProxy("/gazebo/reset_world", Empty)
-        self.publisher = rospy.Publisher("goal_point", MarkerArray, queue_size=3)
-        self.publisher2 = rospy.Publisher("linear_velocity", MarkerArray, queue_size=1)
-        self.publisher3 = rospy.Publisher("angular_velocity", MarkerArray, queue_size=1)
+        self.publisher = rospy.Publisher(f"/{self.robot_name}/goal_point", MarkerArray, queue_size=3)
+        self.publisher2 = rospy.Publisher(f"/{self.robot_name}/linear_velocity", MarkerArray, queue_size=1)
+        self.publisher3 = rospy.Publisher(f"/{self.robot_name}/angular_velocity", MarkerArray, queue_size=1)
         self.velodyne = rospy.Subscriber(f"/{self.robot_name}/velodyne_points", PointCloud2, self.velodyne_callback, queue_size=1)
 
         self.odom = rospy.Subscriber(f"/{self.robot_name}/odom", Odometry, self.odom_callback, queue_size=1)
