@@ -257,7 +257,7 @@ if save_model and not os.path.exists("./pytorch_models"):
 # Create the training environment
 environment_dim = 20
 robot_dim = 4
-dgap_number_gaps_dim = 3 * 4 # 5 gaps * 4 floats in the dgap_flat_list
+dgap_number_gaps_dim = 0 * 4 # 5 gaps * 4 floats in the dgap_flat_list
 
 parser = argparse.ArgumentParser()
 parser.add_argument("robot_name", type=str, nargs="?", default="r2", help="Robot name (positional argument)")
