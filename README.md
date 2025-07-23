@@ -12,6 +12,20 @@ cd ~/DRL-robot-navigation/TD3
 roslaunch ~/DRL-robot-navigation/TD3/assets/multi_robot_scenario.launch
 ```
 ```shell
+cd ~/DRL-robot-navigation/catkin_ws
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_PORT_SIM=11311
+export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
+source ~/.bashrc
+cd ~/DRL-robot-navigation/catkin_ws
+source devel_isolated/setup.bash
+cd ~/DRL-robot-navigation/TD3
+python3 train_velodyne_td3.py
+```
+
+
+```shell
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=r1/cmd_vel
 ```
 

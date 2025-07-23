@@ -105,10 +105,10 @@ class GazeboEnv:
         # self.dgap_flat_vector = []# this is part of the dgap code
         self.dgap_flat_vector = np.zeros(12, dtype=np.float32)
 
-        port = "11311"
-        subprocess.Popen(["roscore", "-p", port])
+        # port = "11311"
+        # subprocess.Popen(["roscore", "-p", port])
 
-        print("Roscore launched!")
+        # print("Roscore launched!")
 
         # Launch the simulation with the given launchfile name
         rospy.init_node("gym", anonymous=True)
@@ -119,8 +119,8 @@ class GazeboEnv:
         if not path.exists(fullpath):
             raise IOError("File " + fullpath + " does not exist")
 
-        subprocess.Popen(["roslaunch", "-p", port, fullpath])
-        print("Gazebo launched!")
+        # subprocess.Popen(["roslaunch", "-p", port, fullpath])
+        # print("Gazebo launched!")
 
         # Set up the ROS publishers and subscribers
         self.vel_pub = rospy.Publisher(f"/{self.robot_name}/cmd_vel", Twist, queue_size=1)
