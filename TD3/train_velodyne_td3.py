@@ -265,7 +265,7 @@ parser.add_argument("file_name", type=str, help="Base file name for saving model
 args = parser.parse_args()
 
 robot_name = args.robot_name
-file_name  = args.file_name  # Use  what you passed on the CLI 
+file_name  = f"{args.file_name}_{robot_name}"  # attach robot name at the end
 
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim, robot_name=robot_name)
 time.sleep(5)
