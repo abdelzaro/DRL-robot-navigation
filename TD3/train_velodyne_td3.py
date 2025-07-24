@@ -243,7 +243,7 @@ buffer_size = 1e6  # Maximum size of the buffer
 # custom_title = sys.argv[1] if len(sys.argv) > 1 else ""
 # file_name = f"TD3_velodyne_{custom_title}" if custom_title else "TD3_velodyne"
 
-file_name = "TD3_velodyne"  # name of the file to store the policy
+# file_name = "TD3_velodyne"  # name of the file to store the policy
 save_model = True  # Weather to save the model or not
 load_model = False  # Weather to load a stored model
 random_near_obstacle = True  # To take random actions near obstacles or not
@@ -260,9 +260,12 @@ robot_dim = 4
 dgap_number_gaps_dim = 0 * 4 # 5 gaps * 4 floats in the dgap_flat_list
 
 parser = argparse.ArgumentParser()
-parser.add_argument("robot_name", type=str, nargs="?", default="r2", help="Robot name (positional argument)")
+parser.add_argument("robot_name", type=str, help="Robot name (e.g., r1 or r2)")
+parser.add_argument("file_name", type=str, help="Base file name for saving models/results")
 args = parser.parse_args()
+
 robot_name = args.robot_name
+file_name  = args.file_name  # Use exactly what you passed on the CLI
 
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim, robot_name=robot_name)
 time.sleep(5)
