@@ -1,8 +1,8 @@
 # generated from catkin/cmake/template/pkg.context.pc.in
 CATKIN_PACKAGE_PREFIX = ""
-PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/".split(';') if "/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/" != "" else []
+PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/".split(';') if "/home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/" != "" else []
 PROJECT_CATKIN_DEPENDS = "roscpp".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lpedsim".split(';') if "-lpedsim" != "" else []
 PROJECT_NAME = "pedsim"
-PROJECT_SPACE_DIR = "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim"
+PROJECT_SPACE_DIR = "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim"
 PROJECT_VERSION = "0.2.0"

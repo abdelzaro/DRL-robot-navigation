@@ -67,14 +67,14 @@ set(pedsim_simulator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(pedsim_simulator_SOURCE_PREFIX /home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator)
-  set(pedsim_simulator_DEVEL_PREFIX /home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator)
+  set(pedsim_simulator_SOURCE_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator)
+  set(pedsim_simulator_DEVEL_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator)
   set(pedsim_simulator_INSTALL_PREFIX "")
   set(pedsim_simulator_PREFIX ${pedsim_simulator_DEVEL_PREFIX})
 else()
   set(pedsim_simulator_SOURCE_PREFIX "")
   set(pedsim_simulator_DEVEL_PREFIX "")
-  set(pedsim_simulator_INSTALL_PREFIX /home/asus/DRL-robot-navigation/catkin_ws/install_isolated)
+  set(pedsim_simulator_INSTALL_PREFIX /home/power20/DRL-robot-navigation/catkin_ws/install_isolated)
   set(pedsim_simulator_PREFIX ${pedsim_simulator_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(pedsim_simulator_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/include;/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator/include " STREQUAL " ")
+if(NOT "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/include;/home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator/include " STREQUAL " ")
   set(pedsim_simulator_INCLUDE_DIRS "")
-  set(_include_dirs "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/include;/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator/include")
+  set(_include_dirs "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/include;/home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "https://github.com/srl-freiburg/pedsim_ros " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulato
         message(FATAL_ERROR "Project 'pedsim_simulator' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pedsim_simulator' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'pedsim_simulator' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_simulator/${idir}'.  ${_report}")
     endif()
     _list_append_unique(pedsim_simulator_INCLUDE_DIRS ${include})
   endforeach()
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
+    foreach(path /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

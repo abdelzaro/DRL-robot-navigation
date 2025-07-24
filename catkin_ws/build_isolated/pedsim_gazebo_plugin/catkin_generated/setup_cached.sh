@@ -7,6 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin:$CMAKE_PREFIX_PATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin:$CMAKE_PREFIX_PATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin:$ROS_PACKAGE_PATH"
