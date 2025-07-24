@@ -1,42 +1,42 @@
 
 "use strict";
 
-let LineObstacles = require('./LineObstacles.js');
-let TrackedPerson = require('./TrackedPerson.js');
-let AllAgentsState = require('./AllAgentsState.js');
-let AgentStates = require('./AgentStates.js');
-let SocialActivities = require('./SocialActivities.js');
-let AgentState = require('./AgentState.js');
-let Waypoint = require('./Waypoint.js');
-let TrackedPersons = require('./TrackedPersons.js');
-let TrackedGroup = require('./TrackedGroup.js');
-let AgentGroups = require('./AgentGroups.js');
-let AgentForce = require('./AgentForce.js');
 let SocialActivity = require('./SocialActivity.js');
-let AgentGroup = require('./AgentGroup.js');
-let SocialRelation = require('./SocialRelation.js');
-let TrackedGroups = require('./TrackedGroups.js');
-let LineObstacle = require('./LineObstacle.js');
+let TrackedGroup = require('./TrackedGroup.js');
 let SocialRelations = require('./SocialRelations.js');
+let SocialActivities = require('./SocialActivities.js');
+let SocialRelation = require('./SocialRelation.js');
+let Waypoint = require('./Waypoint.js');
+let LineObstacle = require('./LineObstacle.js');
 let Waypoints = require('./Waypoints.js');
+let LineObstacles = require('./LineObstacles.js');
+let AgentGroups = require('./AgentGroups.js');
+let AgentStates = require('./AgentStates.js');
+let AgentGroup = require('./AgentGroup.js');
+let AgentState = require('./AgentState.js');
+let AgentForce = require('./AgentForce.js');
+let AllAgentsState = require('./AllAgentsState.js');
+let TrackedGroups = require('./TrackedGroups.js');
+let TrackedPersons = require('./TrackedPersons.js');
+let TrackedPerson = require('./TrackedPerson.js');
 
 module.exports = {
-  LineObstacles: LineObstacles,
-  TrackedPerson: TrackedPerson,
-  AllAgentsState: AllAgentsState,
-  AgentStates: AgentStates,
-  SocialActivities: SocialActivities,
-  AgentState: AgentState,
-  Waypoint: Waypoint,
-  TrackedPersons: TrackedPersons,
-  TrackedGroup: TrackedGroup,
-  AgentGroups: AgentGroups,
-  AgentForce: AgentForce,
   SocialActivity: SocialActivity,
-  AgentGroup: AgentGroup,
-  SocialRelation: SocialRelation,
-  TrackedGroups: TrackedGroups,
-  LineObstacle: LineObstacle,
+  TrackedGroup: TrackedGroup,
   SocialRelations: SocialRelations,
+  SocialActivities: SocialActivities,
+  SocialRelation: SocialRelation,
+  Waypoint: Waypoint,
+  LineObstacle: LineObstacle,
   Waypoints: Waypoints,
+  LineObstacles: LineObstacles,
+  AgentGroups: AgentGroups,
+  AgentStates: AgentStates,
+  AgentGroup: AgentGroup,
+  AgentState: AgentState,
+  AgentForce: AgentForce,
+  AllAgentsState: AllAgentsState,
+  TrackedGroups: TrackedGroups,
+  TrackedPersons: TrackedPersons,
+  TrackedPerson: TrackedPerson,
 };

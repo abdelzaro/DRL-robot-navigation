@@ -1,4 +1,4 @@
-prefix=/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario
+prefix=/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario
 
 Name: multi_robot_scenario
 Description: Description of multi_robot_scenario

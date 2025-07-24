@@ -8,7 +8,7 @@ import struct
 
 
 class GapPolar(genpy.Message):
-  _md5sum = "4eda0998fb76ae7703340ee0972390d2"
+  _md5sum = "633e4eeee72c08575897401f2c80d401"
   _type = "dynamic_gap/GapPolar"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """# angles are in the incoming laser frame  (rad)
@@ -18,10 +18,10 @@ float32 left_angle
 float32 left_range
 
 # convenience: Euclidean width of the gap  (m)
-float32 width 
+# float32 width 
 """
-  __slots__ = ['right_angle','right_range','left_angle','left_range','width']
-  _slot_types = ['float32','float32','float32','float32','float32']
+  __slots__ = ['right_angle','right_range','left_angle','left_range']
+  _slot_types = ['float32','float32','float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -31,7 +31,7 @@ float32 width
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       right_angle,right_range,left_angle,left_range,width
+       right_angle,right_range,left_angle,left_range
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -48,14 +48,11 @@ float32 width
         self.left_angle = 0.
       if self.left_range is None:
         self.left_range = 0.
-      if self.width is None:
-        self.width = 0.
     else:
       self.right_angle = 0.
       self.right_range = 0.
       self.left_angle = 0.
       self.left_range = 0.
-      self.width = 0.
 
   def _get_types(self):
     """
@@ -70,7 +67,7 @@ float32 width
     """
     try:
       _x = self
-      buff.write(_get_struct_5f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width))
+      buff.write(_get_struct_4f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -85,8 +82,8 @@ float32 width
       end = 0
       _x = self
       start = end
-      end += 20
-      (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width,) = _get_struct_5f().unpack(str[start:end])
+      end += 16
+      (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range,) = _get_struct_4f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -100,7 +97,7 @@ float32 width
     """
     try:
       _x = self
-      buff.write(_get_struct_5f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width))
+      buff.write(_get_struct_4f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -116,8 +113,8 @@ float32 width
       end = 0
       _x = self
       start = end
-      end += 20
-      (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width,) = _get_struct_5f().unpack(str[start:end])
+      end += 16
+      (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range,) = _get_struct_4f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -126,9 +123,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_5f = None
-def _get_struct_5f():
-    global _struct_5f
-    if _struct_5f is None:
-        _struct_5f = struct.Struct("<5f")
-    return _struct_5f
+_struct_4f = None
+def _get_struct_4f():
+    global _struct_4f
+    if _struct_4f is None:
+        _struct_4f = struct.Struct("<4f")
+    return _struct_4f

@@ -1,4 +1,4 @@
-prefix=/home/asus/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/p14/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: velodyne_description
 Description: Description of velodyne_description

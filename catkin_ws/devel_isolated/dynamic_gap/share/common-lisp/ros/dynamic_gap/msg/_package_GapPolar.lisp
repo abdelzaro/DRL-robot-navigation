@@ -7,6 +7,4 @@
           LEFT_ANGLE
           LEFT_RANGE-VAL
           LEFT_RANGE
-          WIDTH-VAL
-          WIDTH
 ))

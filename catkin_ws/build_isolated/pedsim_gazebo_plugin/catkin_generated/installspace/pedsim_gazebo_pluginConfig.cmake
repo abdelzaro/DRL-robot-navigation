@@ -67,14 +67,14 @@ set(pedsim_gazebo_plugin_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(pedsim_gazebo_plugin_SOURCE_PREFIX /home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin)
-  set(pedsim_gazebo_plugin_DEVEL_PREFIX /home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin)
+  set(pedsim_gazebo_plugin_SOURCE_PREFIX /home/p14/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin)
+  set(pedsim_gazebo_plugin_DEVEL_PREFIX /home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin)
   set(pedsim_gazebo_plugin_INSTALL_PREFIX "")
   set(pedsim_gazebo_plugin_PREFIX ${pedsim_gazebo_plugin_DEVEL_PREFIX})
 else()
   set(pedsim_gazebo_plugin_SOURCE_PREFIX "")
   set(pedsim_gazebo_plugin_DEVEL_PREFIX "")
-  set(pedsim_gazebo_plugin_INSTALL_PREFIX /home/asus/DRL-robot-navigation/catkin_ws/install_isolated)
+  set(pedsim_gazebo_plugin_INSTALL_PREFIX /home/p14/DRL-robot-navigation/catkin_ws/install_isolated)
   set(pedsim_gazebo_plugin_PREFIX ${pedsim_gazebo_plugin_INSTALL_PREFIX})
 endif()
 
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/asus/DRL-robot-navigation/catkin_ws/install_isolated/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
+    foreach(path /home/p14/DRL-robot-navigation/catkin_ws/install_isolated/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
