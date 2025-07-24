@@ -2,7 +2,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# === CONFIGURATION ===
+# === CONFIGURATION = ==
 results_dir = '/home/power20/DRL-robot-navigation/TD3/results'
 
 # === START/END FILES ===
