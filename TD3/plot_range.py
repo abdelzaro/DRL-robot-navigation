@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 results_dir = '/home/power20/DRL-robot-navigation/TD3/results' 
 
 # === START/END FILES ===
-end_file = 'TD3_velodyne_20250724-175756.npy'
-start_file   = 'TD3_velodyne_20250724-160301.npy'
+end_file = 'out_of_box_r1_20250725-132559.npy'
+start_file   = 'out_of_box_r1_20250725-132559.npy'
 
 # === LOAD & SORT ALL .npy FILES ===
 all_files = sorted(f for f in os.listdir(results_dir) if f.endswith('.npy'))
