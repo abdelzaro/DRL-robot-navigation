@@ -119,7 +119,7 @@ class GazeboEnv:
         self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
         
         # self.dgap_flat_vector = []# this is part of the dgap code
-        self.dgap_flat_vector = np.zeros(12, dtype=np.float32)
+        self.dgap_flat_vector = np.zeros(28, dtype=np.float32)
 
         port = "11311"
         subprocess.Popen(["roscore", "-p", port])
@@ -181,7 +181,7 @@ class GazeboEnv:
 
     def gaps_callback(self, msg):
         gaps_flat = []
-        max_gaps = 3  #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
+        max_gaps = 7  #IF YOU CHANGE THIS!!!: update dgap_number_gaps_dim in train_velodyne_td3.py
         # and dgap_flat_vector initial value
         max_range = 5.0  
         
@@ -289,14 +289,21 @@ class GazeboEnv:
             done = True
 
         robot_state = [distance, theta, action[0], action[1]]
-        # print("inside of step()")
-        # print(self.dgap_flat_vector)
-        original_state = np.append(laser_state, robot_state) #orginal before dgap
+        # # print("inside of step()")
+        # # print(self.dgap_flat_vector)
+        # original_state = np.append(laser_state, robot_state) #orginal before dgap
+      
+        # gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
+        #  # print("gap_state")
+        # # print(gap_state)     
+        # state = np.append(original_state, gap_state)
+        # # print("state with gap added:")
+        # # print(state)
       
         gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
          # print("gap_state")
         # print(gap_state)     
-        state = np.append(original_state, gap_state)
+        state = np.append(robot_state, gap_state)
         # print("state with gap added:")
         # print(state)
         
@@ -393,12 +400,19 @@ class GazeboEnv:
             theta = np.pi - theta
 
         robot_state = [distance, theta, 0.0, 0.0]
-        original_state = np.append(laser_state, robot_state)
+        # original_state = np.append(laser_state, robot_state)
+
+        # gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
+
+        # state = np.append(original_state, gap_state)
+        # print("state inside reset(): ")
+        # print(state)
 
         gap_state = np.array(self.dgap_flat_vector, dtype=np.float32)
-
-        state = np.append(original_state, gap_state)
-        # print("state inside reset(): ")
+         # print("gap_state")
+        # print(gap_state)
+        state = np.append(robot_state, gap_state)
+        # print("state with gap added:")
         # print(state)
         return state
 

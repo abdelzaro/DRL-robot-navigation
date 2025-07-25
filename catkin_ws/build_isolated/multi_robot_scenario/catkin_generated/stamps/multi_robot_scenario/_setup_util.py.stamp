@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/p14/env/bin/python3
 # -*- coding: utf-8 -*-
 
 # Software License Agreement (BSD License)
@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_simulator;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++17
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"dynamic_gap\"
 
-CXX_INCLUDES = -I/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include -I/home/power20/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include -I/usr/include/eigen3 -I/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include -I/home/p14/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include -I/usr/include/eigen3 -I/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

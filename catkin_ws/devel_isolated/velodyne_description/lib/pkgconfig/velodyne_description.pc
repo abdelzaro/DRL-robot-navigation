@@ -1,4 +1,4 @@
-prefix=/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description
+prefix=/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description
 
 Name: velodyne_description
 Description: Description of velodyne_description

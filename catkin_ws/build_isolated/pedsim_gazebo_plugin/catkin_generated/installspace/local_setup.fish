@@ -5,7 +5,7 @@
 # or fall back to the destination set at configure time
 
 if test -z $_CATKIN_SETUP_DIR
-    set _CATKIN_SETUP_DIR /home/power20/DRL-robot-navigation/catkin_ws/install_isolated
+    set _CATKIN_SETUP_DIR /home/p14/DRL-robot-navigation/catkin_ws/install_isolated
 end
 
 set CATKIN_SETUP_UTIL_ARGS "--extend --local"
