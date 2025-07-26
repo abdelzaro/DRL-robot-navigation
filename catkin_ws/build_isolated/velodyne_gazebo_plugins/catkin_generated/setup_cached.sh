@@ -7,3 +7,6 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins:$CMAKE_PREFIX_PATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/az/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins:$ROS_PACKAGE_PATH"

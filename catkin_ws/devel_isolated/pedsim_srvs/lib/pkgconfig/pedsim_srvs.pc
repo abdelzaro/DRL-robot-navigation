@@ -1,0 +1,8 @@
+prefix=/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs
+
+Name: pedsim_srvs
+Description: Description of pedsim_srvs
+Version: 0.0.1
+Cflags: -I/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime pedsim_msgs std_msgs

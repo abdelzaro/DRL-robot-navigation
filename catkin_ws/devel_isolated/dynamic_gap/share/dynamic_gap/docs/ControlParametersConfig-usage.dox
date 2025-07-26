@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_gap" pkg="dynamic_gap" type="dynamic_gap">
+  <param name="linear_vel_x" type="double" value="0.0" />
+  <param name="linear_vel_y" type="double" value="0.0" />
+  <param name="angular_vel_z" type="double" value="0.0" />
+</node>
+\endverbatim
+

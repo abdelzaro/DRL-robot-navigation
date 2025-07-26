@@ -152,7 +152,7 @@ class GazeboEnv:
         self.last_odom = od_data
 
     # Perform an action and read a new state
-    def step(self, action):
+    def step(self, action, measure_collisions=False):
         target = False
 
         # Publish the robot action
@@ -229,11 +229,17 @@ class GazeboEnv:
         robot_state = [distance, theta, action[0], action[1]]
         state = np.append(laser_state, robot_state)
         reward = self.get_reward(target, collision, action, min_laser)
-        return state, reward, done, target
+
+        if not measure_collisions: 
+            return state, reward, done, target
+        
+        else: 
+            return state, reward, done, target, collision
+
 
     def reset(self):
 
-        # Resets the state of the environment and returns an initial observation.
+        # Resets the state of the environment and returns an initial observation. 
         rospy.wait_for_service("/gazebo/reset_world")
         try:
             self.reset_proxy()
