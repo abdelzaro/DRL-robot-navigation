@@ -19,9 +19,9 @@ except ImportError:
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/env.sh')
+code = generate_environment_script('/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/env.sh')
 
-output_filename = '/home/p14/DRL-robot-navigation/catkin_ws/build_isolated/multi_robot_scenario/catkin_generated/setup_cached.sh'
+output_filename = '/home/power20/DRL-robot-navigation/catkin_ws/build_isolated/multi_robot_scenario/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     # print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

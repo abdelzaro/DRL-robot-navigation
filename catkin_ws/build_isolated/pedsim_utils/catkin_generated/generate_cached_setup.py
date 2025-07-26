@@ -12,16 +12,16 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in '/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/opt/ros/noetic'.split(';'):
+    for workspace in '/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim;/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/opt/ros/noetic'.split(';'):
         python_path = os.path.join(workspace, 'lib/python3/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/env.sh')
+code = generate_environment_script('/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/env.sh')
 
-output_filename = '/home/p14/DRL-robot-navigation/catkin_ws/build_isolated/pedsim_utils/catkin_generated/setup_cached.sh'
+output_filename = '/home/power20/DRL-robot-navigation/catkin_ws/build_isolated/pedsim_utils/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     # print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

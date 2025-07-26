@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/lib/pedsim_visualizer/pedsim_visualizer_node"
-  "/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/lib/pedsim_visualizer/pedsim_visualizer_node.pdb"
+  "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/lib/pedsim_visualizer/pedsim_visualizer_node"
+  "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/lib/pedsim_visualizer/pedsim_visualizer_node.pdb"
   "CMakeFiles/pedsim_visualizer_node.dir/src/sim_visualizer.cpp.o"
   "CMakeFiles/pedsim_visualizer_node.dir/src/sim_visualizer_node.cpp.o"
 )

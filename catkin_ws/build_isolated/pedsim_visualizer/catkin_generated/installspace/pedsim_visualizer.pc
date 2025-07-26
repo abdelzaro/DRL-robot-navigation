@@ -1,4 +1,4 @@
-prefix=/home/p14/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/power20/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: pedsim_visualizer
 Description: Description of pedsim_visualizer

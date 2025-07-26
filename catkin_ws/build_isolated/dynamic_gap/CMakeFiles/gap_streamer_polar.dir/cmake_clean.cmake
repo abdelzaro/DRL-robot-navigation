@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/dynamic_gap/gap_streamer_polar"
-  "/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/dynamic_gap/gap_streamer_polar.pdb"
+  "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/dynamic_gap/gap_streamer_polar"
+  "/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/dynamic_gap/gap_streamer_polar.pdb"
   "CMakeFiles/gap_streamer_polar.dir/src/gap_streamer_polar.cpp.o"
 )
 
