@@ -107,3 +107,513 @@ Author: abdelzaro <abdelzaro8@gmail.com>
 Date:   Sun Jul 13 16:35:59 2025 -0400
 
     Merge branch 'central' of https://github.com/abdelzaro/DRL-robot-navigation into central
+
+[33mcommit a706f9083b580c0eaba97c049c9ee5b1ce150742[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:35:38 2025 -0400
+
+    testing if I can add stuff then pull on thinkpad branch
+
+[33mcommit 4136d796748eac1be81be552ae65bff03c1f84a3[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:34:43 2025 -0400
+
+    testing if I can add stuff then pull on thinkpad branch
+
+[33mcommit 7112bac18ae6be152ba4bae3fd3b5d6010f78cae[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Sun Jul 13 16:32:57 2025 -0400
+
+    Update README.md
+
+[33mcommit c0da207325a3984d7b106ad58329ad73de627c34[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:26:20 2025 -0400
+
+    plot
+
+[33mcommit 71ad47495573c2a855726e2aa18771b68d78050d[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Sun Jul 13 16:22:45 2025 -0400
+
+    Update README.md
+
+[33mcommit 85d59ebe99cbfeee90ec9f60b1c383adec293d15[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:20:59 2025 -0400
+
+    added requirements because these stupid command pip install empy==3.3.4. still don't forget git clone https://github.com/srl-freiburg/pedsim_ros.git
+
+[33mcommit 993c99e63469fb596e60e84860535f9ea7f48d6a[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:17:21 2025 -0400
+
+    large file pushing issue solved
+
+[33mcommit e6a8b8f0a5eaa24ed36f3130418f150db27451a7[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:05:47 2025 -0400
+
+    test
+
+[33mcommit 93a07513d8ec2612c871c3681ff8436207f05ab1[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sun Jul 13 16:03:37 2025 -0400
+
+    testing if it pushes
+
+[33mcommit 162497992df1667b7446c2c39fde2d9a59ea3902[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 12 08:27:25 2025 -0400
+
+    added custom titles for training
+
+[33mcommit d1f7982b1b334980b517588278415e689a964705[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 12 08:20:00 2025 -0400
+
+    cleaned code a bit
+
+[33mcommit 413ee3424d955e547e47d4e4bd5357c35009b657[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 12 08:18:34 2025 -0400
+
+    added gap to state, training runs now. state vector is 44x1
+
+[33mcommit 870b49878dfd095d5b6741d3c18ddd7e556b9c42[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 12 07:10:57 2025 -0400
+
+    in prog, 44 input state seems to be working, just printing out test
+
+[33mcommit 60735bce257db57ff8216edb6b405597648af41f[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Sat Jul 12 06:24:49 2025 -0400
+
+    Update README.md
+
+[33mcommit 6202de58c20a71b8a063d26838b594e3e122727f[m
+Merge: 77f6093b 6301075d
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 12 06:21:33 2025 -0400
+
+    Merge branch 'main' of https://github.com/abdelzaro/DRL-robot-navigation into main
+
+[33mcommit 77f6093b360ae5c4ee274ba521530a774c1b796e[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 12 06:21:01 2025 -0400
+
+    broken code I think I forgot to pull that's why i'm trying to push
+
+[33mcommit 6301075dcde6a82920eb981826872f4bd4f869b9[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Sat Jul 12 05:55:37 2025 -0400
+
+    Update README.md
+
+[33mcommit 41d56abccf252ea4d787bc754b65df5ff002e6f3[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Sat Jul 12 05:55:03 2025 -0400
+
+    I forgot to say, in the last commit I also added the subscriber to the env. Also I Update README.md
+
+[33mcommit 79650574371f330431edd517977745c0a283ccef[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Sat Jul 12 05:50:47 2025 -0400
+
+    just added a dgap_flat_vector to pass into the DRL later
+
+[33mcommit 33527573a05fdf5888c2fd39693635a09bc7df0e[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Fri Jul 11 20:05:50 2025 -0400
+
+    nothing
+
+[33mcommit 0d5f0a4de8ae06cba53097db079b3d88de24563f[m
+Merge: 36835143 93a9798c
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Fri Jul 11 20:03:57 2025 -0400
+
+    TESTING
+    
+    Merge branch 'main' of https://github.com/abdelzaro/DRL-robot-navigation into main
+
+[33mcommit 36835143fe553e057b141b20368c394742978a7b[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Fri Jul 11 20:02:39 2025 -0400
+
+    i messed with env then did cntrl z, i'm using this to see if i screwed soemthing up
+
+[33mcommit 93a9798c73b9f33530c8b77ab7cb06bbfaa56430[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Fri Jul 11 19:41:49 2025 -0400
+
+    Update README.md
+
+[33mcommit c094155c37980afaf2154773e5046d5c6589a136[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Fri Jul 11 19:41:26 2025 -0400
+
+    Update README.md
+
+[33mcommit af89625c998992d755bfab4bee175e994729fb66[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Fri Jul 11 13:15:48 2025 -0400
+
+    Update README.md
+
+[33mcommit a330cbd88c66788075b77800a8c90f50416aa9fe[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 10 20:34:44 2025 -0400
+
+    making test actually work
+
+[33mcommit 8eced6e8b537334c7a2666c03d8eace7b7a89122[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 10 19:55:20 2025 -0400
+
+    changed test to cpu only bc seems like my rtx4060 is too old
+
+[33mcommit 6a28f09f0270d2a54600358cd78c8d6c3aca2111[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 10 19:45:52 2025 -0400
+
+    didn't show up for some reason: added date to saving results, haven't tested it
+
+[33mcommit 446fdda8325d9a1d6a7b46ca3fe89547e05f243e[m
+Merge: 8e40a8a3 c43e6261
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 10 19:43:20 2025 -0400
+
+    added date to saving results, haven't tested it
+
+[33mcommit 8e40a8a37737bf752a9f030ef143a17b0e319a29[m
+Author: abdelzaro <abdelzaro8@gmail.com>
+Date:   Thu Jul 10 19:38:12 2025 -0400
+
+    added date to saving results, haven't tested it
+
+[33mcommit c43e626131f4b5fd2af025b977230f9e9e5577a9[m
+Author: abdelzaro <76800333+abdelzaro@users.noreply.github.com>
+Date:   Thu Jul 10 11:52:25 2025 -0400
+
+    Update README.md
+
+[33mcommit 017ed127928bb14532f15467498655f0c5b16600[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Jun 11 10:05:54 2025 +0200
+
+    Fix final model save directory
+
+[33mcommit aba927a6a3b832a15e02183a2a9c78fce7a8732e[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Fri Aug 9 12:18:12 2024 +0200
+
+    Update README.md
+
+[33mcommit 9ba90d2e2658aa6bc47a6eb6c92ad5efdb79697e[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Fri Aug 9 12:17:13 2024 +0200
+
+    Update README.md
+
+[33mcommit 842c72100aeaba1b24e0abebd544c7d9040bb369[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Fri Aug 9 12:15:42 2024 +0200
+
+    Update and rename bug_report.md to issue_template.md
+
+[33mcommit 101ed8eaba77b9f447e3d57cc71518cfedb7f65c[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Fri Aug 4 22:04:55 2023 +0200
+
+    Update issue templates
+
+[33mcommit 943186fb7f1890700ce215951e92d5cb92031d14[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Jan 12 11:25:36 2023 +0100
+
+    Update README.md
+
+[33mcommit 125da3d1f788d8c5f60aa972f36dab6f333348e1[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Oct 13 10:52:20 2022 +0200
+
+    Update README.md
+
+[33mcommit b7eb47eaf85c3dd0e031eb63359df84117c211cb[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:37:41 2022 +0200
+
+    Update README.md
+
+[33mcommit f843d1646eac48760449f051b22f920ca345b593[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:29:46 2022 +0200
+
+    Add files via upload
+
+[33mcommit 1f7d6feffab459bf191d6728f129be1074e699dc[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:29:30 2022 +0200
+
+    Delete catkin_ws/src/multi_robot_scenario/launch directory
+
+[33mcommit 4807def54a94220c5c5956c37053850a7ee44ff5[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:28:59 2022 +0200
+
+    Add files via upload
+
+[33mcommit c586599c8092feae47d9096c22c2ca079c7e6c1a[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:27:07 2022 +0200
+
+    Add files via upload
+
+[33mcommit fc41439dfa5cd6d5f9db1d836511da64f2a6ce10[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:25:30 2022 +0200
+
+    Delete velodyne_td3.py
+
+[33mcommit 5a959f125570491719c92868168cd372e4323549[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:25:18 2022 +0200
+
+    Delete replay_buffer2.py
+
+[33mcommit 4dbce58fece8e9e5396f2541bf53ce867399cb20[m
+Merge: e9e51987 f2885581
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:24:39 2022 +0200
+
+    Merge pull request #26 from reiniscimurs/reiniscimurs-update1
+    
+    Add files via upload
+
+[33mcommit f28855819c79331cc319fcb3e563876a2949fb16[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Wed Aug 17 21:23:55 2022 +0200
+
+    Add files via upload
+
+[33mcommit e9e51987bb8176fb09f5dcb2d7af901a7b0e988f[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Aug 9 21:52:08 2022 +0200
+
+    Update README.md
+
+[33mcommit 10338dddf3a69ec7a7e32fd11b1a8df081e6d038[m
+Merge: d51438ae dc621d72
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Aug 9 21:48:55 2022 +0200
+
+    Merge pull request #24 from reiniscimurs/Noetic
+    
+    Noetic
+
+[33mcommit dc621d72d924bc971fb12ecf7672cb6e16e8b116[m
+Merge: 8e410ab6 d51438ae
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Aug 9 21:47:53 2022 +0200
+
+    Merge branch 'main' into Noetic
+
+[33mcommit d51438aea0dd8404ae7a633dcfc4f5f96e54f569[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Sun Jun 26 23:15:16 2022 +0200
+
+    Update README.md
+
+[33mcommit be811a4050dfcb5c800a0a0e4000be81d48cfbc5[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Sat Feb 5 16:39:04 2022 +0100
+
+    Update README.md
+
+[33mcommit 8e410ab6a05ff7852a09c692d9d6e1a3ec706fd1[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Fri Dec 17 20:19:40 2021 +0100
+
+    Update README.md
+
+[33mcommit 1d50660fc8294e438e6e22ce04c2dbfa5f0bc88a[m
+Author: Reinis Cimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Fri Dec 17 20:19:14 2021 +0100
+
+    Update README.md
+
+[33mcommit 5277508b324bfb48872f36a06ef9098cd0047f4d[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Sat Dec 4 12:22:25 2021 +0100
+
+    Update README.md
+
+[33mcommit 66a5fd926c9656e004daa71ee2c5a071bf4df1e5[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Sat Dec 4 12:08:36 2021 +0100
+
+    Add files via upload
+
+[33mcommit c13c65f23313dd27a86a836322fd660572953ef8[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Fri Dec 3 11:52:40 2021 +0100
+
+    Update velodyne_env.py
+
+[33mcommit 5510de4f475c1cc29339e97814021b7783adae94[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Dec 2 21:31:28 2021 +0100
+
+    Update README.md
+
+[33mcommit 98f1fceec6b45df3f4af7702c79af571d94460b1[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Dec 2 21:24:20 2021 +0100
+
+    Add files via upload
+
+[33mcommit f087ba67ee39007322a4a8c2d7694be47b19f0bc[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Dec 2 21:21:09 2021 +0100
+
+    Add files via upload
+
+[33mcommit c452c0e4b6559f412b17e561e12a5f4cfd4faeec[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Dec 2 21:19:37 2021 +0100
+
+    Add files via upload
+
+[33mcommit 4909ff55060258b0beab85686cf2d3cf4acc9285[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Dec 2 21:17:50 2021 +0100
+
+    Add files via upload
+
+[33mcommit 44db0186cfa8f86ff86962e9a3a1a62c12f4090c[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Dec 2 21:16:00 2021 +0100
+
+    Add files via upload
+
+[33mcommit dea37acfc65f702f7fa792787e09602416cf85d4[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Oct 28 18:00:39 2021 +0900
+
+    Update velodyne_td3.py
+
+[33mcommit 506f6216658cc13e71a42c0c591e5bc8651f4cb3[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Oct 28 15:48:51 2021 +0900
+
+    Update velodyne_td3.py
+
+[33mcommit dbe3b5900f33817a922ee41ee62ecb5139b14ca2[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Oct 28 14:38:16 2021 +0900
+
+    Update README.md
+
+[33mcommit 1cfed1ff44fd325dbf672e46333b1ba32162feda[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Oct 28 14:36:06 2021 +0900
+
+    Create description
+
+[33mcommit 74e41d30ad19c1635094888cc075d6f825435e0b[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Oct 28 14:33:47 2021 +0900
+
+    Add files via upload
+
+[33mcommit fa2768f1e53926e150721589d0c73f43d088d079[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Thu Oct 28 14:17:50 2021 +0900
+
+    Update README.md
+
+[33mcommit 12aaba151b139b2d5ace1fa08710c75774ed89b5[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 19:03:31 2021 +0900
+
+    Update README.md
+
+[33mcommit 0a01c44b716938affbc8e30eb16c3e0405b9fac7[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 18:04:55 2021 +0900
+
+    Add files via upload
+
+[33mcommit ae251b8b431eb4fb8eea968b2f547ff1df55a352[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 13:20:36 2021 +0900
+
+    Update README.md
+
+[33mcommit 08f73a279167c2ddfdaa08737906a687158dd16f[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 13:20:06 2021 +0900
+
+    Update README.md
+
+[33mcommit 5fb14a83dff4b2934557f6e5fe3f394816fcf55b[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 13:19:46 2021 +0900
+
+    Update README.md
+
+[33mcommit 373c880c61eeb3e2806dfc6adbedccecbed44af1[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 13:16:11 2021 +0900
+
+    Update README.md
+
+[33mcommit d0a3dc1e54bf9b4840c12fb70c91a66e95f67b0b[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 13:13:37 2021 +0900
+
+    Add files via upload
+
+[33mcommit f3b11ad1ad0ad3689905623b0ecd07f9e603e9b7[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 13:11:43 2021 +0900
+
+    Update README.md
+
+[33mcommit 2d2b9fa43bfd7d3f2b603d10b061b37ec607b410[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 12:59:04 2021 +0900
+
+    Update README.md
+
+[33mcommit 82ca66cb36bfbe71210680b7841e8d11b4e8dcbb[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Tue Oct 26 10:08:23 2021 +0900
+
+    Add files via upload
+
+[33mcommit e4368e449404a5da900be41184c3955f5f87c00c[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Mon Oct 25 17:56:38 2021 +0900
+
+    Add files via upload
+
+[33mcommit 53bd2549f35eb23ba2b4a201644e74fe02308ac4[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Mon Oct 25 17:56:11 2021 +0900
+
+    Add files via upload
+
+[33mcommit 4c385513a783a0996985b894297708b956947f30[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Mon Oct 25 17:54:46 2021 +0900
+
+    Add files via upload
+
+[33mcommit 3f5ff3260a5a5ad7e830a2b5472f3f0dfe8100da[m
+Author: reiniscimurs <33617541+reiniscimurs@users.noreply.github.com>
+Date:   Mon Oct 25 17:49:28 2021 +0900
+
+    Initial commit
