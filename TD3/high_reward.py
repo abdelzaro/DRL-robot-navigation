@@ -2,14 +2,14 @@ import os
 import numpy as np
 import sys
 
-# === PARSE ARGUMENTS ===
+# === PARSE ARGUMENTS  ===
 if len(sys.argv) != 2:
     print("Usage: python3 high_reward.py <file_prefix>")
     sys.exit(1)
 
 file_prefix = sys.argv[1]
 results_dir = '/home/power20/DRL-robot-navigation/TD3/results/'
-episode_limit = 40  # Only consider rewards from episodes ≤ 40
+episode_limit = 50  # Only consider rewards from episodes ≤ 40
 
 # === LOAD & FILTER FILES ===
 all_files = [f for f in os.listdir(results_dir)
