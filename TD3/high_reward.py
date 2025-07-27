@@ -8,7 +8,7 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 file_prefix = sys.argv[1]
-results_dir = '/home/power20/DRL-robot-navigation/TD3/results/'
+results_dir = '/home/p14/DRL-robot-navigation/TD3/results/'
 episode_limit = 40  # Only consider rewards from episodes ≤ 40
 
 # === LOAD & FILTER FILES ===
