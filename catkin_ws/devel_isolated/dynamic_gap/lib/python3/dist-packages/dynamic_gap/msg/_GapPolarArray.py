@@ -10,7 +10,7 @@ import dynamic_gap.msg
 import std_msgs.msg
 
 class GapPolarArray(genpy.Message):
-  _md5sum = "bca7aae125759a66c1c2548d6ce506aa"
+  _md5sum = "acecdc166934590f4302140fcb710960"
   _type = "dynamic_gap/GapPolarArray"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header      header
@@ -41,7 +41,7 @@ float32 left_angle
 float32 left_range
 
 # convenience: Euclidean width of the gap  (m)
-# float32 width 
+float32 width 
 """
   __slots__ = ['header','gaps']
   _slot_types = ['std_msgs/Header','dynamic_gap/GapPolar[]']
@@ -95,7 +95,7 @@ float32 left_range
       buff.write(_struct_I.pack(length))
       for val1 in self.gaps:
         _x = val1
-        buff.write(_get_struct_4f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range))
+        buff.write(_get_struct_5f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -133,8 +133,8 @@ float32 left_range
         val1 = dynamic_gap.msg.GapPolar()
         _x = val1
         start = end
-        end += 16
-        (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range,) = _get_struct_4f().unpack(str[start:end])
+        end += 20
+        (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width,) = _get_struct_5f().unpack(str[start:end])
         self.gaps.append(val1)
       return self
     except struct.error as e:
@@ -160,7 +160,7 @@ float32 left_range
       buff.write(_struct_I.pack(length))
       for val1 in self.gaps:
         _x = val1
-        buff.write(_get_struct_4f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range))
+        buff.write(_get_struct_5f().pack(_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -199,8 +199,8 @@ float32 left_range
         val1 = dynamic_gap.msg.GapPolar()
         _x = val1
         start = end
-        end += 16
-        (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range,) = _get_struct_4f().unpack(str[start:end])
+        end += 20
+        (_x.right_angle, _x.right_range, _x.left_angle, _x.left_range, _x.width,) = _get_struct_5f().unpack(str[start:end])
         self.gaps.append(val1)
       return self
     except struct.error as e:
@@ -216,9 +216,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_4f = None
-def _get_struct_4f():
-    global _struct_4f
-    if _struct_4f is None:
-        _struct_4f = struct.Struct("<4f")
-    return _struct_4f
+_struct_5f = None
+def _get_struct_5f():
+    global _struct_5f
+    if _struct_5f is None:
+        _struct_5f = struct.Struct("<5f")
+    return _struct_5f
