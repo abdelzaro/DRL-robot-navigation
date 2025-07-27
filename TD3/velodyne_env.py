@@ -116,10 +116,10 @@ class GazeboEnv:
             self.gaps.append(
                 [self.gaps[m][1], self.gaps[m][1] + np.pi / self.environment_dim]
             )
-        self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap code
+        self.gaps[-1][-1] += 0.03 # Abdel: this is part of the DRL code not the dgap  code
         
         # self.dgap_flat_vector = []# this is part of the dgap code
-        self.dgap_flat_vector = np.zeros(28, dtype=np.float32)
+        self.dgap_flat_vector = np.zeros(40, dtype=np.float32)
 
         port = "11311"
         subprocess.Popen(["roscore", "-p", port])
@@ -181,7 +181,7 @@ class GazeboEnv:
 
     def gaps_callback(self, msg):
         gaps_flat = []
-        max_gaps = 7  #IF YOU CHANGE THIS!!!:  update dgap_number_gaps_dim in train_velodyne_td3.py
+        max_gaps = 10  #IF YOU CHANGE THIS!!!:  update dgap_number_gaps_dim in train_velodyne_td3.py
         # and dgap_flat_vector initial value
         max_range = 5.0  
         
