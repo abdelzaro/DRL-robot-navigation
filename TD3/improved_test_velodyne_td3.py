@@ -98,13 +98,16 @@ episode_num = 0
 
 environment_dim = 20
 robot_dim = 4
-dgap_number_gaps_dim = 3 * 4 # 5 gaps * 4 floats in the dgap_flat_list
+dgap_number_gaps_dim = 7 * 4 # 5 gaps * 4 floats in the dgap_flat_list
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim)
 time.sleep(5)
 torch.manual_seed(seed)
 np.random.seed(seed)
-state_dim = environment_dim + robot_dim + dgap_number_gaps_dim
+# state_dim = environment_dim + robot_dim + dgap_number_gaps_dim
 # state_dim = environment_dim + robot_dim
+
+state_dim =  robot_dim + dgap_number_gaps_dim
+
 action_dim = 2
 total_runs = 1000
 # Create the network
