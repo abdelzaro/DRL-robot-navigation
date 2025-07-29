@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib/libgazebo_ros_velodyne_gpu_laser.pdb"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib/libgazebo_ros_velodyne_gpu_laser.so"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib/libgazebo_ros_velodyne_gpu_laser.pdb"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib/libgazebo_ros_velodyne_gpu_laser.so"
   "CMakeFiles/gazebo_ros_velodyne_gpu_laser.dir/src/GazeboRosVelodyneLaser.cpp.o"
 )
 

@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "velodyne_description"
-PROJECT_SPACE_DIR = "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description"
+PROJECT_SPACE_DIR = "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description"
 PROJECT_VERSION = "1.0.10"

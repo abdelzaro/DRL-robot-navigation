@@ -1,10 +1,10 @@
 
 "use strict";
 
-let GapPolar = require('./GapPolar.js');
 let GapPolarArray = require('./GapPolarArray.js');
+let GapPolar = require('./GapPolar.js');
 
 module.exports = {
-  GapPolar: GapPolar,
   GapPolarArray: GapPolarArray,
+  GapPolar: GapPolar,
 };

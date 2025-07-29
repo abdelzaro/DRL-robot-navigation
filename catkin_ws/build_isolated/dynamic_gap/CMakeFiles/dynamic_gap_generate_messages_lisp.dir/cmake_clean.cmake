@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/common-lisp/ros/dynamic_gap/msg/GapPolar.lisp"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/common-lisp/ros/dynamic_gap/msg/GapPolarArray.lisp"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/common-lisp/ros/dynamic_gap/msg/GapPolar.lisp"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/common-lisp/ros/dynamic_gap/msg/GapPolarArray.lisp"
   "CMakeFiles/dynamic_gap_generate_messages_lisp"
 )
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolar.h"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolarArray.h"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolar.h"
+  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include/dynamic_gap/GapPolarArray.h"
   "CMakeFiles/dynamic_gap_generate_messages_cpp"
 )
 

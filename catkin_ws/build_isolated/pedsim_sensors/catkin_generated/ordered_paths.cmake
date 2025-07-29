@@ -1,1 +1,1 @@
-set(ORDERED_PATHS "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/lib;/opt/ros/noetic/lib")
+set(ORDERED_PATHS "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/lib;/opt/ros/noetic/lib")
