@@ -3,11 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # === CONFIGURATION ===
-results_dir = '/home/power20/DRL-robot-navigation/TD3/results'
+results_dir = '/home/mini/DRL-robot-navigation/TD3/results'
 
 # === START/END FILES ===
-start_file = 'TD3_velodyne_20250710-200821.npy'
-end_file   = 'TD3_velodyne_20250713-172445.npy'
+start_file = 'TD3_velodyne_20250729-130616.npy'
+end_file   = 'TD3_velodyne_20250729-130616.npy'
 
 # === LOAD & SORT ALL .npy FILES ===
 all_files = sorted(f for f in os.listdir(results_dir) if f.endswith('.npy'))
