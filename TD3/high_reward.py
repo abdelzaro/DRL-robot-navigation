@@ -9,7 +9,7 @@ if len(sys.argv) != 2:
 
 file_prefix = sys.argv[1]
 results_dir = '/home/p14/DRL-robot-navigation/TD3/results/'
-episode_limit = 115  # Only consider rewards from episodes ≤ 40
+episode_limit = 40  # Only consider rewards from episodes ≤ 40
 
 # === LOAD & FILTER FILES ===
 all_files = [f for f in os.listdir(results_dir)
