@@ -7,6 +7,3 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_simulator:$CMAKE_PREFIX_PATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_simulator/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/p14/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_simulator:$ROS_PACKAGE_PATH"
