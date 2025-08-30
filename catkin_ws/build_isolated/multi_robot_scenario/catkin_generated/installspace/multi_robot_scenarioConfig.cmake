@@ -67,14 +67,14 @@ set(multi_robot_scenario_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(multi_robot_scenario_SOURCE_PREFIX /home/p14/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario)
-  set(multi_robot_scenario_DEVEL_PREFIX /home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario)
+  set(multi_robot_scenario_SOURCE_PREFIX /home/az/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario)
+  set(multi_robot_scenario_DEVEL_PREFIX /home/az/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario)
   set(multi_robot_scenario_INSTALL_PREFIX "")
   set(multi_robot_scenario_PREFIX ${multi_robot_scenario_DEVEL_PREFIX})
 else()
   set(multi_robot_scenario_SOURCE_PREFIX "")
   set(multi_robot_scenario_DEVEL_PREFIX "")
-  set(multi_robot_scenario_INSTALL_PREFIX /home/p14/DRL-robot-navigation/catkin_ws/install_isolated)
+  set(multi_robot_scenario_INSTALL_PREFIX /home/az/DRL-robot-navigation/catkin_ws/install_isolated)
   set(multi_robot_scenario_PREFIX ${multi_robot_scenario_INSTALL_PREFIX})
 endif()
 
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/p14/DRL-robot-navigation/catkin_ws/install_isolated/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/global_planner_setup/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_simulator/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
+    foreach(path /home/az/DRL-robot-navigation/catkin_ws/install_isolated/lib;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/global_planner_setup/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

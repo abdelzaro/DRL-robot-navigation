@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/p14/DRL-robot-navigation/catkin_ws/src/global_planner_setup
+CMAKE_SOURCE_DIR = /home/az/DRL-robot-navigation/catkin_ws/src/global_planner_setup
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/p14/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup
+CMAKE_BINARY_DIR = /home/az/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup
 
 # Utility rule file for nav_msgs_generate_messages_nodejs.
 
@@ -67,6 +67,6 @@ CMakeFiles/nav_msgs_generate_messages_nodejs.dir/clean:
 .PHONY : CMakeFiles/nav_msgs_generate_messages_nodejs.dir/clean
 
 CMakeFiles/nav_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/p14/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/p14/DRL-robot-navigation/catkin_ws/src/global_planner_setup /home/p14/DRL-robot-navigation/catkin_ws/src/global_planner_setup /home/p14/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup /home/p14/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup /home/p14/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/az/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/az/DRL-robot-navigation/catkin_ws/src/global_planner_setup /home/az/DRL-robot-navigation/catkin_ws/src/global_planner_setup /home/az/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup /home/az/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup /home/az/DRL-robot-navigation/catkin_ws/build_isolated/global_planner_setup/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/nav_msgs_generate_messages_nodejs.dir/depend
 

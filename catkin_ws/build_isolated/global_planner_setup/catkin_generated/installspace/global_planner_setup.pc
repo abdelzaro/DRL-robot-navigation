@@ -1,4 +1,4 @@
-prefix=/home/p14/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/az/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: global_planner_setup
 Description: Description of global_planner_setup

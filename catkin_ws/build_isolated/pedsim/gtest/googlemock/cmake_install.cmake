@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/p14/DRL-robot-navigation/catkin_ws/install_isolated")
+  set(CMAKE_INSTALL_PREFIX "/home/az/DRL-robot-navigation/catkin_ws/install_isolated")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/p14/DRL-robot-navigation/catkin_ws/build_isolated/pedsim/gtest/googletest/cmake_install.cmake")
+  include("/home/az/DRL-robot-navigation/catkin_ws/build_isolated/pedsim/gtest/googletest/cmake_install.cmake")
 
 endif()
 

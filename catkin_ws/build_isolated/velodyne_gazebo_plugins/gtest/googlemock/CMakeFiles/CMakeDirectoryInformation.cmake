@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/googletest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/p14/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/az/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_gazebo_plugins")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)
