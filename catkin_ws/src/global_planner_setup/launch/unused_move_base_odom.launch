@@ -1,0 +1,14 @@
+<launch>
+  <!-- Use simulated time from Gazebo -->
+  <param name="use_sim_time" value="true"/>
+
+  <!-- Load odom-only costmap params -->
+  <rosparam file="$(find global_planner_setup)/config/costmaps_house.yaml" command="load"/>
+
+  <!-- Start move_base with only global planner -->
+  <node pkg="move_base" type="move_base" name="move_base" output="screen">
+    <param name="base_global_planner" value="navfn/NavfnROS"/>
+    <!-- local planner still required by node API, but you will ignore its /cmd_vel -->
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+  </node>
+</launch>

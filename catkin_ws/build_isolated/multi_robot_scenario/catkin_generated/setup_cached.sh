@@ -7,4 +7,3 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/p14/DRL-robot-navigation/catkin_ws/build_isolated/multi_robot_scenario'

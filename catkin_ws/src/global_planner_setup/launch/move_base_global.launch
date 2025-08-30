@@ -1,0 +1,11 @@
+<launch>
+  <param name="use_sim_time" value="true"/>
+
+  <!-- Load costmap params  -->
+  <rosparam file="$(find global_planner_setup)/config/costmaps_house.yaml" command="load"/>
+
+  <node pkg="move_base" type="move_base" name="move_base" output="screen">
+    <param name="base_global_planner" value="navfn/NavfnROS"/> <!-- or global_planner/GlobalPlanner -->
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/> <!-- keep but ignore -->
+  </node>
+</launch>
