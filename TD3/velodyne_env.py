@@ -338,7 +338,7 @@ class GazeboEnv:
             position_ok = check_pos(x, y)
         object_state.pose.position.x = x
         object_state.pose.position.y = y
-        # object_state.pose.position.z = 0.
+        # object_state.pose.position.z = 0. 
         object_state.pose.orientation.x = quaternion.x
         object_state.pose.orientation.y = quaternion.y
         object_state.pose.orientation.z = quaternion.z
@@ -350,7 +350,7 @@ class GazeboEnv:
 
         '''
 
-        # Fixed spawn for testing
+        # Fixed spawnn for testing
         x = -3.0
         y = -2.0
         angle = 0.0
