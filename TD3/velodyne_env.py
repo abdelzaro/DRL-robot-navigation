@@ -324,11 +324,11 @@ class GazeboEnv:
 
         except rospy.ServiceException as e:
             print("/gazebo/reset_simulation service call failed")
-
+        '''
         angle = np.random.uniform(-np.pi, np.pi)
         quaternion = Quaternion.from_euler(0.0, 0.0, angle)
         object_state = self.set_self_state
-
+        
         x = 0
         y = 0
         position_ok = False
@@ -348,10 +348,30 @@ class GazeboEnv:
         self.odom_x = object_state.pose.position.x
         self.odom_y = object_state.pose.position.y
 
+        '''
+
+        # Fixed spawn for testing
+        x = -3.0
+        y = -2.0
+        angle = 0.0
+        quaternion = Quaternion.from_euler(0.0, 0.0, angle)
+
+        object_state = self.set_self_state
+        object_state.pose.position.x = x
+        object_state.pose.position.y = y
+        object_state.pose.orientation.x = quaternion.x
+        object_state.pose.orientation.y = quaternion.y
+        object_state.pose.orientation.z = quaternion.z
+        object_state.pose.orientation.w = quaternion.w
+        self.set_state.publish(object_state)
+
+        self.odom_x = x
+        self.odom_y = y
+
         # set a random goal in empty space in environment
         self.change_goal()
         # randomly scatter boxes in the environment
-        self.random_box()
+        # self.random_box()
         self.publish_markers([0.0, 0.0])
 
         rospy.wait_for_service("/gazebo/unpause_physics")
