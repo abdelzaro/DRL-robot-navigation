@@ -5,8 +5,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import sys
-
 from numpy import inf
 from torch.utils.tensorboard import SummaryWriter
 
@@ -239,10 +237,7 @@ policy_noise = 0.2  # Added noise for exploration
 noise_clip = 0.5  # Maximum clamping values of the noise
 policy_freq = 2  # Frequency of Actor network updates
 buffer_size = 1e6  # Maximum size of the buffer
-custom_title = sys.argv[1] if len(sys.argv) > 1 else ""
-file_name = f"TD3_velodyne_{custom_title}" if custom_title else "TD3_velodyne"
-
-# file_name = "TD3_velodyne"  # name of the file to store the policy
+file_name = "TD3_velodyne"  # name of the file to store the policy
 save_model = True  # Weather to save the model or not
 load_model = False  # Weather to load a stored model
 random_near_obstacle = True  # To take random actions near obstacles or not
@@ -254,17 +249,13 @@ if save_model and not os.path.exists("./pytorch_models"):
     os.makedirs("./pytorch_models")
 
 # Create the training environment
-use_lidar = False # in the observation
 environment_dim = 20
 robot_dim = 4
-dgap_number_gaps_dim = 5 * 4 # 5 gaps * 4 floats in the dgap_flat_list
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim)
-time.sleep(30) #
+time.sleep(5)
 torch.manual_seed(seed)
 np.random.seed(seed)
-# state_dim = environment_dim + robot_dim + dgap_number_gaps_dim 
-# state_dim = (environment_dim + robot_dim + dgap_number_gaps_dim) if use_lidar else ( robot_dim + dgap_number_gaps_dim)
-state_dim = robot_dim + dgap_number_gaps_dim
+state_dim = environment_dim + robot_dim
 action_dim = 2
 max_action = 1
 
