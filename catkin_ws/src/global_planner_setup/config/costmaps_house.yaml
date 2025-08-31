@@ -5,12 +5,15 @@ global_costmap:
   publish_frequency: 1.0
   resolution: 0.05
   static_map: true
-  rolling_window: true
+  rolling_window: false
   width: 50.0
   height: 50.0
   plugins:
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
     - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
     - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+  static_layer:
+    map_topic: /map
 
   obstacle_layer:
     observation_sources: laser
