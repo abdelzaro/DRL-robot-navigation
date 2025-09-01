@@ -1,0 +1,11 @@
+<launch>
+  <!-- Load the static map -->
+  <node pkg="map_server" type="map_server" name="map_server"
+        args="$(find global_planner_setup)/maps/map_house.yaml"/>
+
+  <!-- Run AMCL -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <rosparam file="$(find global_planner_setup)/config/amcl.yaml" command="load"/>
+    <remap from="scan" to="/r1/front_laser/scan"/>
+  </node>
+</launch>
