@@ -2,7 +2,7 @@
   <param name="use_sim_time" value="true"/>
 
   <!-- Global costmap -->
-  <rosparam file="$(find global_planner_setup)/config/costmaps_house.yaml" command="load" ns="global_costmap/static_layer"/>
+  <rosparam file="$(find global_planner_setup)/config/costmaps_house.yaml" command="load" ns="global_costmap/static_map"/>
 
   <!-- Local costmap -->
   <rosparam file="$(find global_planner_setup)/config/costmaps_house.yaml" command="load" ns="local_costmap"/>
