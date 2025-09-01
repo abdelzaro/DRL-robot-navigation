@@ -1,0 +1,29 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 1.0
+  publish_frequency: 1.0
+  resolution: 0.05
+  rolling_window: false
+  width: 50.0
+  height: 50.0
+
+  plugins:
+    - {name: static_layer,   type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+
+  static_layer:
+    map_topic: /map
+    first_map_only: true   # fixed map; set false if using SLAM
+
+  obstacle_layer:
+    observation_sources: laser
+    laser: {sensor_frame: base_laser,
+            data_type: LaserScan,
+            topic: /r1/front_laser/scan,
+            marking: true,
+            clearing: true}
+
+  inflation_layer:
+    inflation_radius: 0.5
