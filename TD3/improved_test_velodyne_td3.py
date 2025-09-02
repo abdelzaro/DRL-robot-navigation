@@ -10,8 +10,8 @@ from velodyne_env import GazeboEnv
 import csv 
 import os
 
-# Define paths
-base_dir = "/home/p14/DRL-robot-navigation/TD3"
+# Define paths 
+base_dir = "/home/power20/DRL-robot-navigation/TD3"
 nav_data_dir = os.path.join(base_dir, "nav_data")
 plot_dir = os.path.join(nav_data_dir, "plots")
 
@@ -98,7 +98,7 @@ episode_num = 0
 
 environment_dim = 20
 robot_dim = 4
-dgap_number_gaps_dim = 0 * 5 # 5 gaps * 4 floats in the dgap_flat_list
+dgap_number_gaps_dim = 3 * 4 # 5 gaps * 4 floats in the dgap_flat_list
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim)
 time.sleep(5)
 torch.manual_seed(seed)
@@ -133,7 +133,7 @@ while i <= (total_runs):
         if not measure_collisions: 
             next_state, reward, done, target = env.step(a_in)
         else: 
-            next_state, reward, done, target, collision= env.step(a_in)
+            next_state, reward, done, target, collision= env.step(a_in, measure_collisions)
             if collision: 
                 num_collisions += 1
                 print(f"(Collision Count:{num_collisions}, Step {episode_timesteps}, Reward: {reward:.2f}")

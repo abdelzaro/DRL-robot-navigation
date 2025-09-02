@@ -56,20 +56,26 @@ $ catkin_make_isolated
 
 Open a terminal and set up sources:
 ```shell
-$ export ROS_HOSTNAME=localhost
-$ export ROS_MASTER_URI=http://localhost:11311
-$ export ROS_PORT_SIM=11311
-$ export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
-$ source ~/.bashrc
-$ cd ~/DRL-robot-navigation/catkin_ws
-$ source devel_isolated/setup.bash
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_PORT_SIM=11311
+export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
+source ~/.bashrc
+cd ~/DRL-robot-navigation/catkin_ws
+source devel_isolated/setup.bash
+
 ```
 
 Run the training:
 ```shell
-$ cd ~/DRL-robot-navigation/TD3
-$ python3 train_velodyne_td3.py
+cd ~/DRL-robot-navigation/TD3
+python3 train_velodyne_td3.py
 ```
+if using dynamic_gap make sure you launch the gap detection publisher:
+```shell
+roslaunch dynamic_gap gap_streamer.launch
+```
+
 
 To check the training process on tensorboard:
 ```shell
@@ -79,7 +85,14 @@ $ tensorboard --logdir runs
 
 To kill the training process:
 ```shell
-$ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+```
+abdel: some extra commands if gazebo won't cose
+```shell
+ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+pkill -9 -f ros
+pkill -9 -f gzserver
+pkill -9 -f gzclient
 ```
 
 Once training is completed, test the model:
