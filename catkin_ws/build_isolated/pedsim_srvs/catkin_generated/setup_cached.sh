@@ -8,5 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PYTHONPATH="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/p14/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_srvs:$ROS_PACKAGE_PATH"
