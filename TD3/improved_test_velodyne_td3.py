@@ -11,7 +11,7 @@ import csv
 import os
 
 # Define paths 
-base_dir = "/home/power20/DRL-robot-navigation/TD3"
+base_dir = "/home/az/DRL-robot-navigation/TD3"
 nav_data_dir = os.path.join(base_dir, "nav_data")
 plot_dir = os.path.join(nav_data_dir, "plots")
 
@@ -98,9 +98,9 @@ episode_num = 0
 
 environment_dim = 20
 robot_dim = 4
-dgap_number_gaps_dim = 3 * 4 # 5 gaps * 4 floats in the dgap_flat_list
+dgap_number_gaps_dim = 7 * 4 # 5 gaps * 4 floats in the dgap_flat_list
 env = GazeboEnv("multi_robot_scenario.launch", environment_dim)
-time.sleep(5)
+time.sleep(15)
 torch.manual_seed(seed)
 np.random.seed(seed)
 state_dim = environment_dim + robot_dim + dgap_number_gaps_dim

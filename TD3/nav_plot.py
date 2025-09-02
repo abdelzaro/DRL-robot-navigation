@@ -12,7 +12,7 @@ model_name = sys.argv[1]
 plot_dir = sys.argv[2]
 
 # Construct path to CSV file
-csv_path = os.path.join("/home/power20/DRL-robot-navigation/TD3/nav_data", f"run_stats_{model_name}.csv")
+csv_path = os.path.join("/home/az/DRL-robot-navigation/TD3/nav_data", f"run_stats_{model_name}.csv")
 
 # Create plot_dir if needed
 os.makedirs(plot_dir, exist_ok=True)

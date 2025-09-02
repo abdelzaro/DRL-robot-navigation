@@ -7,6 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description:$CMAKE_PREFIX_PATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description:$CMAKE_PREFIX_PATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/az/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description:$ROS_PACKAGE_PATH"

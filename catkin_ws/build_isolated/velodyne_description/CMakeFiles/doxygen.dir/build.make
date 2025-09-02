@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description
+CMAKE_SOURCE_DIR = /home/az/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/power20/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description
+CMAKE_BINARY_DIR = /home/az/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/power20/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description /home/power20/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description /home/power20/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description /home/power20/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description /home/power20/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/az/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/az/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description /home/az/DRL-robot-navigation/catkin_ws/src/velodyne_simulator/velodyne_description /home/az/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description /home/az/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description /home/az/DRL-robot-navigation/catkin_ws/build_isolated/velodyne_description/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

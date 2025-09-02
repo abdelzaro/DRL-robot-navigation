@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -Wall -Wunused -std=c++0x -pipe -Os
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"pedsim\" -Dpedsim_EXPORTS
 
-CXX_INCLUDES = -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/power20/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/pedsim 
+CXX_INCLUDES = -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/az/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/pedsim 
 

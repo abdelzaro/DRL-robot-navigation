@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/power20/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/setup.sh

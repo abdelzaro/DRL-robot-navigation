@@ -1,4 +1,4 @@
-prefix=/home/power20/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/az/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: velodyne_description
 Description: Description of velodyne_description
