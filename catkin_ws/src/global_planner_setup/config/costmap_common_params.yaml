@@ -1,0 +1,18 @@
+# costmap_common_params.yaml
+footprint: [[0.5, -0.35], [-0.5, -0.35], [-0.5, 0.35], [0.5, 0.35]]
+# OR you can use robot_radius instead of footprint:
+# robot_radius: 0.3
+
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+inflation_radius: 0.2
+cost_scaling_factor: 10.0
+
+observation_sources: laser_scan_sensor
+
+laser_scan_sensor: {sensor_frame: base_laser,
+                    data_type: LaserScan,
+                    topic: r1/front_laser/scan,
+                    marking: true,
+                    clearing: true}
