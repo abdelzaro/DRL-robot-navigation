@@ -1,0 +1,45 @@
+DWAPlannerROS:
+
+# Robot Configuration Parameters
+  max_vel_x: 1.0      # Pioneer max ~1.2 m/s
+  min_vel_x: -0.3     # allow some reverse
+  max_vel_y: 0.0
+  min_vel_y: 0.0
+
+  max_vel_trans:  1.0
+  min_vel_trans:  0.1
+
+  max_vel_theta: 3.0   # ~180 deg/s
+  min_vel_theta: 0.5
+
+  acc_lim_x: 1.0       # Pioneer accelerates slower than TB3
+  acc_lim_y: 0.0
+  acc_lim_theta: 2.0   # slower angular accel
+
+# Goal Tolerance Parameters
+  xy_goal_tolerance: 0.1
+  yaw_goal_tolerance: 0.2
+  latch_xy_goal_tolerance: false
+
+# Forward Simulation Parameters
+  sim_time: 3.0         # can plan further ahead
+  vx_samples: 20
+  vy_samples: 0
+  vth_samples: 40
+  controller_frequency: 10.0
+
+# Trajectory Scoring Parameters
+  path_distance_bias: 32.0
+  goal_distance_bias: 20.0
+  occdist_scale: 0.02
+  forward_point_distance: 0.5
+  stop_time_buffer: 0.2
+  scaling_speed: 0.5
+  max_scaling_factor: 0.2
+
+# Oscillation Prevention Parameters
+  oscillation_reset_dist: 0.1
+
+# Debugging
+  publish_traj_pc: true
+  publish_cost_grid_pc: true

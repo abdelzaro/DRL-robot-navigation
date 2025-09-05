@@ -1,0 +1,16 @@
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+# Robot footprint polygon (approx rectangle 0.44 x 0.38 m)
+footprint: [[-0.22, -0.19], [-0.22, 0.19], [0.22, 0.19], [0.22, -0.19]]
+
+# Alternatively, you can just use a radius
+# robot_radius: 0.22
+
+inflation_radius: 0.6     # smaller than 1.0, avoids over-conservatism
+cost_scaling_factor: 3.0
+
+map_type: costmap
+
+observation_sources: scan
+scan: {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}
