@@ -55,6 +55,27 @@ Start localization (AMCL)
 rosrun amcl amcl scan:=/r1/front_laser/scan
 ```
 
+```shell
+ rosrun tf static_transform_publisher 0 0 0 0 0 0 base_link base_footprint 100
+```
+
+```shell
+rosrun tf static_transform_publisher 0 0 0 0 0 0 front_laser base_scan 100
+```
+
+why are these needed? 
+this code has:
+
+odom → base_link → chassis → front_laser
+
+
+TurtleBot3 navigation expects:
+map → odom → base_footprint → base_scan
+
+
+So there are two mismatches:
+ don’t have base_footprint at all (root is base_link/chassis).
+ laser frame is front_laser, but navigation defaults to base_scan.
 
 abdel: some extra commands if gazebo won't cose
 ```shell
