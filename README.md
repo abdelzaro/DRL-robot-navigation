@@ -30,8 +30,10 @@ source devel_isolated/setup.bash
 ```
 
 
+
+Launch move_base with your config
 ```shell
-roslaunch global_planner_setup move_base_global.launch
+roslaunch global_planner_setup move_base.launch
 ```
 
 this is the current way to set the global plan goal position: 
@@ -53,10 +55,6 @@ Start localization (AMCL)
 rosrun amcl amcl scan:=/r1/front_laser/scan
 ```
 
-Launch move_base with your config
-```shell
-roslaunch global_planner_setup move_base.launch
-```
 
 abdel: some extra commands if gazebo won't cose
 ```shell
