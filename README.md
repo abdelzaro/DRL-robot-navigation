@@ -42,9 +42,20 @@ pose:
   orientation: {z: 0.0, w: 1.0}"
 ```
 
-adjusting this will also adjust where the global and local costmaps are:
+run map: 
 ```shell
-rosrun tf static_transform_publisher 5 5 0 0 0 0 map odom 100
+rosrun map_server map_server ~/DRL-robot-navigation/catkin_ws/src/global_planner_setup/maps/map_house.yaml
+```
+
+Start localization (AMCL)
+(assuming you have a laser publishing /r1/front_laser/scan and base_link)
+```shell
+rosrun amcl amcl scan:=/r1/front_laser/scan
+```
+
+Launch move_base with your config
+```shell
+roslaunch global_planner_setup move_base.launch
 ```
 
 abdel: some extra commands if gazebo won't cose
