@@ -324,7 +324,7 @@ class GazeboEnv:
 
         except rospy.ServiceException as e:
             print("/gazebo/reset_simulation service call failed")
-        '''
+        
         angle = np.random.uniform(-np.pi, np.pi)
         quaternion = Quaternion.from_euler(0.0, 0.0, angle)
         object_state = self.set_self_state
@@ -333,8 +333,8 @@ class GazeboEnv:
         y = 0
         position_ok = False
         while not position_ok:
-            x = np.random.uniform(-4.5, 4.5)
-            y = np.random.uniform(-4.5, 4.5)
+            x = np.random.uniform(-4.5, 4.5) # 7 7 or -8 and 7 
+            y = np.random.uniform(0, 5)
             position_ok = check_pos(x, y)
         object_state.pose.position.x = x
         object_state.pose.position.y = y
@@ -367,6 +367,7 @@ class GazeboEnv:
 
         self.odom_x = x
         self.odom_y = y
+        '''
 
         # set a random goal in empty space in environment
         self.change_goal()
