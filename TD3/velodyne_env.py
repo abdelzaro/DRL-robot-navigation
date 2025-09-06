@@ -19,6 +19,8 @@ from squaternion import Quaternion
 from std_srvs.srv import Empty
 from visualization_msgs.msg import Marker
 from visualization_msgs.msg import MarkerArray
+from geometry_msgs.msg import PoseWithCovarianceStamped
+
 
 GOAL_REACHED_DIST = 0.3
 COLLISION_DIST = 0.35
@@ -128,6 +130,19 @@ class GazeboEnv:
 
         # Launch the simulation with the given launchfile name
         rospy.init_node("gym", anonymous=True)
+    
+        # Publisher for AMCL initial pose
+        self.initialpose_pub = rospy.Publisher(
+            "/initialpose", PoseWithCovarianceStamped, queue_size=1, latch=True
+        )
+
+        # Optional offsets if your map origin doesn’t match Gazebo’s origin
+        self.map_origin_x = rospy.get_param("~map_origin_x", 0.0)
+        self.map_origin_y = rospy.get_param("~map_origin_y", 0.0)
+        self.map_origin_yaw = rospy.get_param("~map_origin_yaw", 0.0)  # radians
+
+
+
         if launchfile.startswith("/"):
             fullpath = launchfile
         else:
@@ -345,6 +360,11 @@ class GazeboEnv:
         object_state.pose.orientation.w = quaternion.w
         self.set_state.publish(object_state)
 
+        # Also publish initial pose for AMCL
+        rospy.sleep(0.2)   # tiny delay so TF is up-to-date
+        self.publish_initialpose(x, y, angle)
+
+
         self.odom_x = object_state.pose.position.x
         self.odom_y = object_state.pose.position.y
 
@@ -541,6 +561,41 @@ class GazeboEnv:
 
         markerArray3.markers.append(marker3)
         self.publisher3.publish(markerArray3)
+
+    def publish_initialpose(self, x, y, yaw):
+
+        """Publish AMCL initial pose in the map frame."""
+        msg = PoseWithCovarianceStamped()
+        msg.header.stamp = rospy.Time.now()
+        msg.header.frame_id = "map"
+
+        # Apply offsets if needed
+        X = x + self.map_origin_x
+        Y = y + self.map_origin_y
+        YAW = yaw + self.map_origin_yaw
+
+        msg.pose.pose.position.x = X
+        msg.pose.pose.position.y = Y
+
+        # yaw to quaternion
+        msg.pose.pose.orientation.z = math.sin(YAW / 2.0)
+        msg.pose.pose.orientation.w = math.cos(YAW / 2.0)
+
+        # Covariance (confidence in x,y,yaw)
+        msg.pose.covariance = [0.25,0,0,0,0,0,
+                            0,0.25,0,0,0,0,
+                            0,0,0.25,0,0,0,
+                            0,0,0,0.068,0,0,
+                            0,0,0,0,0.068,0,
+                            0,0,0,0,0,0.068]
+
+        # Publish a few times in case AMCL is slow to start
+        for _ in range(3):
+            self.initialpose_pub.publish(msg)
+            rospy.sleep(0.2)
+
+        rospy.loginfo(f"Published initial pose at ({X:.2f}, {Y:.2f}, yaw={YAW:.2f} rad)")
+
 
     @staticmethod
     def observe_collision(laser_data):
