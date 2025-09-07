@@ -27,15 +27,13 @@ struct GapPolar_
     : right_angle(0.0)
     , right_range(0.0)
     , left_angle(0.0)
-    , left_range(0.0)
-    , width(0.0)  {
+    , left_range(0.0)  {
     }
   GapPolar_(const ContainerAllocator& _alloc)
     : right_angle(0.0)
     , right_range(0.0)
     , left_angle(0.0)
-    , left_range(0.0)
-    , width(0.0)  {
+    , left_range(0.0)  {
   (void)_alloc;
     }
 
@@ -52,9 +50,6 @@ struct GapPolar_
 
    typedef float _left_range_type;
   _left_range_type left_range;
-
-   typedef float _width_type;
-  _width_type width;
 
 
 
@@ -88,8 +83,7 @@ bool operator==(const ::dynamic_gap::GapPolar_<ContainerAllocator1> & lhs, const
   return lhs.right_angle == rhs.right_angle &&
     lhs.right_range == rhs.right_range &&
     lhs.left_angle == rhs.left_angle &&
-    lhs.left_range == rhs.left_range &&
-    lhs.width == rhs.width;
+    lhs.left_range == rhs.left_range;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -146,12 +140,12 @@ struct MD5Sum< ::dynamic_gap::GapPolar_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "4eda0998fb76ae7703340ee0972390d2";
+    return "633e4eeee72c08575897401f2c80d401";
   }
 
   static const char* value(const ::dynamic_gap::GapPolar_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x4eda0998fb76ae77ULL;
-  static const uint64_t static_value2 = 0x03340ee0972390d2ULL;
+  static const uint64_t static_value1 = 0x633e4eeee72c0857ULL;
+  static const uint64_t static_value2 = 0x5897401f2c80d401ULL;
 };
 
 template<class ContainerAllocator>
@@ -177,7 +171,7 @@ struct Definition< ::dynamic_gap::GapPolar_<ContainerAllocator> >
 "float32 left_range\n"
 "\n"
 "# convenience: Euclidean width of the gap  (m)\n"
-"float32 width \n"
+"# float32 width \n"
 ;
   }
 
@@ -200,7 +194,6 @@ namespace serialization
       stream.next(m.right_range);
       stream.next(m.left_angle);
       stream.next(m.left_range);
-      stream.next(m.width);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -235,10 +228,6 @@ struct Printer< ::dynamic_gap::GapPolar_<ContainerAllocator> >
       s << std::endl;
     s << indent << "left_range: ";
     Printer<float>::stream(s, indent + "  ", v.left_range);
-    if (true || !indent.empty())
-      s << std::endl;
-    s << indent << "width: ";
-    Printer<float>::stream(s, indent + "  ", v.width);
   }
 };
 

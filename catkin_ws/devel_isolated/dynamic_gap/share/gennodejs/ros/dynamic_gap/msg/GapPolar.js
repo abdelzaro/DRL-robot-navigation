@@ -22,7 +22,6 @@ class GapPolar {
       this.right_range = null;
       this.left_angle = null;
       this.left_range = null;
-      this.width = null;
     }
     else {
       if (initObj.hasOwnProperty('right_angle')) {
@@ -49,12 +48,6 @@ class GapPolar {
       else {
         this.left_range = 0.0;
       }
-      if (initObj.hasOwnProperty('width')) {
-        this.width = initObj.width
-      }
-      else {
-        this.width = 0.0;
-      }
     }
   }
 
@@ -68,8 +61,6 @@ class GapPolar {
     bufferOffset = _serializer.float32(obj.left_angle, buffer, bufferOffset);
     // Serialize message field [left_range]
     bufferOffset = _serializer.float32(obj.left_range, buffer, bufferOffset);
-    // Serialize message field [width]
-    bufferOffset = _serializer.float32(obj.width, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -85,13 +76,11 @@ class GapPolar {
     data.left_angle = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [left_range]
     data.left_range = _deserializer.float32(buffer, bufferOffset);
-    // Deserialize message field [width]
-    data.width = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 20;
+    return 16;
   }
 
   static datatype() {
@@ -101,7 +90,7 @@ class GapPolar {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '4eda0998fb76ae7703340ee0972390d2';
+    return '633e4eeee72c08575897401f2c80d401';
   }
 
   static messageDefinition() {
@@ -114,7 +103,7 @@ class GapPolar {
     float32 left_range
     
     # convenience: Euclidean width of the gap  (m)
-    float32 width 
+    # float32 width 
     
     `;
   }
@@ -151,13 +140,6 @@ class GapPolar {
     }
     else {
       resolved.left_range = 0.0
-    }
-
-    if (msg.width !== undefined) {
-      resolved.width = msg.width;
-    }
-    else {
-      resolved.width = 0.0
     }
 
     return resolved;

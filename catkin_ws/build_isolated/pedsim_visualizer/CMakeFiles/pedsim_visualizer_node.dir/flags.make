@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wall -Wunused -std=c++11 -pipe -Wunused -Wextra
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"pedsim_visualizer\"
 
-CXX_INCLUDES = -I/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/include -I/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_visualizer/include -I/home/asus/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_utils/include -I/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer/include -I/home/az/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_visualizer/include -I/home/az/DRL-robot-navigation/catkin_ws/src/pedsim_ros/pedsim_utils/include -I/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

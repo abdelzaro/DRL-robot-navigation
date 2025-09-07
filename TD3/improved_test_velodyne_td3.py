@@ -11,7 +11,7 @@ import csv
 import os
 
 # Define paths
-base_dir = "/home/asus/DRL-robot-navigation/TD3"
+base_dir = "/home/az/DRL-robot-navigation/TD3"
 nav_data_dir = os.path.join(base_dir, "nav_data")
 plot_dir = os.path.join(nav_data_dir, "plots")
 

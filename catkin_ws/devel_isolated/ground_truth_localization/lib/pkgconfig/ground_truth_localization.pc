@@ -1,0 +1,8 @@
+prefix=/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/ground_truth_localization
+
+Name: ground_truth_localization
+Description: Description of ground_truth_localization
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

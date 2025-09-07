@@ -1,8 +1,8 @@
-prefix=/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs
+prefix=/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs
 
 Name: pedsim_msgs
 Description: Description of pedsim_msgs
 Version: 0.0.2
-Cflags: -I/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include
+Cflags: -I/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include
 Libs: -L${prefix}/lib 
 Requires: roscpp rospy message_runtime std_msgs geometry_msgs sensor_msgs nav_msgs

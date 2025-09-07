@@ -1,4 +1,4 @@
-prefix=/home/asus/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/az/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: pedsim_simulator
 Description: Description of pedsim_simulator

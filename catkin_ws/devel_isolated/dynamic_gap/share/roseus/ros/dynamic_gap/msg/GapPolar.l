@@ -14,7 +14,7 @@
 
 (defclass dynamic_gap::GapPolar
   :super ros::object
-  :slots (_right_angle _right_range _left_angle _left_range _width ))
+  :slots (_right_angle _right_range _left_angle _left_range ))
 
 (defmethod dynamic_gap::GapPolar
   (:init
@@ -23,14 +23,12 @@
     ((:right_range __right_range) 0.0)
     ((:left_angle __left_angle) 0.0)
     ((:left_range __left_range) 0.0)
-    ((:width __width) 0.0)
     )
    (send-super :init)
    (setq _right_angle (float __right_angle))
    (setq _right_range (float __right_range))
    (setq _left_angle (float __left_angle))
    (setq _left_range (float __left_range))
-   (setq _width (float __width))
    self)
   (:right_angle
    (&optional __right_angle)
@@ -44,9 +42,6 @@
   (:left_range
    (&optional __left_range)
    (if __left_range (setq _left_range __left_range)) _left_range)
-  (:width
-   (&optional __width)
-   (if __width (setq _width __width)) _width)
   (:serialization-length
    ()
    (+
@@ -57,8 +52,6 @@
     ;; float32 _left_angle
     4
     ;; float32 _left_range
-    4
-    ;; float32 _width
     4
     ))
   (:serialize
@@ -73,8 +66,6 @@
        (sys::poke _left_angle (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;; float32 _left_range
        (sys::poke _left_range (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
-     ;; float32 _width
-       (sys::poke _width (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -87,13 +78,11 @@
      (setq _left_angle (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;; float32 _left_range
      (setq _left_range (sys::peek buf ptr- :float)) (incf ptr- 4)
-   ;; float32 _width
-     (setq _width (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get dynamic_gap::GapPolar :md5sum-) "4eda0998fb76ae7703340ee0972390d2")
+(setf (get dynamic_gap::GapPolar :md5sum-) "633e4eeee72c08575897401f2c80d401")
 (setf (get dynamic_gap::GapPolar :datatype-) "dynamic_gap/GapPolar")
 (setf (get dynamic_gap::GapPolar :definition-)
       "# angles are in the incoming laser frame  (rad)
@@ -103,12 +92,12 @@ float32 left_angle
 float32 left_range
 
 # convenience: Euclidean width of the gap  (m)
-float32 width 
+# float32 width 
 
 ")
 
 
 
-(provide :dynamic_gap/GapPolar "4eda0998fb76ae7703340ee0972390d2")
+(provide :dynamic_gap/GapPolar "633e4eeee72c08575897401f2c80d401")
 
 

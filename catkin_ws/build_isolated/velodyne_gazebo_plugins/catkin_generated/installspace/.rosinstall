@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/asus/DRL-robot-navigation/catkin_ws/install_isolated/setup.sh
+    local-name: /home/az/DRL-robot-navigation/catkin_ws/install_isolated/setup.sh

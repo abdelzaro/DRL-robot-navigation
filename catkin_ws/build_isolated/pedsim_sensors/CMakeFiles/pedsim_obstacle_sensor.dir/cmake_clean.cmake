@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib/pedsim_sensors/pedsim_obstacle_sensor"
-  "/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib/pedsim_sensors/pedsim_obstacle_sensor.pdb"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib/pedsim_sensors/pedsim_obstacle_sensor"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors/lib/pedsim_sensors/pedsim_obstacle_sensor.pdb"
   "CMakeFiles/pedsim_obstacle_sensor.dir/src/pedsim_sensors/obstacle_point_cloud.cpp.o"
 )
 

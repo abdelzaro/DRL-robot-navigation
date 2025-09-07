@@ -1,4 +1,4 @@
-#!/home/asus/venv/bin/python3
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # Software License Agreement (BSD License)
@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim;/home/asus/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/ground_truth_localization;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_simulator;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_gazebo_plugins;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/velodyne_description;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_visualizer;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_simulator;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_sensors;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_utils;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_ros;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_gazebo_plugin;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario;/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []
