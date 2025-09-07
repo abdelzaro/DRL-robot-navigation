@@ -248,7 +248,7 @@ class GazeboEnv:
         x = 0
         y = 0
         # position_ok = False
-        # while not position_ok:
+        # while not position_ok: d
         x = np.random.uniform(-4.5, 4.5) # 7 7 or -8 and 7 
         y = np.random.uniform(0, 5)
 
