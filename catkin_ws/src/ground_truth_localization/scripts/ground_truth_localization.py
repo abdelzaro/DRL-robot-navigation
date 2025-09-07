@@ -11,7 +11,7 @@ class GroundTruthLocalization:
         # TF broadcaster: publishes map→odom
         self.br = tf.TransformBroadcaster()
 
-        # Fake /amcl_pose publisher (optional, for RViz)
+        # Fake /amcl_pose publisher (optional, for RViz). hi 
         self.amcl_pub = rospy.Publisher("/amcl_pose",
                                         PoseWithCovarianceStamped,
                                         queue_size=1)
