@@ -7,6 +7,3 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/turtlebot3_navigation:$CMAKE_PREFIX_PATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/p14/DRL-robot-navigation/catkin_ws/devel_isolated/turtlebot3_navigation/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/p14/DRL-robot-navigation/catkin_ws/src/turtlebot3_navigation:$ROS_PACKAGE_PATH"

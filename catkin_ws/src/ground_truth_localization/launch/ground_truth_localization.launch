@@ -1,0 +1,11 @@
+<launch>
+  <!-- Robot name as it appears in Gazebo (default: r1) -->
+  <arg name="robot_name" default="r1"/>
+
+  <node pkg="ground_truth_localization"
+        type="ground_truth_localization.py"
+        name="ground_truth_localization"
+        output="screen">
+    <param name="robot_name" value="$(arg robot_name)"/>
+  </node>
+</launch>
