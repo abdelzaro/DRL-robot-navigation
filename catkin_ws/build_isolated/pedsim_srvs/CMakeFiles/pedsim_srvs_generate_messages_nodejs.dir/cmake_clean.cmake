@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/GetAgentState.js"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/GetAllAgentsState.js"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/SetAgentState.js"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/SetAllAgentsState.js"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/GetAgentState.js"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/GetAllAgentsState.js"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/SetAgentState.js"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_srvs/share/gennodejs/ros/pedsim_srvs/srv/SetAllAgentsState.js"
   "CMakeFiles/pedsim_srvs_generate_messages_nodejs"
 )
 

@@ -67,14 +67,14 @@ set(pedsim_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(pedsim_SOURCE_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim)
-  set(pedsim_DEVEL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim)
+  set(pedsim_SOURCE_PREFIX /home/az/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim)
+  set(pedsim_DEVEL_PREFIX /home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim)
   set(pedsim_INSTALL_PREFIX "")
   set(pedsim_PREFIX ${pedsim_DEVEL_PREFIX})
 else()
   set(pedsim_SOURCE_PREFIX "")
   set(pedsim_DEVEL_PREFIX "")
-  set(pedsim_INSTALL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/install_isolated)
+  set(pedsim_INSTALL_PREFIX /home/az/DRL-robot-navigation/catkin_ws/install_isolated)
   set(pedsim_PREFIX ${pedsim_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(pedsim_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/ " STREQUAL " ")
+if(NOT "/home/az/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/ " STREQUAL " ")
   set(pedsim_INCLUDE_DIRS "")
-  set(_include_dirs "/home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/")
+  set(_include_dirs "/home/az/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/include/")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libped
         message(FATAL_ERROR "Project 'pedsim' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pedsim' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mini/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'pedsim' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/az/DRL-robot-navigation/catkin_ws/src/pedsim_ros/3rdparty/libpedsim/${idir}'.  ${_report}")
     endif()
     _list_append_unique(pedsim_INCLUDE_DIRS ${include})
   endforeach()
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
+    foreach(path /home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

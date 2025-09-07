@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/libdynamic_gap.pdb"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/libdynamic_gap.so"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/libdynamic_gap.pdb"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib/libdynamic_gap.so"
   "CMakeFiles/dynamic_gap.dir/src/DynamicGapPlanner.cpp.o"
   "CMakeFiles/dynamic_gap.dir/src/Planner.cpp.o"
   "CMakeFiles/dynamic_gap.dir/src/TimeKeeper.cpp.o"

@@ -229,7 +229,7 @@ class GazeboEnv:
         robot_state = [distance, theta, action[0], action[1]]
         state = np.append(laser_state, robot_state)
         reward = self.get_reward(target, collision, action, min_laser)
-        return state, reward, done, target
+        return state, reward, done, target, collision
 
     def reset(self):
 
@@ -247,11 +247,12 @@ class GazeboEnv:
 
         x = 0
         y = 0
-        position_ok = False
-        while not position_ok:
-            x = np.random.uniform(-4.5, 4.5)
-            y = np.random.uniform(-4.5, 4.5)
-            position_ok = check_pos(x, y)
+        # position_ok = False
+        # while not position_ok:
+        x = np.random.uniform(-4.5, 4.5) # 7 7 or -8 and 7 
+        y = np.random.uniform(0, 5)
+
+        # position_ok = check_pos(x, y)
         object_state.pose.position.x = x
         object_state.pose.position.y = y
         # object_state.pose.position.z = 0.
@@ -267,7 +268,7 @@ class GazeboEnv:
         # set a random goal in empty space in environment
         self.change_goal()
         # randomly scatter boxes in the environment
-        self.random_box()
+        # self.random_box()
         self.publish_markers([0.0, 0.0])
 
         rospy.wait_for_service("/gazebo/unpause_physics")

@@ -7,11 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH='/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario:/opt/ros/noetic'
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib'
-export PATH='/opt/ros/noetic/bin:/home/mini/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
-export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
-export PWD='/home/mini/DRL-robot-navigation/catkin_ws/build_isolated/multi_robot_scenario'
-export PYTHONPATH='/opt/ros/noetic/lib/python3/dist-packages'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/share/common-lisp'
-export ROS_PACKAGE_PATH='/home/mini/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario:/opt/ros/noetic/share'
+export CMAKE_PREFIX_PATH="/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario:$CMAKE_PREFIX_PATH"
+export PATH='/opt/ros/noetic/bin:/home/az/env/bin:/home/az/.local/bin:/home/az/.local/bin:/home/az/.local/bin:/home/az/.local/bin:/home/az/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+export PWD='/home/az/DRL-robot-navigation/catkin_ws/build_isolated/multi_robot_scenario'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/az/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario:$ROS_PACKAGE_PATH"

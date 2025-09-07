@@ -67,14 +67,14 @@ set(dynamic_gap_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(dynamic_gap_SOURCE_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap)
-  set(dynamic_gap_DEVEL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap)
+  set(dynamic_gap_SOURCE_PREFIX /home/az/DRL-robot-navigation/catkin_ws/src/dynamic_gap)
+  set(dynamic_gap_DEVEL_PREFIX /home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap)
   set(dynamic_gap_INSTALL_PREFIX "")
   set(dynamic_gap_PREFIX ${dynamic_gap_DEVEL_PREFIX})
 else()
   set(dynamic_gap_SOURCE_PREFIX "")
   set(dynamic_gap_DEVEL_PREFIX "")
-  set(dynamic_gap_INSTALL_PREFIX /home/mini/DRL-robot-navigation/catkin_ws/install_isolated)
+  set(dynamic_gap_INSTALL_PREFIX /home/az/DRL-robot-navigation/catkin_ws/install_isolated)
   set(dynamic_gap_PREFIX ${dynamic_gap_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(dynamic_gap_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/usr/include " STREQUAL " ")
+if(NOT "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/az/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/usr/include " STREQUAL " ")
   set(dynamic_gap_INCLUDE_DIRS "")
-  set(_include_dirs "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/usr/include")
+  set(_include_dirs "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/include;/home/az/DRL-robot-navigation/catkin_ws/src/dynamic_gap/include;/usr/include/eigen3;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/include;/opt/ros/noetic/include;/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/usr/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/inc
         message(FATAL_ERROR "Project 'dynamic_gap' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'dynamic_gap' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mini/DRL-robot-navigation/catkin_ws/src/dynamic_gap/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'dynamic_gap' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/az/DRL-robot-navigation/catkin_ws/src/dynamic_gap/${idir}'.  ${_report}")
     endif()
     _list_append_unique(dynamic_gap_INCLUDE_DIRS ${include})
   endforeach()
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
+    foreach(path /home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/lib;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim_msgs/lib;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/pedsim/lib;/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/multi_robot_scenario/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/gennodejs/ros/dynamic_gap/msg/GapPolar.js"
-  "/home/mini/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/gennodejs/ros/dynamic_gap/msg/GapPolarArray.js"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/gennodejs/ros/dynamic_gap/msg/GapPolar.js"
+  "/home/az/DRL-robot-navigation/catkin_ws/devel_isolated/dynamic_gap/share/gennodejs/ros/dynamic_gap/msg/GapPolarArray.js"
   "CMakeFiles/dynamic_gap_generate_messages_nodejs"
 )
 

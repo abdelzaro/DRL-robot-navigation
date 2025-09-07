@@ -1,14 +1,14 @@
 
 "use strict";
 
-let SetAllAgentsState = require('./SetAllAgentsState.js')
-let GetAllAgentsState = require('./GetAllAgentsState.js')
-let SetAgentState = require('./SetAgentState.js')
 let GetAgentState = require('./GetAgentState.js')
+let SetAllAgentsState = require('./SetAllAgentsState.js')
+let SetAgentState = require('./SetAgentState.js')
+let GetAllAgentsState = require('./GetAllAgentsState.js')
 
 module.exports = {
-  SetAllAgentsState: SetAllAgentsState,
-  GetAllAgentsState: GetAllAgentsState,
-  SetAgentState: SetAgentState,
   GetAgentState: GetAgentState,
+  SetAllAgentsState: SetAllAgentsState,
+  SetAgentState: SetAgentState,
+  GetAllAgentsState: GetAllAgentsState,
 };

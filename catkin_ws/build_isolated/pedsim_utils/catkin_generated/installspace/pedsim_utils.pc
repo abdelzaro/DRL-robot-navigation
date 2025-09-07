@@ -1,4 +1,4 @@
-prefix=/home/mini/DRL-robot-navigation/catkin_ws/install_isolated
+prefix=/home/az/DRL-robot-navigation/catkin_ws/install_isolated
 
 Name: pedsim_utils
 Description: Description of pedsim_utils
