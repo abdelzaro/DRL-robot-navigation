@@ -258,6 +258,27 @@ Visualization Manager:
         "": true
       Queue Size: 100
       Value: true
+    
+    - Class: rviz/Map          # <--- NEW
+      Alpha: 0.7
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /map
+      Unreliable: false
+      Value: true
+
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Value: true
+
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /angular_velocity

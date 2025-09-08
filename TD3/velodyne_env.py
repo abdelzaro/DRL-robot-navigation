@@ -137,8 +137,8 @@ class GazeboEnv:
         )
 
         # Optional offsets if your map origin doesn’t match Gazebo’s origin
-        self.map_origin_x = rospy.get_param("~map_origin_x", 0.0)
-        self.map_origin_y = rospy.get_param("~map_origin_y", 0.0)
+        self.map_origin_x = rospy.get_param("~map_origin_x", 5.0)
+        self.map_origin_y = rospy.get_param("~map_origin_y", 5.0)
         self.map_origin_yaw = rospy.get_param("~map_origin_yaw", 0.0)  # radians
 
 
@@ -339,7 +339,7 @@ class GazeboEnv:
 
         except rospy.ServiceException as e:
             print("/gazebo/reset_simulation service call failed")
-        
+        '''
         angle = np.random.uniform(-np.pi, np.pi)
         quaternion = Quaternion.from_euler(0.0, 0.0, angle)
         object_state = self.set_self_state
@@ -369,10 +369,13 @@ class GazeboEnv:
         self.odom_y = object_state.pose.position.y
 
         '''
+        ########### spawning in same location: start #############
 
         # Fixed spawn for testing
-        x = -3.0
-        y = -2.0
+        x = 4.0
+        y = 1.0
+        # x = 1.0
+        # y = 0.0
         angle = 0.0
         quaternion = Quaternion.from_euler(0.0, 0.0, angle)
 
@@ -387,7 +390,12 @@ class GazeboEnv:
 
         self.odom_x = x
         self.odom_y = y
-        '''
+
+        # Also publish initial pose for AMCL
+        rospy.sleep(0.2)   # tiny delay so TF is up-to-date
+        self.publish_initialpose(x, y, angle)
+
+        ########### spawning in same location: end #############
 
         # set a random goal in empty space in environment
         self.change_goal()
@@ -582,12 +590,12 @@ class GazeboEnv:
         msg.pose.pose.orientation.w = math.cos(YAW / 2.0)
 
         # Covariance (confidence in x,y,yaw)
-        msg.pose.covariance = [0.25,0,0,0,0,0,
-                            0,0.25,0,0,0,0,
-                            0,0,0.25,0,0,0,
-                            0,0,0,0.068,0,0,
-                            0,0,0,0,0.068,0,
-                            0,0,0,0,0,0.068]
+        msg.pose.covariance = [0.0,0,0,0,0,0,
+                            0,0.0,0,0,0,0,
+                            0,0,0.0,0,0,0,
+                            0,0,0,0.0,0,0,
+                            0,0,0,0,0.0,0,
+                            0,0,0,0,0,0.0]
 
         # Publish a few times in case AMCL is slow to start
         for _ in range(3):
