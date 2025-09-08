@@ -18,7 +18,7 @@ from visualization_msgs.msg import Marker
 from visualization_msgs.msg import MarkerArray
 
 GOAL_REACHED_DIST = 0.3
-COLLISION_DIST = 0.35
+COLLISION_DIST = 0.25
 TIME_DELTA = 0.1
 
 
