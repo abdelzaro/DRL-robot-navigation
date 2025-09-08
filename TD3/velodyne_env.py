@@ -138,8 +138,8 @@ class GazeboEnv:
 
         # Optional offsets if your map origin doesn’t match Gazebo’s origin
         self.map_origin_x = rospy.get_param("~map_origin_x", 5.0)
-        self.map_origin_y = rospy.get_param("~map_origin_y", 5.0)
-        self.map_origin_yaw = rospy.get_param("~map_origin_yaw", 0.0)  # radians
+        self.map_origin_y = rospy.get_param("~map_origin_y", 5.0) 
+        self.map_origin_yaw = rospy.get_param("~map_origin_yaw", 0.0)  # radian
 
 
 
