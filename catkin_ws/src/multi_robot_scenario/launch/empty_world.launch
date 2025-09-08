@@ -13,7 +13,7 @@
   <arg name="debug" default="false"/>
   <arg name="physics" default="ode"/>
   <arg name="verbose" default="false"/>
-  <arg name="world_name" default="$(find turtlebot3_gazebo)/worlds/turtlebot3_house.world"/>
+  <arg name="world_name" default="home/az/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch/house.world"/>
   <arg name="respawn_gazebo" default="true"/>
   <arg name="use_clock_frequency" default="false"/>
   <arg name="pub_clock_frequency" default="1000"/>
