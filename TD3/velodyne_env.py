@@ -139,7 +139,7 @@ class GazeboEnv:
         # Optional offsets if your map origin doesn’t match Gazebo’s origin
         self.map_origin_x = rospy.get_param("~map_origin_x", 5.0)
         self.map_origin_y = rospy.get_param("~map_origin_y", 5.0) 
-        self.map_origin_yaw = rospy.get_param("~map_origin_yaw", 0.0)  # radian
+        self.map_origin_yaw = rospy.get_param("~map_origin_yaw", 0.0)  # radians
 
 
 
@@ -230,10 +230,14 @@ class GazeboEnv:
         target = False
 
         # Publish the robot action
-        vel_cmd = Twist()
-        vel_cmd.linear.x = action[0]
-        vel_cmd.angular.z = action[1]
-        self.vel_pub.publish(vel_cmd)
+        # vel_cmd = Twist()
+        # vel_cmd.linear.x = action[0]
+        # vel_cmd.angular.z = action[1]
+        # self.vel_pub.publish(vel_cmd)
+        # self.publish_markers(action)
+
+        vel_cmd = Twist()  # defaults to zero
+        # self.vel_pub.publish(vel_cmd)
         self.publish_markers(action)
 
         rospy.wait_for_service("/gazebo/unpause_physics")

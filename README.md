@@ -1,3 +1,10 @@
+important note, this specific branch is just for debugging and driving teleop. I didn't finish working with it bc going to work on lit review - 20250909
+
+the teleop command: 
+```shell
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/r1/cmd_vel
+```
+
 All at once: 
 ```shell
 source env/bin/activate
